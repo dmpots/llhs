@@ -1,0 +1,26 @@
+
+GHC=~/Research/darcs/ghc-HEAD.BUILD/inplace/bin/ghc-stage2
+
+default:
+	@echo "targets: "
+	@echo "  core"
+	@echo "  cmm"
+	@echo "  llvm"
+	@echo "  opt-llvm"
+	@echo "  clean"
+
+core:
+	 $(GHC) -fllvm -ddump-simpl -O -S F.hs > F.core
+
+cmm:
+	 $(GHC) -fllvm -ddump-opt-cmm -O -S F.hs > F.cmm
+
+llvm:
+	 $(GHC) -fllvm -ddump-llvm -O -S F.hs > F.llvm
+
+opt-llvm:
+	opt -std-compile-opts -inline -O1 F.dave.llvm > F.opt.llvm
+
+clean:
+	rm -f *.hi *.o *.s a.out
+

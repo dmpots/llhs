@@ -1,0 +1,64 @@
+
+i = 4 s = s
+i = 3 s = s + (4 + 1)
+i = 2 s = s + (4 + 1) + (3 + 1)
+i = 1 s = s + (4 + 1) + (3 + 1) + (2 + 1)
+i = 0 s = s + (4 + 1) + (3 + 1) + (2 + 1) + (1 + 1)
+
+i = 4 s = s
+i = 3 s = s + ((i+1) + 1)
+i = 2 s = s + ((i+2) + 1) + ((i+1) + 1)
+i = 1 s = s + ((i+3) + 1) + ((i+2) + 1) + ((i+1) + 1)
+i = 0 s = s + ((i+4) + 1) + ((i+3) + 1) + ((i+2) + 1) + ((i+1) + 1)
+
+f$worker
+header:
+  if i == 0 goto end
+  s = s + i + 1
+  i = i - 1
+  goto header
+end:
+  return s
+  
+f$worker
+  header:
+    if i == 0 goto end
+    s = s + i
+    s = s + 1
+    i = i - 1
+    goto header
+  end:
+    return s  
+
+SSA w/o Reassociation
+f$worker(i0, s0)
+  loop:
+    s_phi = phi(s0, s1)
+    i_phi = phi(i0, i1)
+    if i_phi == 0 goto end
+    #s1 = s_phi + i_phi + 1
+    st = s_phi + i_phi
+    s1 = st + 1
+    i1 = i_phi - 1
+    goto loop
+  end:
+    return s
+
+SSA w/o Reassociation
+f$worker(i0, s0)
+  loop:
+    s_phi = phi(s0, s1)
+    i_phi = phi(i0, i1)
+    if i_phi == 0 goto end
+    #s1 = s_phi + i_phi + 1
+    st = 1  + s_phi
+    s1 = st + i_phi
+    i1 = i_phi - 1
+    goto loop
+  end:
+    return s
+
+
+
+
+

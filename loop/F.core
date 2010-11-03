@@ -1,0 +1,170 @@
+
+==================== Tidy Core ====================
+F.g1 :: GHC.Types.Int
+[GblId,
+ Caf=NoCafRefs,
+ Str=DmdType m,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=IF_ARGS [] 1 2}]
+F.g1 = GHC.Types.I# 0
+
+Rec {
+F.$wf [Occ=LoopBreaker]
+  :: GHC.Prim.Int#
+     -> GHC.Prim.Int#
+     -> GHC.Prim.Int#
+     -> GHC.Prim.Int#
+     -> GHC.Prim.Int#
+[GblId, Arity=4, Caf=NoCafRefs, Str=DmdType LLLL]
+F.$wf =
+  \ (ww_smi :: GHC.Prim.Int#)
+    (ww1_smm :: GHC.Prim.Int#)
+    (ww2_smq :: GHC.Prim.Int#)
+    (ww3_smu :: GHC.Prim.Int#) ->
+    case ww_smi of wild_B1 {
+      __DEFAULT ->
+        F.$wf
+          (GHC.Prim.-# wild_B1 1)
+          (GHC.Prim.-# ww1_smm 1)
+          (GHC.Prim.+# (GHC.Prim.+# ww2_smq wild_B1) 1)
+          (GHC.Prim.+# ww3_smu (GHC.Prim.*# ww1_smm 5));
+      0 -> GHC.Prim.+# ww2_smq ww3_smu
+    }
+end Rec }
+
+F.f [InlPrag=INLINE[0]]
+  :: GHC.Types.Int
+     -> GHC.Types.Int
+     -> GHC.Types.Int
+     -> GHC.Types.Int
+     -> GHC.Types.Int
+[GblId,
+ Arity=4,
+ Caf=NoCafRefs,
+ Str=DmdType U(L)U(L)U(L)U(L)m,
+ Unf=Unf{Src=Worker=F.$wf, TopLvl=True, Arity=4, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=ALWAYS_IF(unsat_ok=True,boring_ok=False)
+         Tmpl= \ (w_smg [Occ=Once!] :: GHC.Types.Int)
+                 (w1_smk [Occ=Once!] :: GHC.Types.Int)
+                 (w2_smo [Occ=Once!] :: GHC.Types.Int)
+                 (w3_sms [Occ=Once!] :: GHC.Types.Int) ->
+                 case w_smg of _ { GHC.Types.I# ww_smi [Occ=Once] ->
+                 case w1_smk of _ { GHC.Types.I# ww1_smm [Occ=Once] ->
+                 case w2_smo of _ { GHC.Types.I# ww2_smq [Occ=Once] ->
+                 case w3_sms of _ { GHC.Types.I# ww3_smu [Occ=Once] ->
+                 case F.$wf ww_smi ww1_smm ww2_smq ww3_smu of ww4_smy { __DEFAULT ->
+                 GHC.Types.I# ww4_smy
+                 }
+                 }
+                 }
+                 }
+                 }}]
+F.f =
+  \ (w_smg :: GHC.Types.Int)
+    (w1_smk :: GHC.Types.Int)
+    (w2_smo :: GHC.Types.Int)
+    (w3_sms :: GHC.Types.Int) ->
+    case w_smg of _ { GHC.Types.I# ww_smi ->
+    case w1_smk of _ { GHC.Types.I# ww1_smm ->
+    case w2_smo of _ { GHC.Types.I# ww2_smq ->
+    case w3_sms of _ { GHC.Types.I# ww3_smu ->
+    case F.$wf ww_smi ww1_smm ww2_smq ww3_smu of ww4_smy { __DEFAULT ->
+    GHC.Types.I# ww4_smy
+    }
+    }
+    }
+    }
+    }
+
+F.g :: GHC.Types.Int -> GHC.Types.Int
+[GblId,
+ Arity=1,
+ Caf=NoCafRefs,
+ Str=DmdType U(L)m,
+ Unf=Unf{Src=InlineStable, TopLvl=True, Arity=1, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=ALWAYS_IF(unsat_ok=True,boring_ok=False)
+         Tmpl= \ (k_ag4 :: GHC.Types.Int) -> F.f k_ag4 k_ag4 F.g1 F.g1}]
+F.g =
+  \ (k_ag4 :: GHC.Types.Int) ->
+    case k_ag4 of _ { GHC.Types.I# ww_smi ->
+    case F.$wf ww_smi ww_smi 0 0 of ww1_smy { __DEFAULT ->
+    GHC.Types.I# ww1_smy
+    }
+    }
+
+Rec {
+F.$wff [Occ=LoopBreaker]
+  :: GHC.Prim.Int# -> GHC.Prim.Int# -> GHC.Prim.Int# -> GHC.Prim.Int#
+[GblId, Arity=3, Caf=NoCafRefs, Str=DmdType LLL]
+F.$wff =
+  \ (ww_smF :: GHC.Prim.Int#)
+    (ww1_smJ :: GHC.Prim.Int#)
+    (ww2_smN :: GHC.Prim.Int#) ->
+    case ww_smF of wild_B1 {
+      __DEFAULT ->
+        F.$wff
+          (GHC.Prim.-# wild_B1 1)
+          (GHC.Prim.+# (GHC.Prim.+# ww1_smJ wild_B1) 1)
+          (GHC.Prim.+# ww2_smN (GHC.Prim.*# wild_B1 5));
+      0 -> GHC.Prim.+# ww1_smJ ww2_smN
+    }
+end Rec }
+
+F.ff [InlPrag=INLINE[0]]
+  :: GHC.Types.Int -> GHC.Types.Int -> GHC.Types.Int -> GHC.Types.Int
+[GblId,
+ Arity=3,
+ Caf=NoCafRefs,
+ Str=DmdType U(L)U(L)U(L)m,
+ Unf=Unf{Src=Worker=F.$wff, TopLvl=True, Arity=3, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=ALWAYS_IF(unsat_ok=True,boring_ok=False)
+         Tmpl= \ (w_smD [Occ=Once!] :: GHC.Types.Int)
+                 (w1_smH [Occ=Once!] :: GHC.Types.Int)
+                 (w2_smL [Occ=Once!] :: GHC.Types.Int) ->
+                 case w_smD of _ { GHC.Types.I# ww_smF [Occ=Once] ->
+                 case w1_smH of _ { GHC.Types.I# ww1_smJ [Occ=Once] ->
+                 case w2_smL of _ { GHC.Types.I# ww2_smN [Occ=Once] ->
+                 case F.$wff ww_smF ww1_smJ ww2_smN of ww3_smR { __DEFAULT ->
+                 GHC.Types.I# ww3_smR
+                 }
+                 }
+                 }
+                 }}]
+F.ff =
+  \ (w_smD :: GHC.Types.Int)
+    (w1_smH :: GHC.Types.Int)
+    (w2_smL :: GHC.Types.Int) ->
+    case w_smD of _ { GHC.Types.I# ww_smF ->
+    case w1_smH of _ { GHC.Types.I# ww1_smJ ->
+    case w2_smL of _ { GHC.Types.I# ww2_smN ->
+    case F.$wff ww_smF ww1_smJ ww2_smN of ww3_smR { __DEFAULT ->
+    GHC.Types.I# ww3_smR
+    }
+    }
+    }
+    }
+
+F.gg :: GHC.Types.Int -> GHC.Types.Int
+[GblId,
+ Arity=1,
+ Caf=NoCafRefs,
+ Str=DmdType U(L)m,
+ Unf=Unf{Src=InlineStable, TopLvl=True, Arity=1, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=ALWAYS_IF(unsat_ok=True,boring_ok=False)
+         Tmpl= \ (k_ag8 [Occ=Once] :: GHC.Types.Int) ->
+                 F.ff k_ag8 F.g1 F.g1}]
+F.gg =
+  \ (k_ag8 :: GHC.Types.Int) ->
+    case k_ag8 of _ { GHC.Types.I# ww_smF ->
+    case F.$wff ww_smF 0 0 of ww1_smR { __DEFAULT ->
+    GHC.Types.I# ww1_smR
+    }
+    }
+
+
+

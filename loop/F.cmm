@@ -1,0 +1,451 @@
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.g1_closure:
+        const GHC.Types.I#_static_info;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.$wff_closure:
+        const F.$wff_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+F.$wff_entry()
+        { [const 196621;, const 0;, const 15;]
+        }
+    cps:
+        _sn4::I32 = I32[Sp + 0];
+        if (_sn4::I32 != 0) goto cpw;
+        _cpA::I32 = I32[Sp + 4] + I32[Sp + 8];
+        R1 = _cpA::I32;
+        Sp = Sp + 12;
+        jump (I32[Sp + 0]) ();
+    cpw:
+        _sor::I32 = _sn4::I32 * 5;
+        _son::I32 = I32[Sp + 8] + _sor::I32;
+        _soq::I32 = I32[Sp + 4] + _sn4::I32;
+        _sop::I32 = _soq::I32 + 1;
+        _soo::I32 = _sn4::I32 - 1;
+        I32[Sp + 8] = _son::I32;
+        I32[Sp + 4] = _sop::I32;
+        I32[Sp + 0] = _soo::I32;
+        jump F.$wff_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.ff_closure:
+        const F.ff_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+sns_ret()
+        { [const 0;, const 32;]
+        }
+    crS:
+        Hp = Hp + 8;
+        if (Hp > I32[BaseReg + 92]) goto crY;
+        I32[Hp - 4] = GHC.Types.I#_con_info;
+        I32[Hp + 0] = R1;
+        R1 = Hp - 3;
+        Sp = Sp + 4;
+        jump (I32[Sp + 0]) ();
+    crZ: jump stg_gc_unbx_r1 ();
+    crY:
+        I32[BaseReg + 112] = 8;
+        goto crZ;
+}
+
+
+
+==================== Optimised Cmm ====================
+sow_ret()
+        { [const 98;, const 32;]
+        }
+    ctj:
+        I32[Sp + 0] = I32[Sp + 8];
+        I32[Sp - 4] = I32[Sp + 4];
+        I32[Sp + 4] = I32[R1 + 3];
+        I32[Sp + 8] = sns_info;
+        Sp = Sp - 4;
+        jump F.$wff_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sox_ret()
+        { [const 34;, const 32;]
+        }
+    cuh:
+        _cuk::I32 = I32[Sp + 8];
+        I32[Sp + 8] = I32[R1 + 3];
+        R1 = _cuk::I32;
+        I32[Sp + 0] = sow_info;
+        if (R1 & 3 != 0) goto cum;
+        jump I32[R1] ();
+    cum: jump sow_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+soy_ret()
+        { [const 2;, const 32;]
+        }
+    cvm:
+        _cvp::I32 = I32[Sp + 4];
+        I32[Sp + 4] = I32[R1 + 3];
+        R1 = _cvp::I32;
+        I32[Sp + 0] = sox_info;
+        if (R1 & 3 != 0) goto cvr;
+        jump I32[R1] ();
+    cvr: jump sox_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.ff_entry()
+        { [const 196628;, const 0;, const 15;]
+        }
+    cwr:
+        if (Sp - 4 < I32[BaseReg + 84]) goto cwt;
+        R1 = I32[Sp + 0];
+        I32[Sp + 0] = soy_info;
+        if (R1 & 3 != 0) goto cww;
+        jump I32[R1] ();
+    cwt:
+        R1 = F.ff_closure;
+        jump (I32[BaseReg - 4]) ();
+    cww: jump soy_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.gg_closure:
+        const F.gg_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+snz_ret()
+        { [const 0;, const 32;]
+        }
+    cy4:
+        Hp = Hp + 8;
+        if (Hp > I32[BaseReg + 92]) goto cya;
+        I32[Hp - 4] = GHC.Types.I#_con_info;
+        I32[Hp + 0] = R1;
+        R1 = Hp - 3;
+        Sp = Sp + 4;
+        jump (I32[Sp + 0]) ();
+    cyb: jump stg_gc_unbx_r1 ();
+    cya:
+        I32[BaseReg + 112] = 8;
+        goto cyb;
+}
+
+
+
+==================== Optimised Cmm ====================
+soH_ret()
+        { [const 0;, const 32;]
+        }
+    czv:
+        I32[Sp - 4] = 0;
+        I32[Sp - 8] = 0;
+        I32[Sp - 12] = I32[R1 + 3];
+        I32[Sp + 0] = snz_info;
+        Sp = Sp - 12;
+        jump F.$wff_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.gg_entry()
+        { [const 65541;, const 0;, const 15;]
+        }
+    cAd:
+        if (Sp - 12 < I32[BaseReg + 84]) goto cAf;
+        R1 = I32[Sp + 0];
+        I32[Sp + 0] = soH_info;
+        if (R1 & 3 != 0) goto cAi;
+        jump I32[R1] ();
+    cAf:
+        R1 = F.gg_closure;
+        jump (I32[BaseReg - 4]) ();
+    cAi: jump soH_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.$wf_closure:
+        const F.$wf_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+F.$wf_slow()
+        { []
+        }
+    cBI:
+        Sp = Sp + 0;
+        jump F.$wf_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.$wf_entry()
+        { [const F.$wf_slow-F.$wf_info;, const 484;, const 0;,
+   const 262144;, const 0;, const 15;]
+        }
+    cC1:
+        _snG::I32 = I32[Sp + 0];
+        if (_snG::I32 != 0) goto cC5;
+        _cC9::I32 = I32[Sp + 8] + I32[Sp + 12];
+        R1 = _cC9::I32;
+        Sp = Sp + 16;
+        jump (I32[Sp + 0]) ();
+    cC5:
+        _soT::I32 = I32[Sp + 4] * 5;
+        _soO::I32 = I32[Sp + 12] + _soT::I32;
+        _soS::I32 = I32[Sp + 8] + _snG::I32;
+        _soR::I32 = _soS::I32 + 1;
+        _soQ::I32 = I32[Sp + 4] - 1;
+        _soP::I32 = _snG::I32 - 1;
+        I32[Sp + 12] = _soO::I32;
+        I32[Sp + 8] = _soR::I32;
+        I32[Sp + 4] = _soQ::I32;
+        I32[Sp + 0] = _soP::I32;
+        jump F.$wf_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.f_closure:
+        const F.f_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+sob_ret()
+        { [const 0;, const 32;]
+        }
+    cER:
+        Hp = Hp + 8;
+        if (Hp > I32[BaseReg + 92]) goto cEX;
+        I32[Hp - 4] = GHC.Types.I#_con_info;
+        I32[Hp + 0] = R1;
+        R1 = Hp - 3;
+        Sp = Sp + 4;
+        jump (I32[Sp + 0]) ();
+    cEY: jump stg_gc_unbx_r1 ();
+    cEX:
+        I32[BaseReg + 112] = 8;
+        goto cEY;
+}
+
+
+
+==================== Optimised Cmm ====================
+soZ_ret()
+        { [const 227;, const 32;]
+        }
+    cGi:
+        I32[Sp + 0] = I32[Sp + 8];
+        I32[Sp + 8] = I32[R1 + 3];
+        I32[Sp - 4] = I32[Sp + 4];
+        I32[Sp + 4] = I32[Sp + 12];
+        I32[Sp + 12] = sob_info;
+        Sp = Sp - 4;
+        jump F.$wf_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sp0_ret()
+        { [const 99;, const 32;]
+        }
+    cHs:
+        _cHv::I32 = I32[Sp + 12];
+        I32[Sp + 12] = I32[R1 + 3];
+        R1 = _cHv::I32;
+        I32[Sp + 0] = soZ_info;
+        if (R1 & 3 != 0) goto cHx;
+        jump I32[R1] ();
+    cHx: jump soZ_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sp1_ret()
+        { [const 35;, const 32;]
+        }
+    cIx:
+        _cIA::I32 = I32[Sp + 8];
+        I32[Sp + 8] = I32[R1 + 3];
+        R1 = _cIA::I32;
+        I32[Sp + 0] = sp0_info;
+        if (R1 & 3 != 0) goto cIC;
+        jump I32[R1] ();
+    cIC: jump sp0_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sp2_ret()
+        { [const 3;, const 32;]
+        }
+    cJC:
+        _cJF::I32 = I32[Sp + 4];
+        I32[Sp + 4] = I32[R1 + 3];
+        R1 = _cJF::I32;
+        I32[Sp + 0] = sp1_info;
+        if (R1 & 3 != 0) goto cJH;
+        jump I32[R1] ();
+    cJH: jump sp1_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.f_entry()
+        { [const 262165;, const 0;, const 15;]
+        }
+    cKH:
+        if (Sp - 4 < I32[BaseReg + 84]) goto cKJ;
+        R1 = I32[Sp + 0];
+        I32[Sp + 0] = sp2_info;
+        if (R1 & 3 != 0) goto cKM;
+        jump I32[R1] ();
+    cKJ:
+        R1 = F.f_closure;
+        jump (I32[BaseReg - 4]) ();
+    cKM: jump sp2_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.g_closure:
+        const F.g_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+soi_ret()
+        { [const 0;, const 32;]
+        }
+    cMk:
+        Hp = Hp + 8;
+        if (Hp > I32[BaseReg + 92]) goto cMq;
+        I32[Hp - 4] = GHC.Types.I#_con_info;
+        I32[Hp + 0] = R1;
+        R1 = Hp - 3;
+        Sp = Sp + 4;
+        jump (I32[Sp + 0]) ();
+    cMr: jump stg_gc_unbx_r1 ();
+    cMq:
+        I32[BaseReg + 112] = 8;
+        goto cMr;
+}
+
+
+
+==================== Optimised Cmm ====================
+spc_ret()
+        { [const 0;, const 32;]
+        }
+    cNL:
+        I32[Sp - 4] = 0;
+        I32[Sp - 8] = 0;
+        I32[Sp - 12] = I32[R1 + 3];
+        I32[Sp - 16] = I32[R1 + 3];
+        I32[Sp + 0] = soi_info;
+        Sp = Sp - 16;
+        jump F.$wf_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.g_entry()
+        { [const 65541;, const 0;, const 15;]
+        }
+    cOF:
+        if (Sp - 16 < I32[BaseReg + 84]) goto cOH;
+        R1 = I32[Sp + 0];
+        I32[Sp + 0] = spc_info;
+        if (R1 & 3 != 0) goto cOK;
+        jump I32[R1] ();
+    cOH:
+        R1 = F.g_closure;
+        jump (I32[BaseReg - 4]) ();
+    cOK: jump spc_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    _module_registered:
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+__stginit_main:F_()
+        { []
+        }
+    cQa:
+        if (0 != I32[_module_registered]) goto cQb;
+        goto cQc;
+    cQb:
+        Sp = Sp + 4;
+        jump (I32[Sp - 4]) ();
+    cQc:
+        I32[_module_registered] = 1;
+        Sp = Sp - 4;
+        I32[Sp] = __stginit_base:Prelude_;
+        goto cQb;
+}
+
+
+
+==================== Optimised Cmm ====================
+__stginit_main:F()
+        { []
+        }
+    cR6: jump __stginit_main:F_ ();
+}
+
+

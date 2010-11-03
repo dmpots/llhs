@@ -1,0 +1,110 @@
+; ModuleID = '<stdin>'
+target datalayout = "e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:32:64-f32:32:32-f64:32:64-v64:64:64-v128:128:128-a0:0:64-f80:128:128-n8:16:32"
+
+%soI_ret_struct = type <{ i32, i32 }>
+
+@ghczmprim_GHCziTypes_Izh_con_info = external global [0 x i32] ; <[0 x i32]*> [#uses=1]
+
+declare cc10 void @stg_gc_unbx_r1(i32* noalias nocapture, i32* noalias nocapture, i32* noalias nocapture, i32) align 4
+
+define cc10 void @snE_info(i32* noalias nocapture %Base_Arg, i32* noalias nocapture %Sp_Arg, i32* noalias nocapture %Hp_Arg, i32 %R1_Arg) nounwind section "__STRIP,__me1" align 4 {
+cAE:
+  %lnAG = getelementptr inbounds i32* %Hp_Arg, i32 2 ; <i32*> [#uses=4]
+  %lnAK = ptrtoint i32* %lnAG to i32              ; <i32> [#uses=2]
+  %lnAM = getelementptr inbounds i32* %Base_Arg, i32 23 ; <i32*> [#uses=1]
+  %lnAO = load i32* %lnAM                         ; <i32> [#uses=1]
+  %lnAP = icmp ugt i32 %lnAK, %lnAO               ; <i1> [#uses=1]
+  br i1 %lnAP, label %cAV, label %nAW
+
+nAW:                                              ; preds = %cAE
+  %lnAZ = getelementptr inbounds i32* %Hp_Arg, i32 1 ; <i32*> [#uses=1]
+  store i32 ptrtoint ([0 x i32]* @ghczmprim_GHCziTypes_Izh_con_info to i32), i32* %lnAZ
+  store i32 %R1_Arg, i32* %lnAG
+  %lnB5 = add i32 %lnAK, -3                       ; <i32> [#uses=1]
+  %lnB7 = getelementptr inbounds i32* %Sp_Arg, i32 1 ; <i32*> [#uses=2]
+  %lnBd = load i32* %lnB7                         ; <i32> [#uses=1]
+  %lnBe = inttoptr i32 %lnBd to void (i32*, i32*, i32*, i32)* ; <void (i32*, i32*, i32*, i32)*> [#uses=1]
+  tail call cc10 void %lnBe(i32* %Base_Arg, i32* %lnB7, i32* %lnAG, i32 %lnB5) nounwind
+  ret void
+
+cAV:                                              ; preds = %cAE
+  %lnBp = getelementptr inbounds i32* %Base_Arg, i32 28 ; <i32*> [#uses=1]
+  store i32 8, i32* %lnBp
+  tail call cc10 void @stg_gc_unbx_r1(i32* %Base_Arg, i32* %Sp_Arg, i32* %lnAG, i32 %R1_Arg) nounwind
+  ret void
+}
+
+define cc10 void @soI_info(i32* noalias nocapture %Base_Arg, i32* noalias nocapture %Sp_Arg, i32* noalias nocapture %Hp_Arg, i32 %R1_Arg) nounwind section "__STRIP,__me1" align 4 {
+cBS:
+  %lnBU = getelementptr inbounds i32* %Sp_Arg, i32 -1 ; <i32*> [#uses=1]
+  store i32 0, i32* %lnBU
+  %lnBW = getelementptr inbounds i32* %Sp_Arg, i32 -2 ; <i32*> [#uses=1]
+  store i32 0, i32* %lnBW
+  %lnBY = add i32 %R1_Arg, 3                      ; <i32> [#uses=1]
+  %lnBZ = inttoptr i32 %lnBY to i32*              ; <i32*> [#uses=2]
+  %lnC0 = load i32* %lnBZ                         ; <i32> [#uses=1]
+  %lnC2 = getelementptr inbounds i32* %Sp_Arg, i32 -3 ; <i32*> [#uses=1]
+  store i32 %lnC0, i32* %lnC2
+  %lnC6 = load i32* %lnBZ                         ; <i32> [#uses=1]
+  %lnC8 = getelementptr inbounds i32* %Sp_Arg, i32 -4 ; <i32*> [#uses=2]
+  store i32 %lnC6, i32* %lnC8
+  store i32 ptrtoint (void (i32*, i32*, i32*, i32)* @snE_info to i32), i32* %Sp_Arg
+  tail call cc10 void @F_zdwf_info(i32* %Base_Arg, i32* %lnC8, i32* %Hp_Arg, i32 %R1_Arg) nounwind
+  ret void
+}
+
+define cc10 void @F_zdwf_info(i32* noalias nocapture %Base_Arg, i32* noalias nocapture %Sp_Arg, i32* noalias nocapture %Hp_Arg, i32 %R1_Arg) nounwind section "__STRIP,__me1" align 4 {
+cqX:
+  %lnr11 = load i32* %Sp_Arg                      ; <i32> [#uses=6]
+  %lnr32 = icmp eq i32 %lnr11, 0                  ; <i1> [#uses=1]
+  br i1 %lnr32, label %cqX.nr6_crit_edge, label %bb.nph
+
+cqX.nr6_crit_edge:                                ; preds = %cqX
+  %lnr8.phi.trans.insert = getelementptr inbounds i32* %Sp_Arg, i32 2 ; <i32*> [#uses=1]
+  %lnra.pre = load i32* %lnr8.phi.trans.insert    ; <i32> [#uses=1]
+  %lnrc.phi.trans.insert = getelementptr inbounds i32* %Sp_Arg, i32 3 ; <i32*> [#uses=1]
+  %lnre.pre = load i32* %lnrc.phi.trans.insert    ; <i32> [#uses=1]
+  br label %nr6
+
+nr6:                                              ; preds = %bb.nph, %cqX.nr6_crit_edge
+  %lnre = phi i32 [ %lnre.pre, %cqX.nr6_crit_edge ], [ %tmp21, %bb.nph ] ; <i32> [#uses=1]
+  %lnra = phi i32 [ %lnra.pre, %cqX.nr6_crit_edge ], [ %tmp14, %bb.nph ] ; <i32> [#uses=1]
+  %lnrf = add i32 %lnre, %lnra                    ; <i32> [#uses=1]
+  %lnri = getelementptr inbounds i32* %Sp_Arg, i32 4 ; <i32*> [#uses=2]
+  %lnro = load i32* %lnri                         ; <i32> [#uses=1]
+  %lnrp = inttoptr i32 %lnro to void (i32*, i32*, i32*, i32)* ; <void (i32*, i32*, i32*, i32)*> [#uses=1]
+  tail call cc10 void %lnrp(i32* %Base_Arg, i32* %lnri, i32* %Hp_Arg, i32 %lnrf) nounwind
+  ret void
+
+bb.nph:                                           ; preds = %cqX
+  %lnrv = getelementptr inbounds i32* %Sp_Arg, i32 1 ; <i32*> [#uses=2]
+  %lnrA = getelementptr inbounds i32* %Sp_Arg, i32 3 ; <i32*> [#uses=2]
+  %lnrG = getelementptr inbounds i32* %Sp_Arg, i32 2 ; <i32*> [#uses=2]
+  %lnrv.promoted = load i32* %lnrv                ; <i32> [#uses=2]
+  %tmp7 = add i32 %lnr11, -1                      ; <i32> [#uses=2]
+  %tmp8 = zext i32 %tmp7 to i33                   ; <i33> [#uses=1]
+  %tmp9 = add i32 %lnr11, -2                      ; <i32> [#uses=1]
+  %tmp10 = zext i32 %tmp9 to i33                  ; <i33> [#uses=1]
+  %tmp11 = mul i33 %tmp8, %tmp10                  ; <i33> [#uses=1]
+  %tmp12 = lshr i33 %tmp11, 1                     ; <i33> [#uses=1]
+  %tmp13 = trunc i33 %tmp12 to i32                ; <i32> [#uses=2]
+  %tmp15 = mul i32 %lnrv.promoted, 5              ; <i32> [#uses=2]
+  %tmp16 = add i32 %tmp15, -5                     ; <i32> [#uses=1]
+  %tmp17 = mul i32 %tmp7, %tmp16                  ; <i32> [#uses=1]
+  %tmp4 = mul i32 %lnr11, %lnr11                  ; <i32> [#uses=1]
+  %lnrG.promoted = load i32* %lnrG                ; <i32> [#uses=1]
+  %lnrA.promoted = load i32* %lnrA                ; <i32> [#uses=1]
+  %tmp20 = mul i32 %tmp13, 5                      ; <i32> [#uses=1]
+  %tmp18 = add i32 %lnrA.promoted, %tmp17         ; <i32> [#uses=1]
+  %tmp5 = add i32 %lnrG.promoted, %tmp4           ; <i32> [#uses=1]
+  %tmp = sub i32 %lnrv.promoted, %lnr11           ; <i32> [#uses=1]
+  %tmp6 = add i32 %tmp5, 1                        ; <i32> [#uses=1]
+  %tmp14 = sub i32 %tmp6, %tmp13                  ; <i32> [#uses=2]
+  %tmp19 = add i32 %tmp18, %tmp15                 ; <i32> [#uses=1]
+  %tmp21 = sub i32 %tmp19, %tmp20                 ; <i32> [#uses=2]
+  store i32 %tmp, i32* %lnrv
+  store i32 %tmp21, i32* %lnrA
+  store i32 %tmp14, i32* %lnrG
+  store i32 0, i32* %Sp_Arg
+  br label %nr6
+}
