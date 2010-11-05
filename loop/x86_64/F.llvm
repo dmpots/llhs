@@ -1,0 +1,2428 @@
+
+==================== LLVM Code ====================
+%F_g1_closure_struct = type <{i64,i64}>
+@ghczmprim_GHCziTypes_Izh_static_info = external global [0 x i64]
+@F_g1_closure =  global %F_g1_closure_struct <{i64 ptrtoint ([0 x i64]* @ghczmprim_GHCziTypes_Izh_static_info to i64),i64 0}>
+%F_zdwf_closure_struct = type <{i64}>
+@F_zdwf_closure =  global %F_zdwf_closure_struct <{i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_zdwf_info to i64)}>
+%F_f_closure_struct = type <{i64}>
+@F_f_closure =  global %F_f_closure_struct <{i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_f_info to i64)}>
+%F_g_closure_struct = type <{i64}>
+@F_g_closure =  global %F_g_closure_struct <{i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_g_info to i64)}>
+%F_zdwff_closure_struct = type <{i64}>
+@F_zdwff_closure =  global %F_zdwff_closure_struct <{i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_zdwff_info to i64)}>
+%F_ff_closure_struct = type <{i64}>
+@F_ff_closure =  global %F_ff_closure_struct <{i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_ff_info to i64)}>
+%F_gg_closure_struct = type <{i64}>
+@F_gg_closure =  global %F_gg_closure_struct <{i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_gg_info to i64)}>
+%_module_registered_struct = type <{i64}>
+@_module_registered = internal global %_module_registered_struct <{i64 0}>
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+define  cc 10 void @F_zdwf_slow(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind
+{
+cpY:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnpZ = load i64** %Sp_Var
+    %lnq0 = getelementptr inbounds i64* %lnpZ, i32 0
+    %lnq1 = bitcast i64* %lnq0 to i64*
+    %lnq2 = load i64* %lnq1
+    store i64 %lnq2, i64* %R2_Var
+    %lnq3 = load i64** %Sp_Var
+    %lnq4 = getelementptr inbounds i64* %lnq3, i32 1
+    %lnq5 = bitcast i64* %lnq4 to i64*
+    %lnq6 = load i64* %lnq5
+    store i64 %lnq6, i64* %R3_Var
+    %lnq7 = load i64** %Sp_Var
+    %lnq8 = getelementptr inbounds i64* %lnq7, i32 2
+    %lnq9 = bitcast i64* %lnq8 to i64*
+    %lnqa = load i64* %lnq9
+    store i64 %lnqa, i64* %R4_Var
+    %lnqb = load i64** %Sp_Var
+    %lnqc = getelementptr inbounds i64* %lnqb, i32 3
+    %lnqd = bitcast i64* %lnqc to i64*
+    %lnqe = load i64* %lnqd
+    store i64 %lnqe, i64* %R5_Var
+    %lnqf = load i64** %Sp_Var
+    %lnqg = getelementptr inbounds i64* %lnqf, i32 4
+    %lnqh = ptrtoint i64* %lnqg to i64
+    %lnqi = inttoptr i64 %lnqh to i64*
+    store i64* %lnqi, i64** %Sp_Var
+    %lnqj = load i64** %Base_Var
+    %lnqk = load i64** %Sp_Var
+    %lnql = load i64** %Hp_Var
+    %lnqm = load i64* %R1_Var
+    %lnqn = load i64* %R2_Var
+    %lnqo = load i64* %R3_Var
+    %lnqp = load i64* %R4_Var
+    %lnqq = load i64* %R5_Var
+    %lnqr = load i64* %R6_Var
+    %lnqs = load i64* %SpLim_Var
+    %lnqt = load float* %F1_Var
+    %lnqu = load float* %F2_Var
+    %lnqv = load float* %F3_Var
+    %lnqw = load float* %F4_Var
+    %lnqx = load double* %D1_Var
+    %lnqy = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwf_info( i64* %lnqj,i64* %lnqk,i64* %lnql,i64 %lnqm,i64 %lnqn,i64 %lnqo,i64 %lnqp,i64 %lnqq,i64 %lnqr,i64 %lnqs,float %lnqt,float %lnqu,float %lnqv,float %lnqw,double %lnqx,double %lnqy ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%F_zdwf_entry_struct = type <{i64,i64,i64,i64,i64,i64}>
+@F_zdwf_info_itable =  constant %F_zdwf_entry_struct <{i64 add (i64 sub (i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_zdwf_slow to i64),i64 ptrtoint (void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @F_zdwf_info to i64)),i64 0),i64 964,i64 0,i64 17179869184,i64 0,i64 15}>, section ".text; .text 0#", align 8
+define  cc 10 void @F_zdwf_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+crI:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lsn2 = alloca i64, i32 1
+    %lcqM = alloca i64, i32 1
+    %lsop = alloca i64, i32 1
+    %lsok = alloca i64, i32 1
+    %lsoo = alloca i64, i32 1
+    %lson = alloca i64, i32 1
+    %lsom = alloca i64, i32 1
+    %lsol = alloca i64, i32 1
+    %lnrJ = load i64* %R2_Var
+    store i64 %lnrJ, i64* %lsn2
+    %lnrK = load i64* %lsn2
+    %lnrL = icmp ne i64 %lnrK, 0
+    br i1 %lnrL, label %crN, label %nrO
+    nrO:
+    %lnrP = load i64* %R4_Var
+    %lnrQ = load i64* %R5_Var
+    %lnrR = add i64 %lnrP, %lnrQ
+    store i64 %lnrR, i64* %lcqM
+    %lnrS = load i64* %lcqM
+    store i64 %lnrS, i64* %R1_Var
+    %lnrT = load i64** %Sp_Var
+    %lnrU = getelementptr inbounds i64* %lnrT, i32 0
+    %lnrV = bitcast i64* %lnrU to i64*
+    %lnrW = load i64* %lnrV
+    %lnrX = inttoptr i64 %lnrW to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnrY = load i64** %Base_Var
+    %lnrZ = load i64** %Sp_Var
+    %lns0 = load i64** %Hp_Var
+    %lns1 = load i64* %R1_Var
+    %lns2 = load i64* %R2_Var
+    %lns3 = load i64* %R3_Var
+    %lns4 = load i64* %R4_Var
+    %lns5 = load i64* %R5_Var
+    %lns6 = load i64* %R6_Var
+    %lns7 = load i64* %SpLim_Var
+    %lns8 = load float* %F1_Var
+    %lns9 = load float* %F2_Var
+    %lnsa = load float* %F3_Var
+    %lnsb = load float* %F4_Var
+    %lnsc = load double* %D1_Var
+    %lnsd = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnrX( i64* %lnrY,i64* %lnrZ,i64* %lns0,i64 %lns1,i64 %lns2,i64 %lns3,i64 %lns4,i64 %lns5,i64 %lns6,i64 %lns7,float %lns8,float %lns9,float %lnsa,float %lnsb,double %lnsc,double %lnsd ) nounwind
+    ret void
+crN:
+    %lnse = load i64* %R3_Var
+    %lnsf = mul i64 %lnse, 5
+    store i64 %lnsf, i64* %lsop
+    %lnsg = load i64* %R5_Var
+    %lnsh = load i64* %lsop
+    %lnsi = add i64 %lnsg, %lnsh
+    store i64 %lnsi, i64* %lsok
+    %lnsj = load i64* %R4_Var
+    %lnsk = load i64* %lsn2
+    %lnsl = add i64 %lnsj, %lnsk
+    store i64 %lnsl, i64* %lsoo
+    %lnsm = load i64* %lsoo
+    %lnsn = add i64 %lnsm, 1
+    store i64 %lnsn, i64* %lson
+    %lnso = load i64* %R3_Var
+    %lnsp = sub i64 %lnso, 1
+    store i64 %lnsp, i64* %lsom
+    %lnsq = load i64* %lsn2
+    %lnsr = sub i64 %lnsq, 1
+    store i64 %lnsr, i64* %lsol
+    %lnss = load i64* %lsol
+    store i64 %lnss, i64* %R2_Var
+    %lnst = load i64* %lsom
+    store i64 %lnst, i64* %R3_Var
+    %lnsu = load i64* %lson
+    store i64 %lnsu, i64* %R4_Var
+    %lnsv = load i64* %lsok
+    store i64 %lnsv, i64* %R5_Var
+    %lnsw = load i64** %Base_Var
+    %lnsx = load i64** %Sp_Var
+    %lnsy = load i64** %Hp_Var
+    %lnsz = load i64* %R1_Var
+    %lnsA = load i64* %R2_Var
+    %lnsB = load i64* %R3_Var
+    %lnsC = load i64* %R4_Var
+    %lnsD = load i64* %R5_Var
+    %lnsE = load i64* %R6_Var
+    %lnsF = load i64* %SpLim_Var
+    %lnsG = load float* %F1_Var
+    %lnsH = load float* %F2_Var
+    %lnsI = load float* %F3_Var
+    %lnsJ = load float* %F4_Var
+    %lnsK = load double* %D1_Var
+    %lnsL = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwf_info( i64* %lnsw,i64* %lnsx,i64* %lnsy,i64 %lnsz,i64 %lnsA,i64 %lnsB,i64 %lnsC,i64 %lnsD,i64 %lnsE,i64 %lnsF,float %lnsG,float %lnsH,float %lnsI,float %lnsJ,double %lnsK,double %lnsL ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+@ghczmprim_GHCziTypes_Izh_con_info = external global [0 x i64]
+declare  cc 10 void @stg_gc_unbx_r1(i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double ) align 8
+%snx_ret_struct = type <{i64,i64}>
+@snx_info_itable = internal constant %snx_ret_struct <{i64 0,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @snx_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cub:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnuc = load i64** %Hp_Var
+    %lnud = getelementptr inbounds i64* %lnuc, i32 2
+    %lnue = ptrtoint i64* %lnud to i64
+    %lnuf = inttoptr i64 %lnue to i64*
+    store i64* %lnuf, i64** %Hp_Var
+    %lnug = load i64** %Hp_Var
+    %lnuh = ptrtoint i64* %lnug to i64
+    %lnui = load i64** %Base_Var
+    %lnuj = getelementptr inbounds i64* %lnui, i32 18
+    %lnuk = bitcast i64* %lnuj to i64*
+    %lnul = load i64* %lnuk
+    %lnum = icmp ugt i64 %lnuh, %lnul
+    br i1 %lnum, label %cus, label %nut
+    nut:
+    %lnuu = ptrtoint [0 x i64]* @ghczmprim_GHCziTypes_Izh_con_info to i64
+    %lnuv = load i64** %Hp_Var
+    %lnuw = getelementptr inbounds i64* %lnuv, i32 -1
+    store i64 %lnuu, i64* %lnuw
+    %lnux = load i64* %R1_Var
+    %lnuy = load i64** %Hp_Var
+    %lnuz = getelementptr inbounds i64* %lnuy, i32 0
+    store i64 %lnux, i64* %lnuz
+    %lnuA = load i64** %Hp_Var
+    %lnuB = ptrtoint i64* %lnuA to i64
+    %lnuC = add i64 %lnuB, -7
+    store i64 %lnuC, i64* %R1_Var
+    %lnuD = load i64** %Sp_Var
+    %lnuE = getelementptr inbounds i64* %lnuD, i32 1
+    %lnuF = ptrtoint i64* %lnuE to i64
+    %lnuG = inttoptr i64 %lnuF to i64*
+    store i64* %lnuG, i64** %Sp_Var
+    %lnuH = load i64** %Sp_Var
+    %lnuI = getelementptr inbounds i64* %lnuH, i32 0
+    %lnuJ = bitcast i64* %lnuI to i64*
+    %lnuK = load i64* %lnuJ
+    %lnuL = inttoptr i64 %lnuK to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnuM = load i64** %Base_Var
+    %lnuN = load i64** %Sp_Var
+    %lnuO = load i64** %Hp_Var
+    %lnuP = load i64* %R1_Var
+    %lnuQ = load i64* %R2_Var
+    %lnuR = load i64* %R3_Var
+    %lnuS = load i64* %R4_Var
+    %lnuT = load i64* %R5_Var
+    %lnuU = load i64* %R6_Var
+    %lnuV = load i64* %SpLim_Var
+    %lnuW = load float* %F1_Var
+    %lnuX = load float* %F2_Var
+    %lnuY = load float* %F3_Var
+    %lnuZ = load float* %F4_Var
+    %lnv0 = load double* %D1_Var
+    %lnv1 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnuL( i64* %lnuM,i64* %lnuN,i64* %lnuO,i64 %lnuP,i64 %lnuQ,i64 %lnuR,i64 %lnuS,i64 %lnuT,i64 %lnuU,i64 %lnuV,float %lnuW,float %lnuX,float %lnuY,float %lnuZ,double %lnv0,double %lnv1 ) nounwind
+    ret void
+cv2:
+    %lnv3 = load i64** %Base_Var
+    %lnv4 = load i64** %Sp_Var
+    %lnv5 = load i64** %Hp_Var
+    %lnv6 = load i64* %R1_Var
+    %lnv7 = load i64* %R2_Var
+    %lnv8 = load i64* %R3_Var
+    %lnv9 = load i64* %R4_Var
+    %lnva = load i64* %R5_Var
+    %lnvb = load i64* %R6_Var
+    %lnvc = load i64* %SpLim_Var
+    %lnvd = load float* %F1_Var
+    %lnve = load float* %F2_Var
+    %lnvf = load float* %F3_Var
+    %lnvg = load float* %F4_Var
+    %lnvh = load double* %D1_Var
+    %lnvi = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @stg_gc_unbx_r1( i64* %lnv3,i64* %lnv4,i64* %lnv5,i64 %lnv6,i64 %lnv7,i64 %lnv8,i64 %lnv9,i64 %lnva,i64 %lnvb,i64 %lnvc,float %lnvd,float %lnve,float %lnvf,float %lnvg,double %lnvh,double %lnvi ) nounwind
+    ret void
+cus:
+    %lnvj = load i64** %Base_Var
+    %lnvk = getelementptr inbounds i64* %lnvj, i32 23
+    store i64 16, i64* %lnvk
+    br label %cv2
+}
+
+
+
+==================== LLVM Code ====================
+%sov_ret_struct = type <{i64,i64}>
+@sov_info_itable = internal constant %sov_ret_struct <{i64 451,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @sov_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cvZ:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnw0 = load i64** %Sp_Var
+    %lnw1 = getelementptr inbounds i64* %lnw0, i32 3
+    %lnw2 = bitcast i64* %lnw1 to i64*
+    %lnw3 = load i64* %lnw2
+    store i64 %lnw3, i64* %R2_Var
+    %lnw4 = load i64** %Sp_Var
+    %lnw5 = getelementptr inbounds i64* %lnw4, i32 2
+    %lnw6 = bitcast i64* %lnw5 to i64*
+    %lnw7 = load i64* %lnw6
+    store i64 %lnw7, i64* %R3_Var
+    %lnw8 = load i64** %Sp_Var
+    %lnw9 = getelementptr inbounds i64* %lnw8, i32 1
+    %lnwa = bitcast i64* %lnw9 to i64*
+    %lnwb = load i64* %lnwa
+    store i64 %lnwb, i64* %R4_Var
+    %lnwc = load i64* %R1_Var
+    %lnwd = add i64 %lnwc, 7
+    %lnwe = inttoptr i64 %lnwd to i64*
+    %lnwf = load i64* %lnwe
+    store i64 %lnwf, i64* %R5_Var
+    %lnwg = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @snx_info to i64
+    %lnwh = load i64** %Sp_Var
+    %lnwi = getelementptr inbounds i64* %lnwh, i32 3
+    store i64 %lnwg, i64* %lnwi
+    %lnwj = load i64** %Sp_Var
+    %lnwk = getelementptr inbounds i64* %lnwj, i32 3
+    %lnwl = ptrtoint i64* %lnwk to i64
+    %lnwm = inttoptr i64 %lnwl to i64*
+    store i64* %lnwm, i64** %Sp_Var
+    %lnwn = load i64** %Base_Var
+    %lnwo = load i64** %Sp_Var
+    %lnwp = load i64** %Hp_Var
+    %lnwq = load i64* %R1_Var
+    %lnwr = load i64* %R2_Var
+    %lnws = load i64* %R3_Var
+    %lnwt = load i64* %R4_Var
+    %lnwu = load i64* %R5_Var
+    %lnwv = load i64* %R6_Var
+    %lnww = load i64* %SpLim_Var
+    %lnwx = load float* %F1_Var
+    %lnwy = load float* %F2_Var
+    %lnwz = load float* %F3_Var
+    %lnwA = load float* %F4_Var
+    %lnwB = load double* %D1_Var
+    %lnwC = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwf_info( i64* %lnwn,i64* %lnwo,i64* %lnwp,i64 %lnwq,i64 %lnwr,i64 %lnws,i64 %lnwt,i64 %lnwu,i64 %lnwv,i64 %lnww,float %lnwx,float %lnwy,float %lnwz,float %lnwA,double %lnwB,double %lnwC ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%sow_ret_struct = type <{i64,i64}>
+@sow_info_itable = internal constant %sow_ret_struct <{i64 387,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @sow_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cxz:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lcwJ = alloca i64, i32 1
+    %lnxA = load i64** %Sp_Var
+    %lnxB = getelementptr inbounds i64* %lnxA, i32 1
+    %lnxC = bitcast i64* %lnxB to i64*
+    %lnxD = load i64* %lnxC
+    store i64 %lnxD, i64* %lcwJ
+    %lnxE = load i64* %R1_Var
+    %lnxF = add i64 %lnxE, 7
+    %lnxG = inttoptr i64 %lnxF to i64*
+    %lnxH = load i64* %lnxG
+    %lnxI = load i64** %Sp_Var
+    %lnxJ = getelementptr inbounds i64* %lnxI, i32 1
+    store i64 %lnxH, i64* %lnxJ
+    %lnxK = load i64* %lcwJ
+    store i64 %lnxK, i64* %R1_Var
+    %lnxL = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @sov_info to i64
+    %lnxM = load i64** %Sp_Var
+    %lnxN = getelementptr inbounds i64* %lnxM, i32 0
+    store i64 %lnxL, i64* %lnxN
+    %lnxO = load i64* %R1_Var
+    %lnxP = and i64 %lnxO, 7
+    %lnxQ = icmp ne i64 %lnxP, 0
+    br i1 %lnxQ, label %cxS, label %nxT
+    nxT:
+    %lnxU = load i64* %R1_Var
+    %lnxV = inttoptr i64 %lnxU to i64*
+    %lnxW = load i64* %lnxV
+    %lnxX = inttoptr i64 %lnxW to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnxY = load i64** %Base_Var
+    %lnxZ = load i64** %Sp_Var
+    %lny0 = load i64** %Hp_Var
+    %lny1 = load i64* %R1_Var
+    %lny2 = load i64* %R2_Var
+    %lny3 = load i64* %R3_Var
+    %lny4 = load i64* %R4_Var
+    %lny5 = load i64* %R5_Var
+    %lny6 = load i64* %R6_Var
+    %lny7 = load i64* %SpLim_Var
+    %lny8 = load float* %F1_Var
+    %lny9 = load float* %F2_Var
+    %lnya = load float* %F3_Var
+    %lnyb = load float* %F4_Var
+    %lnyc = load double* %D1_Var
+    %lnyd = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnxX( i64* %lnxY,i64* %lnxZ,i64* %lny0,i64 %lny1,i64 %lny2,i64 %lny3,i64 %lny4,i64 %lny5,i64 %lny6,i64 %lny7,float %lny8,float %lny9,float %lnya,float %lnyb,double %lnyc,double %lnyd ) nounwind
+    ret void
+cxS:
+    %lnye = load i64** %Base_Var
+    %lnyf = load i64** %Sp_Var
+    %lnyg = load i64** %Hp_Var
+    %lnyh = load i64* %R1_Var
+    %lnyi = load i64* %R2_Var
+    %lnyj = load i64* %R3_Var
+    %lnyk = load i64* %R4_Var
+    %lnyl = load i64* %R5_Var
+    %lnym = load i64* %R6_Var
+    %lnyn = load i64* %SpLim_Var
+    %lnyo = load float* %F1_Var
+    %lnyp = load float* %F2_Var
+    %lnyq = load float* %F3_Var
+    %lnyr = load float* %F4_Var
+    %lnys = load double* %D1_Var
+    %lnyt = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @sov_info( i64* %lnye,i64* %lnyf,i64* %lnyg,i64 %lnyh,i64 %lnyi,i64 %lnyj,i64 %lnyk,i64 %lnyl,i64 %lnym,i64 %lnyn,float %lnyo,float %lnyp,float %lnyq,float %lnyr,double %lnys,double %lnyt ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%sox_ret_struct = type <{i64,i64}>
+@sox_info_itable = internal constant %sox_ret_struct <{i64 259,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @sox_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+czq:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lcyA = alloca i64, i32 1
+    %lnzr = load i64** %Sp_Var
+    %lnzs = getelementptr inbounds i64* %lnzr, i32 2
+    %lnzt = bitcast i64* %lnzs to i64*
+    %lnzu = load i64* %lnzt
+    store i64 %lnzu, i64* %lcyA
+    %lnzv = load i64* %R1_Var
+    %lnzw = add i64 %lnzv, 7
+    %lnzx = inttoptr i64 %lnzw to i64*
+    %lnzy = load i64* %lnzx
+    %lnzz = load i64** %Sp_Var
+    %lnzA = getelementptr inbounds i64* %lnzz, i32 2
+    store i64 %lnzy, i64* %lnzA
+    %lnzB = load i64* %lcyA
+    store i64 %lnzB, i64* %R1_Var
+    %lnzC = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @sow_info to i64
+    %lnzD = load i64** %Sp_Var
+    %lnzE = getelementptr inbounds i64* %lnzD, i32 0
+    store i64 %lnzC, i64* %lnzE
+    %lnzF = load i64* %R1_Var
+    %lnzG = and i64 %lnzF, 7
+    %lnzH = icmp ne i64 %lnzG, 0
+    br i1 %lnzH, label %czJ, label %nzK
+    nzK:
+    %lnzL = load i64* %R1_Var
+    %lnzM = inttoptr i64 %lnzL to i64*
+    %lnzN = load i64* %lnzM
+    %lnzO = inttoptr i64 %lnzN to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnzP = load i64** %Base_Var
+    %lnzQ = load i64** %Sp_Var
+    %lnzR = load i64** %Hp_Var
+    %lnzS = load i64* %R1_Var
+    %lnzT = load i64* %R2_Var
+    %lnzU = load i64* %R3_Var
+    %lnzV = load i64* %R4_Var
+    %lnzW = load i64* %R5_Var
+    %lnzX = load i64* %R6_Var
+    %lnzY = load i64* %SpLim_Var
+    %lnzZ = load float* %F1_Var
+    %lnA0 = load float* %F2_Var
+    %lnA1 = load float* %F3_Var
+    %lnA2 = load float* %F4_Var
+    %lnA3 = load double* %D1_Var
+    %lnA4 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnzO( i64* %lnzP,i64* %lnzQ,i64* %lnzR,i64 %lnzS,i64 %lnzT,i64 %lnzU,i64 %lnzV,i64 %lnzW,i64 %lnzX,i64 %lnzY,float %lnzZ,float %lnA0,float %lnA1,float %lnA2,double %lnA3,double %lnA4 ) nounwind
+    ret void
+czJ:
+    %lnA5 = load i64** %Base_Var
+    %lnA6 = load i64** %Sp_Var
+    %lnA7 = load i64** %Hp_Var
+    %lnA8 = load i64* %R1_Var
+    %lnA9 = load i64* %R2_Var
+    %lnAa = load i64* %R3_Var
+    %lnAb = load i64* %R4_Var
+    %lnAc = load i64* %R5_Var
+    %lnAd = load i64* %R6_Var
+    %lnAe = load i64* %SpLim_Var
+    %lnAf = load float* %F1_Var
+    %lnAg = load float* %F2_Var
+    %lnAh = load float* %F3_Var
+    %lnAi = load float* %F4_Var
+    %lnAj = load double* %D1_Var
+    %lnAk = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @sow_info( i64* %lnA5,i64* %lnA6,i64* %lnA7,i64 %lnA8,i64 %lnA9,i64 %lnAa,i64 %lnAb,i64 %lnAc,i64 %lnAd,i64 %lnAe,float %lnAf,float %lnAg,float %lnAh,float %lnAi,double %lnAj,double %lnAk ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%soy_ret_struct = type <{i64,i64}>
+@soy_info_itable = internal constant %soy_ret_struct <{i64 3,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @soy_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cBh:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lcAr = alloca i64, i32 1
+    %lnBi = load i64** %Sp_Var
+    %lnBj = getelementptr inbounds i64* %lnBi, i32 3
+    %lnBk = bitcast i64* %lnBj to i64*
+    %lnBl = load i64* %lnBk
+    store i64 %lnBl, i64* %lcAr
+    %lnBm = load i64* %R1_Var
+    %lnBn = add i64 %lnBm, 7
+    %lnBo = inttoptr i64 %lnBn to i64*
+    %lnBp = load i64* %lnBo
+    %lnBq = load i64** %Sp_Var
+    %lnBr = getelementptr inbounds i64* %lnBq, i32 3
+    store i64 %lnBp, i64* %lnBr
+    %lnBs = load i64* %lcAr
+    store i64 %lnBs, i64* %R1_Var
+    %lnBt = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @sox_info to i64
+    %lnBu = load i64** %Sp_Var
+    %lnBv = getelementptr inbounds i64* %lnBu, i32 0
+    store i64 %lnBt, i64* %lnBv
+    %lnBw = load i64* %R1_Var
+    %lnBx = and i64 %lnBw, 7
+    %lnBy = icmp ne i64 %lnBx, 0
+    br i1 %lnBy, label %cBA, label %nBB
+    nBB:
+    %lnBC = load i64* %R1_Var
+    %lnBD = inttoptr i64 %lnBC to i64*
+    %lnBE = load i64* %lnBD
+    %lnBF = inttoptr i64 %lnBE to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnBG = load i64** %Base_Var
+    %lnBH = load i64** %Sp_Var
+    %lnBI = load i64** %Hp_Var
+    %lnBJ = load i64* %R1_Var
+    %lnBK = load i64* %R2_Var
+    %lnBL = load i64* %R3_Var
+    %lnBM = load i64* %R4_Var
+    %lnBN = load i64* %R5_Var
+    %lnBO = load i64* %R6_Var
+    %lnBP = load i64* %SpLim_Var
+    %lnBQ = load float* %F1_Var
+    %lnBR = load float* %F2_Var
+    %lnBS = load float* %F3_Var
+    %lnBT = load float* %F4_Var
+    %lnBU = load double* %D1_Var
+    %lnBV = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnBF( i64* %lnBG,i64* %lnBH,i64* %lnBI,i64 %lnBJ,i64 %lnBK,i64 %lnBL,i64 %lnBM,i64 %lnBN,i64 %lnBO,i64 %lnBP,float %lnBQ,float %lnBR,float %lnBS,float %lnBT,double %lnBU,double %lnBV ) nounwind
+    ret void
+cBA:
+    %lnBW = load i64** %Base_Var
+    %lnBX = load i64** %Sp_Var
+    %lnBY = load i64** %Hp_Var
+    %lnBZ = load i64* %R1_Var
+    %lnC0 = load i64* %R2_Var
+    %lnC1 = load i64* %R3_Var
+    %lnC2 = load i64* %R4_Var
+    %lnC3 = load i64* %R5_Var
+    %lnC4 = load i64* %R6_Var
+    %lnC5 = load i64* %SpLim_Var
+    %lnC6 = load float* %F1_Var
+    %lnC7 = load float* %F2_Var
+    %lnC8 = load float* %F3_Var
+    %lnC9 = load float* %F4_Var
+    %lnCa = load double* %D1_Var
+    %lnCb = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @sox_info( i64* %lnBW,i64* %lnBX,i64* %lnBY,i64 %lnBZ,i64 %lnC0,i64 %lnC1,i64 %lnC2,i64 %lnC3,i64 %lnC4,i64 %lnC5,float %lnC6,float %lnC7,float %lnC8,float %lnC9,double %lnCa,double %lnCb ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%F_f_entry_struct = type <{i64,i64,i64}>
+@F_f_info_itable =  constant %F_f_entry_struct <{i64 17179869205,i64 0,i64 15}>, section ".text; .text 0#", align 8
+define  cc 10 void @F_f_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cDA:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnDB = load i64** %Sp_Var
+    %lnDC = getelementptr inbounds i64* %lnDB, i32 -4
+    %lnDD = ptrtoint i64* %lnDC to i64
+    %lnDE = load i64* %SpLim_Var
+    %lnDF = icmp ult i64 %lnDD, %lnDE
+    br i1 %lnDF, label %cDH, label %nDI
+    nDI:
+    %lnDJ = load i64* %R5_Var
+    %lnDK = load i64** %Sp_Var
+    %lnDL = getelementptr inbounds i64* %lnDK, i32 -3
+    store i64 %lnDJ, i64* %lnDL
+    %lnDM = load i64* %R4_Var
+    %lnDN = load i64** %Sp_Var
+    %lnDO = getelementptr inbounds i64* %lnDN, i32 -2
+    store i64 %lnDM, i64* %lnDO
+    %lnDP = load i64* %R3_Var
+    %lnDQ = load i64** %Sp_Var
+    %lnDR = getelementptr inbounds i64* %lnDQ, i32 -1
+    store i64 %lnDP, i64* %lnDR
+    %lnDS = load i64* %R2_Var
+    store i64 %lnDS, i64* %R1_Var
+    %lnDT = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @soy_info to i64
+    %lnDU = load i64** %Sp_Var
+    %lnDV = getelementptr inbounds i64* %lnDU, i32 -4
+    store i64 %lnDT, i64* %lnDV
+    %lnDW = load i64** %Sp_Var
+    %lnDX = getelementptr inbounds i64* %lnDW, i32 -4
+    %lnDY = ptrtoint i64* %lnDX to i64
+    %lnDZ = inttoptr i64 %lnDY to i64*
+    store i64* %lnDZ, i64** %Sp_Var
+    %lnE0 = load i64* %R1_Var
+    %lnE1 = and i64 %lnE0, 7
+    %lnE2 = icmp ne i64 %lnE1, 0
+    br i1 %lnE2, label %cE5, label %nE6
+    nE6:
+    %lnE7 = load i64* %R1_Var
+    %lnE8 = inttoptr i64 %lnE7 to i64*
+    %lnE9 = load i64* %lnE8
+    %lnEa = inttoptr i64 %lnE9 to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnEb = load i64** %Base_Var
+    %lnEc = load i64** %Sp_Var
+    %lnEd = load i64** %Hp_Var
+    %lnEe = load i64* %R1_Var
+    %lnEf = load i64* %R2_Var
+    %lnEg = load i64* %R3_Var
+    %lnEh = load i64* %R4_Var
+    %lnEi = load i64* %R5_Var
+    %lnEj = load i64* %R6_Var
+    %lnEk = load i64* %SpLim_Var
+    %lnEl = load float* %F1_Var
+    %lnEm = load float* %F2_Var
+    %lnEn = load float* %F3_Var
+    %lnEo = load float* %F4_Var
+    %lnEp = load double* %D1_Var
+    %lnEq = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnEa( i64* %lnEb,i64* %lnEc,i64* %lnEd,i64 %lnEe,i64 %lnEf,i64 %lnEg,i64 %lnEh,i64 %lnEi,i64 %lnEj,i64 %lnEk,float %lnEl,float %lnEm,float %lnEn,float %lnEo,double %lnEp,double %lnEq ) nounwind
+    ret void
+cDH:
+    %lnEr = ptrtoint %F_f_closure_struct* @F_f_closure to i64
+    store i64 %lnEr, i64* %R1_Var
+    %lnEs = load i64** %Base_Var
+    %lnEt = getelementptr inbounds i64* %lnEs, i32 -1
+    %lnEu = bitcast i64* %lnEt to i64*
+    %lnEv = load i64* %lnEu
+    %lnEw = inttoptr i64 %lnEv to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnEx = load i64** %Base_Var
+    %lnEy = load i64** %Sp_Var
+    %lnEz = load i64** %Hp_Var
+    %lnEA = load i64* %R1_Var
+    %lnEB = load i64* %R2_Var
+    %lnEC = load i64* %R3_Var
+    %lnED = load i64* %R4_Var
+    %lnEE = load i64* %R5_Var
+    %lnEF = load i64* %R6_Var
+    %lnEG = load i64* %SpLim_Var
+    %lnEH = load float* %F1_Var
+    %lnEI = load float* %F2_Var
+    %lnEJ = load float* %F3_Var
+    %lnEK = load float* %F4_Var
+    %lnEL = load double* %D1_Var
+    %lnEM = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnEw( i64* %lnEx,i64* %lnEy,i64* %lnEz,i64 %lnEA,i64 %lnEB,i64 %lnEC,i64 %lnED,i64 %lnEE,i64 %lnEF,i64 %lnEG,float %lnEH,float %lnEI,float %lnEJ,float %lnEK,double %lnEL,double %lnEM ) nounwind
+    ret void
+cE5:
+    %lnEN = load i64** %Base_Var
+    %lnEO = load i64** %Sp_Var
+    %lnEP = load i64** %Hp_Var
+    %lnEQ = load i64* %R1_Var
+    %lnER = load i64* %R2_Var
+    %lnES = load i64* %R3_Var
+    %lnET = load i64* %R4_Var
+    %lnEU = load i64* %R5_Var
+    %lnEV = load i64* %R6_Var
+    %lnEW = load i64* %SpLim_Var
+    %lnEX = load float* %F1_Var
+    %lnEY = load float* %F2_Var
+    %lnEZ = load float* %F3_Var
+    %lnF0 = load float* %F4_Var
+    %lnF1 = load double* %D1_Var
+    %lnF2 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @soy_info( i64* %lnEN,i64* %lnEO,i64* %lnEP,i64 %lnEQ,i64 %lnER,i64 %lnES,i64 %lnET,i64 %lnEU,i64 %lnEV,i64 %lnEW,float %lnEX,float %lnEY,float %lnEZ,float %lnF0,double %lnF1,double %lnF2 ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+%snE_ret_struct = type <{i64,i64}>
+@snE_info_itable = internal constant %snE_ret_struct <{i64 0,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @snE_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cGg:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnGh = load i64** %Hp_Var
+    %lnGi = getelementptr inbounds i64* %lnGh, i32 2
+    %lnGj = ptrtoint i64* %lnGi to i64
+    %lnGk = inttoptr i64 %lnGj to i64*
+    store i64* %lnGk, i64** %Hp_Var
+    %lnGl = load i64** %Hp_Var
+    %lnGm = ptrtoint i64* %lnGl to i64
+    %lnGn = load i64** %Base_Var
+    %lnGo = getelementptr inbounds i64* %lnGn, i32 18
+    %lnGp = bitcast i64* %lnGo to i64*
+    %lnGq = load i64* %lnGp
+    %lnGr = icmp ugt i64 %lnGm, %lnGq
+    br i1 %lnGr, label %cGx, label %nGy
+    nGy:
+    %lnGz = ptrtoint [0 x i64]* @ghczmprim_GHCziTypes_Izh_con_info to i64
+    %lnGA = load i64** %Hp_Var
+    %lnGB = getelementptr inbounds i64* %lnGA, i32 -1
+    store i64 %lnGz, i64* %lnGB
+    %lnGC = load i64* %R1_Var
+    %lnGD = load i64** %Hp_Var
+    %lnGE = getelementptr inbounds i64* %lnGD, i32 0
+    store i64 %lnGC, i64* %lnGE
+    %lnGF = load i64** %Hp_Var
+    %lnGG = ptrtoint i64* %lnGF to i64
+    %lnGH = add i64 %lnGG, -7
+    store i64 %lnGH, i64* %R1_Var
+    %lnGI = load i64** %Sp_Var
+    %lnGJ = getelementptr inbounds i64* %lnGI, i32 1
+    %lnGK = ptrtoint i64* %lnGJ to i64
+    %lnGL = inttoptr i64 %lnGK to i64*
+    store i64* %lnGL, i64** %Sp_Var
+    %lnGM = load i64** %Sp_Var
+    %lnGN = getelementptr inbounds i64* %lnGM, i32 0
+    %lnGO = bitcast i64* %lnGN to i64*
+    %lnGP = load i64* %lnGO
+    %lnGQ = inttoptr i64 %lnGP to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnGR = load i64** %Base_Var
+    %lnGS = load i64** %Sp_Var
+    %lnGT = load i64** %Hp_Var
+    %lnGU = load i64* %R1_Var
+    %lnGV = load i64* %R2_Var
+    %lnGW = load i64* %R3_Var
+    %lnGX = load i64* %R4_Var
+    %lnGY = load i64* %R5_Var
+    %lnGZ = load i64* %R6_Var
+    %lnH0 = load i64* %SpLim_Var
+    %lnH1 = load float* %F1_Var
+    %lnH2 = load float* %F2_Var
+    %lnH3 = load float* %F3_Var
+    %lnH4 = load float* %F4_Var
+    %lnH5 = load double* %D1_Var
+    %lnH6 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnGQ( i64* %lnGR,i64* %lnGS,i64* %lnGT,i64 %lnGU,i64 %lnGV,i64 %lnGW,i64 %lnGX,i64 %lnGY,i64 %lnGZ,i64 %lnH0,float %lnH1,float %lnH2,float %lnH3,float %lnH4,double %lnH5,double %lnH6 ) nounwind
+    ret void
+cH7:
+    %lnH8 = load i64** %Base_Var
+    %lnH9 = load i64** %Sp_Var
+    %lnHa = load i64** %Hp_Var
+    %lnHb = load i64* %R1_Var
+    %lnHc = load i64* %R2_Var
+    %lnHd = load i64* %R3_Var
+    %lnHe = load i64* %R4_Var
+    %lnHf = load i64* %R5_Var
+    %lnHg = load i64* %R6_Var
+    %lnHh = load i64* %SpLim_Var
+    %lnHi = load float* %F1_Var
+    %lnHj = load float* %F2_Var
+    %lnHk = load float* %F3_Var
+    %lnHl = load float* %F4_Var
+    %lnHm = load double* %D1_Var
+    %lnHn = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @stg_gc_unbx_r1( i64* %lnH8,i64* %lnH9,i64* %lnHa,i64 %lnHb,i64 %lnHc,i64 %lnHd,i64 %lnHe,i64 %lnHf,i64 %lnHg,i64 %lnHh,float %lnHi,float %lnHj,float %lnHk,float %lnHl,double %lnHm,double %lnHn ) nounwind
+    ret void
+cGx:
+    %lnHo = load i64** %Base_Var
+    %lnHp = getelementptr inbounds i64* %lnHo, i32 23
+    store i64 16, i64* %lnHp
+    br label %cH7
+}
+
+
+
+==================== LLVM Code ====================
+%soI_ret_struct = type <{i64,i64}>
+@soI_info_itable = internal constant %soI_ret_struct <{i64 0,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @soI_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cHS:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnHT = load i64* %R1_Var
+    %lnHU = add i64 %lnHT, 7
+    %lnHV = inttoptr i64 %lnHU to i64*
+    %lnHW = load i64* %lnHV
+    store i64 %lnHW, i64* %R2_Var
+    %lnHX = load i64* %R1_Var
+    %lnHY = add i64 %lnHX, 7
+    %lnHZ = inttoptr i64 %lnHY to i64*
+    %lnI0 = load i64* %lnHZ
+    store i64 %lnI0, i64* %R3_Var
+    store i64 0, i64* %R4_Var
+    store i64 0, i64* %R5_Var
+    %lnI1 = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @snE_info to i64
+    %lnI2 = load i64** %Sp_Var
+    %lnI3 = getelementptr inbounds i64* %lnI2, i32 0
+    store i64 %lnI1, i64* %lnI3
+    %lnI4 = load i64** %Base_Var
+    %lnI5 = load i64** %Sp_Var
+    %lnI6 = load i64** %Hp_Var
+    %lnI7 = load i64* %R1_Var
+    %lnI8 = load i64* %R2_Var
+    %lnI9 = load i64* %R3_Var
+    %lnIa = load i64* %R4_Var
+    %lnIb = load i64* %R5_Var
+    %lnIc = load i64* %R6_Var
+    %lnId = load i64* %SpLim_Var
+    %lnIe = load float* %F1_Var
+    %lnIf = load float* %F2_Var
+    %lnIg = load float* %F3_Var
+    %lnIh = load float* %F4_Var
+    %lnIi = load double* %D1_Var
+    %lnIj = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwf_info( i64* %lnI4,i64* %lnI5,i64* %lnI6,i64 %lnI7,i64 %lnI8,i64 %lnI9,i64 %lnIa,i64 %lnIb,i64 %lnIc,i64 %lnId,float %lnIe,float %lnIf,float %lnIg,float %lnIh,double %lnIi,double %lnIj ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%F_g_entry_struct = type <{i64,i64,i64}>
+@F_g_info_itable =  constant %F_g_entry_struct <{i64 4294967301,i64 0,i64 15}>, section ".text; .text 0#", align 8
+define  cc 10 void @F_g_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cJz:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnJA = load i64** %Sp_Var
+    %lnJB = getelementptr inbounds i64* %lnJA, i32 -1
+    %lnJC = ptrtoint i64* %lnJB to i64
+    %lnJD = load i64* %SpLim_Var
+    %lnJE = icmp ult i64 %lnJC, %lnJD
+    br i1 %lnJE, label %cJG, label %nJH
+    nJH:
+    %lnJI = load i64* %R2_Var
+    store i64 %lnJI, i64* %R1_Var
+    %lnJJ = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @soI_info to i64
+    %lnJK = load i64** %Sp_Var
+    %lnJL = getelementptr inbounds i64* %lnJK, i32 -1
+    store i64 %lnJJ, i64* %lnJL
+    %lnJM = load i64** %Sp_Var
+    %lnJN = getelementptr inbounds i64* %lnJM, i32 -1
+    %lnJO = ptrtoint i64* %lnJN to i64
+    %lnJP = inttoptr i64 %lnJO to i64*
+    store i64* %lnJP, i64** %Sp_Var
+    %lnJQ = load i64* %R1_Var
+    %lnJR = and i64 %lnJQ, 7
+    %lnJS = icmp ne i64 %lnJR, 0
+    br i1 %lnJS, label %cJV, label %nJW
+    nJW:
+    %lnJX = load i64* %R1_Var
+    %lnJY = inttoptr i64 %lnJX to i64*
+    %lnJZ = load i64* %lnJY
+    %lnK0 = inttoptr i64 %lnJZ to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnK1 = load i64** %Base_Var
+    %lnK2 = load i64** %Sp_Var
+    %lnK3 = load i64** %Hp_Var
+    %lnK4 = load i64* %R1_Var
+    %lnK5 = load i64* %R2_Var
+    %lnK6 = load i64* %R3_Var
+    %lnK7 = load i64* %R4_Var
+    %lnK8 = load i64* %R5_Var
+    %lnK9 = load i64* %R6_Var
+    %lnKa = load i64* %SpLim_Var
+    %lnKb = load float* %F1_Var
+    %lnKc = load float* %F2_Var
+    %lnKd = load float* %F3_Var
+    %lnKe = load float* %F4_Var
+    %lnKf = load double* %D1_Var
+    %lnKg = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnK0( i64* %lnK1,i64* %lnK2,i64* %lnK3,i64 %lnK4,i64 %lnK5,i64 %lnK6,i64 %lnK7,i64 %lnK8,i64 %lnK9,i64 %lnKa,float %lnKb,float %lnKc,float %lnKd,float %lnKe,double %lnKf,double %lnKg ) nounwind
+    ret void
+cJG:
+    %lnKh = ptrtoint %F_g_closure_struct* @F_g_closure to i64
+    store i64 %lnKh, i64* %R1_Var
+    %lnKi = load i64** %Base_Var
+    %lnKj = getelementptr inbounds i64* %lnKi, i32 -1
+    %lnKk = bitcast i64* %lnKj to i64*
+    %lnKl = load i64* %lnKk
+    %lnKm = inttoptr i64 %lnKl to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnKn = load i64** %Base_Var
+    %lnKo = load i64** %Sp_Var
+    %lnKp = load i64** %Hp_Var
+    %lnKq = load i64* %R1_Var
+    %lnKr = load i64* %R2_Var
+    %lnKs = load i64* %R3_Var
+    %lnKt = load i64* %R4_Var
+    %lnKu = load i64* %R5_Var
+    %lnKv = load i64* %R6_Var
+    %lnKw = load i64* %SpLim_Var
+    %lnKx = load float* %F1_Var
+    %lnKy = load float* %F2_Var
+    %lnKz = load float* %F3_Var
+    %lnKA = load float* %F4_Var
+    %lnKB = load double* %D1_Var
+    %lnKC = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnKm( i64* %lnKn,i64* %lnKo,i64* %lnKp,i64 %lnKq,i64 %lnKr,i64 %lnKs,i64 %lnKt,i64 %lnKu,i64 %lnKv,i64 %lnKw,float %lnKx,float %lnKy,float %lnKz,float %lnKA,double %lnKB,double %lnKC ) nounwind
+    ret void
+cJV:
+    %lnKD = load i64** %Base_Var
+    %lnKE = load i64** %Sp_Var
+    %lnKF = load i64** %Hp_Var
+    %lnKG = load i64* %R1_Var
+    %lnKH = load i64* %R2_Var
+    %lnKI = load i64* %R3_Var
+    %lnKJ = load i64* %R4_Var
+    %lnKK = load i64* %R5_Var
+    %lnKL = load i64* %R6_Var
+    %lnKM = load i64* %SpLim_Var
+    %lnKN = load float* %F1_Var
+    %lnKO = load float* %F2_Var
+    %lnKP = load float* %F3_Var
+    %lnKQ = load float* %F4_Var
+    %lnKR = load double* %D1_Var
+    %lnKS = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @soI_info( i64* %lnKD,i64* %lnKE,i64* %lnKF,i64 %lnKG,i64 %lnKH,i64 %lnKI,i64 %lnKJ,i64 %lnKK,i64 %lnKL,i64 %lnKM,float %lnKN,float %lnKO,float %lnKP,float %lnKQ,double %lnKR,double %lnKS ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+%F_zdwff_entry_struct = type <{i64,i64,i64}>
+@F_zdwff_info_itable =  constant %F_zdwff_entry_struct <{i64 12884901901,i64 0,i64 15}>, section ".text; .text 0#", align 8
+define  cc 10 void @F_zdwff_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cM1:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lsnK = alloca i64, i32 1
+    %lcL8 = alloca i64, i32 1
+    %lsoT = alloca i64, i32 1
+    %lsoP = alloca i64, i32 1
+    %lsoS = alloca i64, i32 1
+    %lsoR = alloca i64, i32 1
+    %lsoQ = alloca i64, i32 1
+    %lnM2 = load i64* %R2_Var
+    store i64 %lnM2, i64* %lsnK
+    %lnM3 = load i64* %lsnK
+    %lnM4 = icmp ne i64 %lnM3, 0
+    br i1 %lnM4, label %cM6, label %nM7
+    nM7:
+    %lnM8 = load i64* %R3_Var
+    %lnM9 = load i64* %R4_Var
+    %lnMa = add i64 %lnM8, %lnM9
+    store i64 %lnMa, i64* %lcL8
+    %lnMb = load i64* %lcL8
+    store i64 %lnMb, i64* %R1_Var
+    %lnMc = load i64** %Sp_Var
+    %lnMd = getelementptr inbounds i64* %lnMc, i32 0
+    %lnMe = bitcast i64* %lnMd to i64*
+    %lnMf = load i64* %lnMe
+    %lnMg = inttoptr i64 %lnMf to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnMh = load i64** %Base_Var
+    %lnMi = load i64** %Sp_Var
+    %lnMj = load i64** %Hp_Var
+    %lnMk = load i64* %R1_Var
+    %lnMl = load i64* %R2_Var
+    %lnMm = load i64* %R3_Var
+    %lnMn = load i64* %R4_Var
+    %lnMo = load i64* %R5_Var
+    %lnMp = load i64* %R6_Var
+    %lnMq = load i64* %SpLim_Var
+    %lnMr = load float* %F1_Var
+    %lnMs = load float* %F2_Var
+    %lnMt = load float* %F3_Var
+    %lnMu = load float* %F4_Var
+    %lnMv = load double* %D1_Var
+    %lnMw = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnMg( i64* %lnMh,i64* %lnMi,i64* %lnMj,i64 %lnMk,i64 %lnMl,i64 %lnMm,i64 %lnMn,i64 %lnMo,i64 %lnMp,i64 %lnMq,float %lnMr,float %lnMs,float %lnMt,float %lnMu,double %lnMv,double %lnMw ) nounwind
+    ret void
+cM6:
+    %lnMx = load i64* %lsnK
+    %lnMy = mul i64 %lnMx, 5
+    store i64 %lnMy, i64* %lsoT
+    %lnMz = load i64* %R4_Var
+    %lnMA = load i64* %lsoT
+    %lnMB = add i64 %lnMz, %lnMA
+    store i64 %lnMB, i64* %lsoP
+    %lnMC = load i64* %R3_Var
+    %lnMD = load i64* %lsnK
+    %lnME = add i64 %lnMC, %lnMD
+    store i64 %lnME, i64* %lsoS
+    %lnMF = load i64* %lsoS
+    %lnMG = add i64 %lnMF, 1
+    store i64 %lnMG, i64* %lsoR
+    %lnMH = load i64* %lsnK
+    %lnMI = sub i64 %lnMH, 1
+    store i64 %lnMI, i64* %lsoQ
+    %lnMJ = load i64* %lsoQ
+    store i64 %lnMJ, i64* %R2_Var
+    %lnMK = load i64* %lsoR
+    store i64 %lnMK, i64* %R3_Var
+    %lnML = load i64* %lsoP
+    store i64 %lnML, i64* %R4_Var
+    %lnMM = load i64** %Base_Var
+    %lnMN = load i64** %Sp_Var
+    %lnMO = load i64** %Hp_Var
+    %lnMP = load i64* %R1_Var
+    %lnMQ = load i64* %R2_Var
+    %lnMR = load i64* %R3_Var
+    %lnMS = load i64* %R4_Var
+    %lnMT = load i64* %R5_Var
+    %lnMU = load i64* %R6_Var
+    %lnMV = load i64* %SpLim_Var
+    %lnMW = load float* %F1_Var
+    %lnMX = load float* %F2_Var
+    %lnMY = load float* %F3_Var
+    %lnMZ = load float* %F4_Var
+    %lnN0 = load double* %D1_Var
+    %lnN1 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwff_info( i64* %lnMM,i64* %lnMN,i64* %lnMO,i64 %lnMP,i64 %lnMQ,i64 %lnMR,i64 %lnMS,i64 %lnMT,i64 %lnMU,i64 %lnMV,float %lnMW,float %lnMX,float %lnMY,float %lnMZ,double %lnN0,double %lnN1 ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+%so8_ret_struct = type <{i64,i64}>
+@so8_info_itable = internal constant %so8_ret_struct <{i64 0,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @so8_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cOn:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnOo = load i64** %Hp_Var
+    %lnOp = getelementptr inbounds i64* %lnOo, i32 2
+    %lnOq = ptrtoint i64* %lnOp to i64
+    %lnOr = inttoptr i64 %lnOq to i64*
+    store i64* %lnOr, i64** %Hp_Var
+    %lnOs = load i64** %Hp_Var
+    %lnOt = ptrtoint i64* %lnOs to i64
+    %lnOu = load i64** %Base_Var
+    %lnOv = getelementptr inbounds i64* %lnOu, i32 18
+    %lnOw = bitcast i64* %lnOv to i64*
+    %lnOx = load i64* %lnOw
+    %lnOy = icmp ugt i64 %lnOt, %lnOx
+    br i1 %lnOy, label %cOE, label %nOF
+    nOF:
+    %lnOG = ptrtoint [0 x i64]* @ghczmprim_GHCziTypes_Izh_con_info to i64
+    %lnOH = load i64** %Hp_Var
+    %lnOI = getelementptr inbounds i64* %lnOH, i32 -1
+    store i64 %lnOG, i64* %lnOI
+    %lnOJ = load i64* %R1_Var
+    %lnOK = load i64** %Hp_Var
+    %lnOL = getelementptr inbounds i64* %lnOK, i32 0
+    store i64 %lnOJ, i64* %lnOL
+    %lnOM = load i64** %Hp_Var
+    %lnON = ptrtoint i64* %lnOM to i64
+    %lnOO = add i64 %lnON, -7
+    store i64 %lnOO, i64* %R1_Var
+    %lnOP = load i64** %Sp_Var
+    %lnOQ = getelementptr inbounds i64* %lnOP, i32 1
+    %lnOR = ptrtoint i64* %lnOQ to i64
+    %lnOS = inttoptr i64 %lnOR to i64*
+    store i64* %lnOS, i64** %Sp_Var
+    %lnOT = load i64** %Sp_Var
+    %lnOU = getelementptr inbounds i64* %lnOT, i32 0
+    %lnOV = bitcast i64* %lnOU to i64*
+    %lnOW = load i64* %lnOV
+    %lnOX = inttoptr i64 %lnOW to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnOY = load i64** %Base_Var
+    %lnOZ = load i64** %Sp_Var
+    %lnP0 = load i64** %Hp_Var
+    %lnP1 = load i64* %R1_Var
+    %lnP2 = load i64* %R2_Var
+    %lnP3 = load i64* %R3_Var
+    %lnP4 = load i64* %R4_Var
+    %lnP5 = load i64* %R5_Var
+    %lnP6 = load i64* %R6_Var
+    %lnP7 = load i64* %SpLim_Var
+    %lnP8 = load float* %F1_Var
+    %lnP9 = load float* %F2_Var
+    %lnPa = load float* %F3_Var
+    %lnPb = load float* %F4_Var
+    %lnPc = load double* %D1_Var
+    %lnPd = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnOX( i64* %lnOY,i64* %lnOZ,i64* %lnP0,i64 %lnP1,i64 %lnP2,i64 %lnP3,i64 %lnP4,i64 %lnP5,i64 %lnP6,i64 %lnP7,float %lnP8,float %lnP9,float %lnPa,float %lnPb,double %lnPc,double %lnPd ) nounwind
+    ret void
+cPe:
+    %lnPf = load i64** %Base_Var
+    %lnPg = load i64** %Sp_Var
+    %lnPh = load i64** %Hp_Var
+    %lnPi = load i64* %R1_Var
+    %lnPj = load i64* %R2_Var
+    %lnPk = load i64* %R3_Var
+    %lnPl = load i64* %R4_Var
+    %lnPm = load i64* %R5_Var
+    %lnPn = load i64* %R6_Var
+    %lnPo = load i64* %SpLim_Var
+    %lnPp = load float* %F1_Var
+    %lnPq = load float* %F2_Var
+    %lnPr = load float* %F3_Var
+    %lnPs = load float* %F4_Var
+    %lnPt = load double* %D1_Var
+    %lnPu = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @stg_gc_unbx_r1( i64* %lnPf,i64* %lnPg,i64* %lnPh,i64 %lnPi,i64 %lnPj,i64 %lnPk,i64 %lnPl,i64 %lnPm,i64 %lnPn,i64 %lnPo,float %lnPp,float %lnPq,float %lnPr,float %lnPs,double %lnPt,double %lnPu ) nounwind
+    ret void
+cOE:
+    %lnPv = load i64** %Base_Var
+    %lnPw = getelementptr inbounds i64* %lnPv, i32 23
+    store i64 16, i64* %lnPw
+    br label %cPe
+}
+
+
+
+==================== LLVM Code ====================
+%soY_ret_struct = type <{i64,i64}>
+@soY_info_itable = internal constant %soY_ret_struct <{i64 194,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @soY_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cQ7:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnQ8 = load i64** %Sp_Var
+    %lnQ9 = getelementptr inbounds i64* %lnQ8, i32 2
+    %lnQa = bitcast i64* %lnQ9 to i64*
+    %lnQb = load i64* %lnQa
+    store i64 %lnQb, i64* %R2_Var
+    %lnQc = load i64** %Sp_Var
+    %lnQd = getelementptr inbounds i64* %lnQc, i32 1
+    %lnQe = bitcast i64* %lnQd to i64*
+    %lnQf = load i64* %lnQe
+    store i64 %lnQf, i64* %R3_Var
+    %lnQg = load i64* %R1_Var
+    %lnQh = add i64 %lnQg, 7
+    %lnQi = inttoptr i64 %lnQh to i64*
+    %lnQj = load i64* %lnQi
+    store i64 %lnQj, i64* %R4_Var
+    %lnQk = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @so8_info to i64
+    %lnQl = load i64** %Sp_Var
+    %lnQm = getelementptr inbounds i64* %lnQl, i32 2
+    store i64 %lnQk, i64* %lnQm
+    %lnQn = load i64** %Sp_Var
+    %lnQo = getelementptr inbounds i64* %lnQn, i32 2
+    %lnQp = ptrtoint i64* %lnQo to i64
+    %lnQq = inttoptr i64 %lnQp to i64*
+    store i64* %lnQq, i64** %Sp_Var
+    %lnQr = load i64** %Base_Var
+    %lnQs = load i64** %Sp_Var
+    %lnQt = load i64** %Hp_Var
+    %lnQu = load i64* %R1_Var
+    %lnQv = load i64* %R2_Var
+    %lnQw = load i64* %R3_Var
+    %lnQx = load i64* %R4_Var
+    %lnQy = load i64* %R5_Var
+    %lnQz = load i64* %R6_Var
+    %lnQA = load i64* %SpLim_Var
+    %lnQB = load float* %F1_Var
+    %lnQC = load float* %F2_Var
+    %lnQD = load float* %F3_Var
+    %lnQE = load float* %F4_Var
+    %lnQF = load double* %D1_Var
+    %lnQG = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwff_info( i64* %lnQr,i64* %lnQs,i64* %lnQt,i64 %lnQu,i64 %lnQv,i64 %lnQw,i64 %lnQx,i64 %lnQy,i64 %lnQz,i64 %lnQA,float %lnQB,float %lnQC,float %lnQD,float %lnQE,double %lnQF,double %lnQG ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%soZ_ret_struct = type <{i64,i64}>
+@soZ_info_itable = internal constant %soZ_ret_struct <{i64 130,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @soZ_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cRD:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lcQN = alloca i64, i32 1
+    %lnRE = load i64** %Sp_Var
+    %lnRF = getelementptr inbounds i64* %lnRE, i32 1
+    %lnRG = bitcast i64* %lnRF to i64*
+    %lnRH = load i64* %lnRG
+    store i64 %lnRH, i64* %lcQN
+    %lnRI = load i64* %R1_Var
+    %lnRJ = add i64 %lnRI, 7
+    %lnRK = inttoptr i64 %lnRJ to i64*
+    %lnRL = load i64* %lnRK
+    %lnRM = load i64** %Sp_Var
+    %lnRN = getelementptr inbounds i64* %lnRM, i32 1
+    store i64 %lnRL, i64* %lnRN
+    %lnRO = load i64* %lcQN
+    store i64 %lnRO, i64* %R1_Var
+    %lnRP = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @soY_info to i64
+    %lnRQ = load i64** %Sp_Var
+    %lnRR = getelementptr inbounds i64* %lnRQ, i32 0
+    store i64 %lnRP, i64* %lnRR
+    %lnRS = load i64* %R1_Var
+    %lnRT = and i64 %lnRS, 7
+    %lnRU = icmp ne i64 %lnRT, 0
+    br i1 %lnRU, label %cRW, label %nRX
+    nRX:
+    %lnRY = load i64* %R1_Var
+    %lnRZ = inttoptr i64 %lnRY to i64*
+    %lnS0 = load i64* %lnRZ
+    %lnS1 = inttoptr i64 %lnS0 to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnS2 = load i64** %Base_Var
+    %lnS3 = load i64** %Sp_Var
+    %lnS4 = load i64** %Hp_Var
+    %lnS5 = load i64* %R1_Var
+    %lnS6 = load i64* %R2_Var
+    %lnS7 = load i64* %R3_Var
+    %lnS8 = load i64* %R4_Var
+    %lnS9 = load i64* %R5_Var
+    %lnSa = load i64* %R6_Var
+    %lnSb = load i64* %SpLim_Var
+    %lnSc = load float* %F1_Var
+    %lnSd = load float* %F2_Var
+    %lnSe = load float* %F3_Var
+    %lnSf = load float* %F4_Var
+    %lnSg = load double* %D1_Var
+    %lnSh = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnS1( i64* %lnS2,i64* %lnS3,i64* %lnS4,i64 %lnS5,i64 %lnS6,i64 %lnS7,i64 %lnS8,i64 %lnS9,i64 %lnSa,i64 %lnSb,float %lnSc,float %lnSd,float %lnSe,float %lnSf,double %lnSg,double %lnSh ) nounwind
+    ret void
+cRW:
+    %lnSi = load i64** %Base_Var
+    %lnSj = load i64** %Sp_Var
+    %lnSk = load i64** %Hp_Var
+    %lnSl = load i64* %R1_Var
+    %lnSm = load i64* %R2_Var
+    %lnSn = load i64* %R3_Var
+    %lnSo = load i64* %R4_Var
+    %lnSp = load i64* %R5_Var
+    %lnSq = load i64* %R6_Var
+    %lnSr = load i64* %SpLim_Var
+    %lnSs = load float* %F1_Var
+    %lnSt = load float* %F2_Var
+    %lnSu = load float* %F3_Var
+    %lnSv = load float* %F4_Var
+    %lnSw = load double* %D1_Var
+    %lnSx = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @soY_info( i64* %lnSi,i64* %lnSj,i64* %lnSk,i64 %lnSl,i64 %lnSm,i64 %lnSn,i64 %lnSo,i64 %lnSp,i64 %lnSq,i64 %lnSr,float %lnSs,float %lnSt,float %lnSu,float %lnSv,double %lnSw,double %lnSx ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%sp0_ret_struct = type <{i64,i64}>
+@sp0_info_itable = internal constant %sp0_ret_struct <{i64 2,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @sp0_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cTu:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lcSE = alloca i64, i32 1
+    %lnTv = load i64** %Sp_Var
+    %lnTw = getelementptr inbounds i64* %lnTv, i32 2
+    %lnTx = bitcast i64* %lnTw to i64*
+    %lnTy = load i64* %lnTx
+    store i64 %lnTy, i64* %lcSE
+    %lnTz = load i64* %R1_Var
+    %lnTA = add i64 %lnTz, 7
+    %lnTB = inttoptr i64 %lnTA to i64*
+    %lnTC = load i64* %lnTB
+    %lnTD = load i64** %Sp_Var
+    %lnTE = getelementptr inbounds i64* %lnTD, i32 2
+    store i64 %lnTC, i64* %lnTE
+    %lnTF = load i64* %lcSE
+    store i64 %lnTF, i64* %R1_Var
+    %lnTG = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @soZ_info to i64
+    %lnTH = load i64** %Sp_Var
+    %lnTI = getelementptr inbounds i64* %lnTH, i32 0
+    store i64 %lnTG, i64* %lnTI
+    %lnTJ = load i64* %R1_Var
+    %lnTK = and i64 %lnTJ, 7
+    %lnTL = icmp ne i64 %lnTK, 0
+    br i1 %lnTL, label %cTN, label %nTO
+    nTO:
+    %lnTP = load i64* %R1_Var
+    %lnTQ = inttoptr i64 %lnTP to i64*
+    %lnTR = load i64* %lnTQ
+    %lnTS = inttoptr i64 %lnTR to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnTT = load i64** %Base_Var
+    %lnTU = load i64** %Sp_Var
+    %lnTV = load i64** %Hp_Var
+    %lnTW = load i64* %R1_Var
+    %lnTX = load i64* %R2_Var
+    %lnTY = load i64* %R3_Var
+    %lnTZ = load i64* %R4_Var
+    %lnU0 = load i64* %R5_Var
+    %lnU1 = load i64* %R6_Var
+    %lnU2 = load i64* %SpLim_Var
+    %lnU3 = load float* %F1_Var
+    %lnU4 = load float* %F2_Var
+    %lnU5 = load float* %F3_Var
+    %lnU6 = load float* %F4_Var
+    %lnU7 = load double* %D1_Var
+    %lnU8 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnTS( i64* %lnTT,i64* %lnTU,i64* %lnTV,i64 %lnTW,i64 %lnTX,i64 %lnTY,i64 %lnTZ,i64 %lnU0,i64 %lnU1,i64 %lnU2,float %lnU3,float %lnU4,float %lnU5,float %lnU6,double %lnU7,double %lnU8 ) nounwind
+    ret void
+cTN:
+    %lnU9 = load i64** %Base_Var
+    %lnUa = load i64** %Sp_Var
+    %lnUb = load i64** %Hp_Var
+    %lnUc = load i64* %R1_Var
+    %lnUd = load i64* %R2_Var
+    %lnUe = load i64* %R3_Var
+    %lnUf = load i64* %R4_Var
+    %lnUg = load i64* %R5_Var
+    %lnUh = load i64* %R6_Var
+    %lnUi = load i64* %SpLim_Var
+    %lnUj = load float* %F1_Var
+    %lnUk = load float* %F2_Var
+    %lnUl = load float* %F3_Var
+    %lnUm = load float* %F4_Var
+    %lnUn = load double* %D1_Var
+    %lnUo = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @soZ_info( i64* %lnU9,i64* %lnUa,i64* %lnUb,i64 %lnUc,i64 %lnUd,i64 %lnUe,i64 %lnUf,i64 %lnUg,i64 %lnUh,i64 %lnUi,float %lnUj,float %lnUk,float %lnUl,float %lnUm,double %lnUn,double %lnUo ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%F_ff_entry_struct = type <{i64,i64,i64}>
+@F_ff_info_itable =  constant %F_ff_entry_struct <{i64 12884901908,i64 0,i64 15}>, section ".text; .text 0#", align 8
+define  cc 10 void @F_ff_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cVK:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnVL = load i64** %Sp_Var
+    %lnVM = getelementptr inbounds i64* %lnVL, i32 -3
+    %lnVN = ptrtoint i64* %lnVM to i64
+    %lnVO = load i64* %SpLim_Var
+    %lnVP = icmp ult i64 %lnVN, %lnVO
+    br i1 %lnVP, label %cVR, label %nVS
+    nVS:
+    %lnVT = load i64* %R4_Var
+    %lnVU = load i64** %Sp_Var
+    %lnVV = getelementptr inbounds i64* %lnVU, i32 -2
+    store i64 %lnVT, i64* %lnVV
+    %lnVW = load i64* %R3_Var
+    %lnVX = load i64** %Sp_Var
+    %lnVY = getelementptr inbounds i64* %lnVX, i32 -1
+    store i64 %lnVW, i64* %lnVY
+    %lnVZ = load i64* %R2_Var
+    store i64 %lnVZ, i64* %R1_Var
+    %lnW0 = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @sp0_info to i64
+    %lnW1 = load i64** %Sp_Var
+    %lnW2 = getelementptr inbounds i64* %lnW1, i32 -3
+    store i64 %lnW0, i64* %lnW2
+    %lnW3 = load i64** %Sp_Var
+    %lnW4 = getelementptr inbounds i64* %lnW3, i32 -3
+    %lnW5 = ptrtoint i64* %lnW4 to i64
+    %lnW6 = inttoptr i64 %lnW5 to i64*
+    store i64* %lnW6, i64** %Sp_Var
+    %lnW7 = load i64* %R1_Var
+    %lnW8 = and i64 %lnW7, 7
+    %lnW9 = icmp ne i64 %lnW8, 0
+    br i1 %lnW9, label %cWc, label %nWd
+    nWd:
+    %lnWe = load i64* %R1_Var
+    %lnWf = inttoptr i64 %lnWe to i64*
+    %lnWg = load i64* %lnWf
+    %lnWh = inttoptr i64 %lnWg to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnWi = load i64** %Base_Var
+    %lnWj = load i64** %Sp_Var
+    %lnWk = load i64** %Hp_Var
+    %lnWl = load i64* %R1_Var
+    %lnWm = load i64* %R2_Var
+    %lnWn = load i64* %R3_Var
+    %lnWo = load i64* %R4_Var
+    %lnWp = load i64* %R5_Var
+    %lnWq = load i64* %R6_Var
+    %lnWr = load i64* %SpLim_Var
+    %lnWs = load float* %F1_Var
+    %lnWt = load float* %F2_Var
+    %lnWu = load float* %F3_Var
+    %lnWv = load float* %F4_Var
+    %lnWw = load double* %D1_Var
+    %lnWx = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnWh( i64* %lnWi,i64* %lnWj,i64* %lnWk,i64 %lnWl,i64 %lnWm,i64 %lnWn,i64 %lnWo,i64 %lnWp,i64 %lnWq,i64 %lnWr,float %lnWs,float %lnWt,float %lnWu,float %lnWv,double %lnWw,double %lnWx ) nounwind
+    ret void
+cVR:
+    %lnWy = ptrtoint %F_ff_closure_struct* @F_ff_closure to i64
+    store i64 %lnWy, i64* %R1_Var
+    %lnWz = load i64** %Base_Var
+    %lnWA = getelementptr inbounds i64* %lnWz, i32 -1
+    %lnWB = bitcast i64* %lnWA to i64*
+    %lnWC = load i64* %lnWB
+    %lnWD = inttoptr i64 %lnWC to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnWE = load i64** %Base_Var
+    %lnWF = load i64** %Sp_Var
+    %lnWG = load i64** %Hp_Var
+    %lnWH = load i64* %R1_Var
+    %lnWI = load i64* %R2_Var
+    %lnWJ = load i64* %R3_Var
+    %lnWK = load i64* %R4_Var
+    %lnWL = load i64* %R5_Var
+    %lnWM = load i64* %R6_Var
+    %lnWN = load i64* %SpLim_Var
+    %lnWO = load float* %F1_Var
+    %lnWP = load float* %F2_Var
+    %lnWQ = load float* %F3_Var
+    %lnWR = load float* %F4_Var
+    %lnWS = load double* %D1_Var
+    %lnWT = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnWD( i64* %lnWE,i64* %lnWF,i64* %lnWG,i64 %lnWH,i64 %lnWI,i64 %lnWJ,i64 %lnWK,i64 %lnWL,i64 %lnWM,i64 %lnWN,float %lnWO,float %lnWP,float %lnWQ,float %lnWR,double %lnWS,double %lnWT ) nounwind
+    ret void
+cWc:
+    %lnWU = load i64** %Base_Var
+    %lnWV = load i64** %Sp_Var
+    %lnWW = load i64** %Hp_Var
+    %lnWX = load i64* %R1_Var
+    %lnWY = load i64* %R2_Var
+    %lnWZ = load i64* %R3_Var
+    %lnX0 = load i64* %R4_Var
+    %lnX1 = load i64* %R5_Var
+    %lnX2 = load i64* %R6_Var
+    %lnX3 = load i64* %SpLim_Var
+    %lnX4 = load float* %F1_Var
+    %lnX5 = load float* %F2_Var
+    %lnX6 = load float* %F3_Var
+    %lnX7 = load float* %F4_Var
+    %lnX8 = load double* %D1_Var
+    %lnX9 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @sp0_info( i64* %lnWU,i64* %lnWV,i64* %lnWW,i64 %lnWX,i64 %lnWY,i64 %lnWZ,i64 %lnX0,i64 %lnX1,i64 %lnX2,i64 %lnX3,float %lnX4,float %lnX5,float %lnX6,float %lnX7,double %lnX8,double %lnX9 ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+%sof_ret_struct = type <{i64,i64}>
+@sof_info_itable = internal constant %sof_ret_struct <{i64 0,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @sof_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cYn:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnYo = load i64** %Hp_Var
+    %lnYp = getelementptr inbounds i64* %lnYo, i32 2
+    %lnYq = ptrtoint i64* %lnYp to i64
+    %lnYr = inttoptr i64 %lnYq to i64*
+    store i64* %lnYr, i64** %Hp_Var
+    %lnYs = load i64** %Hp_Var
+    %lnYt = ptrtoint i64* %lnYs to i64
+    %lnYu = load i64** %Base_Var
+    %lnYv = getelementptr inbounds i64* %lnYu, i32 18
+    %lnYw = bitcast i64* %lnYv to i64*
+    %lnYx = load i64* %lnYw
+    %lnYy = icmp ugt i64 %lnYt, %lnYx
+    br i1 %lnYy, label %cYE, label %nYF
+    nYF:
+    %lnYG = ptrtoint [0 x i64]* @ghczmprim_GHCziTypes_Izh_con_info to i64
+    %lnYH = load i64** %Hp_Var
+    %lnYI = getelementptr inbounds i64* %lnYH, i32 -1
+    store i64 %lnYG, i64* %lnYI
+    %lnYJ = load i64* %R1_Var
+    %lnYK = load i64** %Hp_Var
+    %lnYL = getelementptr inbounds i64* %lnYK, i32 0
+    store i64 %lnYJ, i64* %lnYL
+    %lnYM = load i64** %Hp_Var
+    %lnYN = ptrtoint i64* %lnYM to i64
+    %lnYO = add i64 %lnYN, -7
+    store i64 %lnYO, i64* %R1_Var
+    %lnYP = load i64** %Sp_Var
+    %lnYQ = getelementptr inbounds i64* %lnYP, i32 1
+    %lnYR = ptrtoint i64* %lnYQ to i64
+    %lnYS = inttoptr i64 %lnYR to i64*
+    store i64* %lnYS, i64** %Sp_Var
+    %lnYT = load i64** %Sp_Var
+    %lnYU = getelementptr inbounds i64* %lnYT, i32 0
+    %lnYV = bitcast i64* %lnYU to i64*
+    %lnYW = load i64* %lnYV
+    %lnYX = inttoptr i64 %lnYW to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %lnYY = load i64** %Base_Var
+    %lnYZ = load i64** %Sp_Var
+    %lnZ0 = load i64** %Hp_Var
+    %lnZ1 = load i64* %R1_Var
+    %lnZ2 = load i64* %R2_Var
+    %lnZ3 = load i64* %R3_Var
+    %lnZ4 = load i64* %R4_Var
+    %lnZ5 = load i64* %R5_Var
+    %lnZ6 = load i64* %R6_Var
+    %lnZ7 = load i64* %SpLim_Var
+    %lnZ8 = load float* %F1_Var
+    %lnZ9 = load float* %F2_Var
+    %lnZa = load float* %F3_Var
+    %lnZb = load float* %F4_Var
+    %lnZc = load double* %D1_Var
+    %lnZd = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnYX( i64* %lnYY,i64* %lnYZ,i64* %lnZ0,i64 %lnZ1,i64 %lnZ2,i64 %lnZ3,i64 %lnZ4,i64 %lnZ5,i64 %lnZ6,i64 %lnZ7,float %lnZ8,float %lnZ9,float %lnZa,float %lnZb,double %lnZc,double %lnZd ) nounwind
+    ret void
+cZe:
+    %lnZf = load i64** %Base_Var
+    %lnZg = load i64** %Sp_Var
+    %lnZh = load i64** %Hp_Var
+    %lnZi = load i64* %R1_Var
+    %lnZj = load i64* %R2_Var
+    %lnZk = load i64* %R3_Var
+    %lnZl = load i64* %R4_Var
+    %lnZm = load i64* %R5_Var
+    %lnZn = load i64* %R6_Var
+    %lnZo = load i64* %SpLim_Var
+    %lnZp = load float* %F1_Var
+    %lnZq = load float* %F2_Var
+    %lnZr = load float* %F3_Var
+    %lnZs = load float* %F4_Var
+    %lnZt = load double* %D1_Var
+    %lnZu = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @stg_gc_unbx_r1( i64* %lnZf,i64* %lnZg,i64* %lnZh,i64 %lnZi,i64 %lnZj,i64 %lnZk,i64 %lnZl,i64 %lnZm,i64 %lnZn,i64 %lnZo,float %lnZp,float %lnZq,float %lnZr,float %lnZs,double %lnZt,double %lnZu ) nounwind
+    ret void
+cYE:
+    %lnZv = load i64** %Base_Var
+    %lnZw = getelementptr inbounds i64* %lnZv, i32 23
+    store i64 16, i64* %lnZw
+    br label %cZe
+}
+
+
+
+==================== LLVM Code ====================
+%sp9_ret_struct = type <{i64,i64}>
+@sp9_info_itable = internal constant %sp9_ret_struct <{i64 0,i64 32}>, section ".text; .text 0#", align 8
+define internal cc 10 void @sp9_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+cZV:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %lnZW = load i64* %R1_Var
+    %lnZX = add i64 %lnZW, 7
+    %lnZY = inttoptr i64 %lnZX to i64*
+    %lnZZ = load i64* %lnZY
+    store i64 %lnZZ, i64* %R2_Var
+    store i64 0, i64* %R3_Var
+    store i64 0, i64* %R4_Var
+    %ln100 = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @sof_info to i64
+    %ln101 = load i64** %Sp_Var
+    %ln102 = getelementptr inbounds i64* %ln101, i32 0
+    store i64 %ln100, i64* %ln102
+    %ln103 = load i64** %Base_Var
+    %ln104 = load i64** %Sp_Var
+    %ln105 = load i64** %Hp_Var
+    %ln106 = load i64* %R1_Var
+    %ln107 = load i64* %R2_Var
+    %ln108 = load i64* %R3_Var
+    %ln109 = load i64* %R4_Var
+    %ln10a = load i64* %R5_Var
+    %ln10b = load i64* %R6_Var
+    %ln10c = load i64* %SpLim_Var
+    %ln10d = load float* %F1_Var
+    %ln10e = load float* %F2_Var
+    %ln10f = load float* %F3_Var
+    %ln10g = load float* %F4_Var
+    %ln10h = load double* %D1_Var
+    %ln10i = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @F_zdwff_info( i64* %ln103,i64* %ln104,i64* %ln105,i64 %ln106,i64 %ln107,i64 %ln108,i64 %ln109,i64 %ln10a,i64 %ln10b,i64 %ln10c,float %ln10d,float %ln10e,float %ln10f,float %ln10g,double %ln10h,double %ln10i ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+%F_gg_entry_struct = type <{i64,i64,i64}>
+@F_gg_info_itable =  constant %F_gg_entry_struct <{i64 4294967301,i64 0,i64 15}>, section ".text; .text 0#", align 8
+define  cc 10 void @F_gg_info(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind section ".text; .text 1#"
+{
+c11y:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %ln11z = load i64** %Sp_Var
+    %ln11A = getelementptr inbounds i64* %ln11z, i32 -1
+    %ln11B = ptrtoint i64* %ln11A to i64
+    %ln11C = load i64* %SpLim_Var
+    %ln11D = icmp ult i64 %ln11B, %ln11C
+    br i1 %ln11D, label %c11F, label %n11G
+    n11G:
+    %ln11H = load i64* %R2_Var
+    store i64 %ln11H, i64* %R1_Var
+    %ln11I = ptrtoint void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )* @sp9_info to i64
+    %ln11J = load i64** %Sp_Var
+    %ln11K = getelementptr inbounds i64* %ln11J, i32 -1
+    store i64 %ln11I, i64* %ln11K
+    %ln11L = load i64** %Sp_Var
+    %ln11M = getelementptr inbounds i64* %ln11L, i32 -1
+    %ln11N = ptrtoint i64* %ln11M to i64
+    %ln11O = inttoptr i64 %ln11N to i64*
+    store i64* %ln11O, i64** %Sp_Var
+    %ln11P = load i64* %R1_Var
+    %ln11Q = and i64 %ln11P, 7
+    %ln11R = icmp ne i64 %ln11Q, 0
+    br i1 %ln11R, label %c11U, label %n11V
+    n11V:
+    %ln11W = load i64* %R1_Var
+    %ln11X = inttoptr i64 %ln11W to i64*
+    %ln11Y = load i64* %ln11X
+    %ln11Z = inttoptr i64 %ln11Y to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %ln120 = load i64** %Base_Var
+    %ln121 = load i64** %Sp_Var
+    %ln122 = load i64** %Hp_Var
+    %ln123 = load i64* %R1_Var
+    %ln124 = load i64* %R2_Var
+    %ln125 = load i64* %R3_Var
+    %ln126 = load i64* %R4_Var
+    %ln127 = load i64* %R5_Var
+    %ln128 = load i64* %R6_Var
+    %ln129 = load i64* %SpLim_Var
+    %ln12a = load float* %F1_Var
+    %ln12b = load float* %F2_Var
+    %ln12c = load float* %F3_Var
+    %ln12d = load float* %F4_Var
+    %ln12e = load double* %D1_Var
+    %ln12f = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln11Z( i64* %ln120,i64* %ln121,i64* %ln122,i64 %ln123,i64 %ln124,i64 %ln125,i64 %ln126,i64 %ln127,i64 %ln128,i64 %ln129,float %ln12a,float %ln12b,float %ln12c,float %ln12d,double %ln12e,double %ln12f ) nounwind
+    ret void
+c11F:
+    %ln12g = ptrtoint %F_gg_closure_struct* @F_gg_closure to i64
+    store i64 %ln12g, i64* %R1_Var
+    %ln12h = load i64** %Base_Var
+    %ln12i = getelementptr inbounds i64* %ln12h, i32 -1
+    %ln12j = bitcast i64* %ln12i to i64*
+    %ln12k = load i64* %ln12j
+    %ln12l = inttoptr i64 %ln12k to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %ln12m = load i64** %Base_Var
+    %ln12n = load i64** %Sp_Var
+    %ln12o = load i64** %Hp_Var
+    %ln12p = load i64* %R1_Var
+    %ln12q = load i64* %R2_Var
+    %ln12r = load i64* %R3_Var
+    %ln12s = load i64* %R4_Var
+    %ln12t = load i64* %R5_Var
+    %ln12u = load i64* %R6_Var
+    %ln12v = load i64* %SpLim_Var
+    %ln12w = load float* %F1_Var
+    %ln12x = load float* %F2_Var
+    %ln12y = load float* %F3_Var
+    %ln12z = load float* %F4_Var
+    %ln12A = load double* %D1_Var
+    %ln12B = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln12l( i64* %ln12m,i64* %ln12n,i64* %ln12o,i64 %ln12p,i64 %ln12q,i64 %ln12r,i64 %ln12s,i64 %ln12t,i64 %ln12u,i64 %ln12v,float %ln12w,float %ln12x,float %ln12y,float %ln12z,double %ln12A,double %ln12B ) nounwind
+    ret void
+c11U:
+    %ln12C = load i64** %Base_Var
+    %ln12D = load i64** %Sp_Var
+    %ln12E = load i64** %Hp_Var
+    %ln12F = load i64* %R1_Var
+    %ln12G = load i64* %R2_Var
+    %ln12H = load i64* %R3_Var
+    %ln12I = load i64* %R4_Var
+    %ln12J = load i64* %R5_Var
+    %ln12K = load i64* %R6_Var
+    %ln12L = load i64* %SpLim_Var
+    %ln12M = load float* %F1_Var
+    %ln12N = load float* %F2_Var
+    %ln12O = load float* %F3_Var
+    %ln12P = load float* %F4_Var
+    %ln12Q = load double* %D1_Var
+    %ln12R = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @sp9_info( i64* %ln12C,i64* %ln12D,i64* %ln12E,i64 %ln12F,i64 %ln12G,i64 %ln12H,i64 %ln12I,i64 %ln12J,i64 %ln12K,i64 %ln12L,float %ln12M,float %ln12N,float %ln12O,float %ln12P,double %ln12Q,double %ln12R ) nounwind
+    ret void
+}
+
+
+
+==================== LLVM Code ====================
+
+
+
+==================== LLVM Code ====================
+@__stginit_base_Prelude_ = external global [0 x i64]
+define  cc 10 void @__stginit_F_(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind
+{
+c13y:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %ln13z = ptrtoint %_module_registered_struct* @_module_registered to i64
+    %ln13A = inttoptr i64 %ln13z to i64*
+    %ln13B = load i64* %ln13A
+    %ln13C = icmp ne i64 0, %ln13B
+    br i1 %ln13C, label %c13D, label %n13E
+    n13E:
+    br label %c13F
+c13D:
+    %ln13G = load i64** %Sp_Var
+    %ln13H = getelementptr inbounds i64* %ln13G, i32 1
+    %ln13I = ptrtoint i64* %ln13H to i64
+    %ln13J = inttoptr i64 %ln13I to i64*
+    store i64* %ln13J, i64** %Sp_Var
+    %ln13K = load i64** %Sp_Var
+    %ln13L = getelementptr inbounds i64* %ln13K, i32 -1
+    %ln13M = bitcast i64* %ln13L to i64*
+    %ln13N = load i64* %ln13M
+    %ln13O = inttoptr i64 %ln13N to void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,i64 ,float ,float ,float ,float ,double ,double )*
+    %ln13P = load i64** %Base_Var
+    %ln13Q = load i64** %Sp_Var
+    %ln13R = load i64** %Hp_Var
+    %ln13S = load i64* %R1_Var
+    %ln13T = load i64* %R2_Var
+    %ln13U = load i64* %R3_Var
+    %ln13V = load i64* %R4_Var
+    %ln13W = load i64* %R5_Var
+    %ln13X = load i64* %R6_Var
+    %ln13Y = load i64* %SpLim_Var
+    %ln13Z = load float* %F1_Var
+    %ln140 = load float* %F2_Var
+    %ln141 = load float* %F3_Var
+    %ln142 = load float* %F4_Var
+    %ln143 = load double* %D1_Var
+    %ln144 = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln13O( i64* %ln13P,i64* %ln13Q,i64* %ln13R,i64 %ln13S,i64 %ln13T,i64 %ln13U,i64 %ln13V,i64 %ln13W,i64 %ln13X,i64 %ln13Y,float %ln13Z,float %ln140,float %ln141,float %ln142,double %ln143,double %ln144 ) nounwind
+    ret void
+c13F:
+    %ln145 = ptrtoint %_module_registered_struct* @_module_registered to i64
+    %ln146 = inttoptr i64 %ln145 to i64*
+    store i64 1, i64* %ln146
+    %ln147 = load i64** %Sp_Var
+    %ln148 = getelementptr inbounds i64* %ln147, i32 -1
+    %ln149 = ptrtoint i64* %ln148 to i64
+    %ln14a = inttoptr i64 %ln149 to i64*
+    store i64* %ln14a, i64** %Sp_Var
+    %ln14b = ptrtoint [0 x i64]* @__stginit_base_Prelude_ to i64
+    %ln14c = load i64** %Sp_Var
+    %ln14d = getelementptr inbounds i64* %ln14c, i32 0
+    store i64 %ln14b, i64* %ln14d
+    br label %c13D
+}
+
+
+
+==================== LLVM Code ====================
+define  cc 10 void @__stginit_F(i64* noalias nocapture %Base_Arg,i64* noalias nocapture %Sp_Arg,i64* noalias nocapture %Hp_Arg,i64 %R1_Arg,i64 %R2_Arg,i64 %R3_Arg,i64 %R4_Arg,i64 %R5_Arg,i64 %R6_Arg,i64 %SpLim_Arg,float %F1_Arg,float %F2_Arg,float %F3_Arg,float %F4_Arg,double %D1_Arg,double %D2_Arg) align 8 nounwind
+{
+c14v:
+    %Base_Var = alloca i64*, i32 1
+    store i64* %Base_Arg, i64** %Base_Var
+    %Sp_Var = alloca i64*, i32 1
+    store i64* %Sp_Arg, i64** %Sp_Var
+    %Hp_Var = alloca i64*, i32 1
+    store i64* %Hp_Arg, i64** %Hp_Var
+    %R1_Var = alloca i64, i32 1
+    store i64 %R1_Arg, i64* %R1_Var
+    %R2_Var = alloca i64, i32 1
+    store i64 %R2_Arg, i64* %R2_Var
+    %R3_Var = alloca i64, i32 1
+    store i64 %R3_Arg, i64* %R3_Var
+    %R4_Var = alloca i64, i32 1
+    store i64 %R4_Arg, i64* %R4_Var
+    %R5_Var = alloca i64, i32 1
+    store i64 %R5_Arg, i64* %R5_Var
+    %R6_Var = alloca i64, i32 1
+    store i64 %R6_Arg, i64* %R6_Var
+    %SpLim_Var = alloca i64, i32 1
+    store i64 %SpLim_Arg, i64* %SpLim_Var
+    %F1_Var = alloca float, i32 1
+    store float %F1_Arg, float* %F1_Var
+    %F2_Var = alloca float, i32 1
+    store float %F2_Arg, float* %F2_Var
+    %F3_Var = alloca float, i32 1
+    store float %F3_Arg, float* %F3_Var
+    %F4_Var = alloca float, i32 1
+    store float %F4_Arg, float* %F4_Var
+    %D1_Var = alloca double, i32 1
+    store double %D1_Arg, double* %D1_Var
+    %D2_Var = alloca double, i32 1
+    store double %D2_Arg, double* %D2_Var
+    %ln14w = load i64** %Base_Var
+    %ln14x = load i64** %Sp_Var
+    %ln14y = load i64** %Hp_Var
+    %ln14z = load i64* %R1_Var
+    %ln14A = load i64* %R2_Var
+    %ln14B = load i64* %R3_Var
+    %ln14C = load i64* %R4_Var
+    %ln14D = load i64* %R5_Var
+    %ln14E = load i64* %R6_Var
+    %ln14F = load i64* %SpLim_Var
+    %ln14G = load float* %F1_Var
+    %ln14H = load float* %F2_Var
+    %ln14I = load float* %F3_Var
+    %ln14J = load float* %F4_Var
+    %ln14K = load double* %D1_Var
+    %ln14L = load double* %D2_Var
+    tail call cc 10 void (i64* noalias nocapture,i64* noalias nocapture,i64* noalias nocapture,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @__stginit_F_( i64* %ln14w,i64* %ln14x,i64* %ln14y,i64 %ln14z,i64 %ln14A,i64 %ln14B,i64 %ln14C,i64 %ln14D,i64 %ln14E,i64 %ln14F,float %ln14G,float %ln14H,float %ln14I,float %ln14J,double %ln14K,double %ln14L ) nounwind
+    ret void
+}
+
+
