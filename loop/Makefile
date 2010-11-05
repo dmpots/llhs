@@ -9,6 +9,8 @@ default:
 	@echo "  opt-llvm"
 	@echo "  clean"
 
+all: core cmm llvm
+
 core:
 	 $(GHC) -fllvm -ddump-simpl -O -S F.hs > F.core
 
