@@ -19,7 +19,8 @@ llvm:
 	 $(GHC) -fllvm -ddump-llvm -O -S F.hs > F.llvm
 
 opt-llvm:
-	opt -std-compile-opts -inline -O1 F.dave.llvm > F.opt.llvm
+	opt -std-compile-opts -inline -O1 F.dave.llvm | llvm-dis > F.opt.llvm
+	llc F.opt.llvm
 
 clean:
 	rm -f *.hi *.o *.s a.out

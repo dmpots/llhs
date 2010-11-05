@@ -10,193 +10,6 @@ section "data" {
 
 ==================== Optimised Cmm ====================
 section "data" {
-    F.$wff_closure:
-        const F.$wff_info;
-}
-
-
-
-==================== Optimised Cmm ====================
-F.$wff_entry()
-        { [const 196621;, const 0;, const 15;]
-        }
-    cps:
-        _sn4::I32 = I32[Sp + 0];
-        if (_sn4::I32 != 0) goto cpw;
-        _cpA::I32 = I32[Sp + 4] + I32[Sp + 8];
-        R1 = _cpA::I32;
-        Sp = Sp + 12;
-        jump (I32[Sp + 0]) ();
-    cpw:
-        _sor::I32 = _sn4::I32 * 5;
-        _son::I32 = I32[Sp + 8] + _sor::I32;
-        _soq::I32 = I32[Sp + 4] + _sn4::I32;
-        _sop::I32 = _soq::I32 + 1;
-        _soo::I32 = _sn4::I32 - 1;
-        I32[Sp + 8] = _son::I32;
-        I32[Sp + 4] = _sop::I32;
-        I32[Sp + 0] = _soo::I32;
-        jump F.$wff_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-section "data" {
-    F.ff_closure:
-        const F.ff_info;
-}
-
-
-
-==================== Optimised Cmm ====================
-sns_ret()
-        { [const 0;, const 32;]
-        }
-    crS:
-        Hp = Hp + 8;
-        if (Hp > I32[BaseReg + 92]) goto crY;
-        I32[Hp - 4] = GHC.Types.I#_con_info;
-        I32[Hp + 0] = R1;
-        R1 = Hp - 3;
-        Sp = Sp + 4;
-        jump (I32[Sp + 0]) ();
-    crZ: jump stg_gc_unbx_r1 ();
-    crY:
-        I32[BaseReg + 112] = 8;
-        goto crZ;
-}
-
-
-
-==================== Optimised Cmm ====================
-sow_ret()
-        { [const 98;, const 32;]
-        }
-    ctj:
-        I32[Sp + 0] = I32[Sp + 8];
-        I32[Sp - 4] = I32[Sp + 4];
-        I32[Sp + 4] = I32[R1 + 3];
-        I32[Sp + 8] = sns_info;
-        Sp = Sp - 4;
-        jump F.$wff_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-sox_ret()
-        { [const 34;, const 32;]
-        }
-    cuh:
-        _cuk::I32 = I32[Sp + 8];
-        I32[Sp + 8] = I32[R1 + 3];
-        R1 = _cuk::I32;
-        I32[Sp + 0] = sow_info;
-        if (R1 & 3 != 0) goto cum;
-        jump I32[R1] ();
-    cum: jump sow_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-soy_ret()
-        { [const 2;, const 32;]
-        }
-    cvm:
-        _cvp::I32 = I32[Sp + 4];
-        I32[Sp + 4] = I32[R1 + 3];
-        R1 = _cvp::I32;
-        I32[Sp + 0] = sox_info;
-        if (R1 & 3 != 0) goto cvr;
-        jump I32[R1] ();
-    cvr: jump sox_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-F.ff_entry()
-        { [const 196628;, const 0;, const 15;]
-        }
-    cwr:
-        if (Sp - 4 < I32[BaseReg + 84]) goto cwt;
-        R1 = I32[Sp + 0];
-        I32[Sp + 0] = soy_info;
-        if (R1 & 3 != 0) goto cww;
-        jump I32[R1] ();
-    cwt:
-        R1 = F.ff_closure;
-        jump (I32[BaseReg - 4]) ();
-    cww: jump soy_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-section "data" {
-    F.gg_closure:
-        const F.gg_info;
-}
-
-
-
-==================== Optimised Cmm ====================
-snz_ret()
-        { [const 0;, const 32;]
-        }
-    cy4:
-        Hp = Hp + 8;
-        if (Hp > I32[BaseReg + 92]) goto cya;
-        I32[Hp - 4] = GHC.Types.I#_con_info;
-        I32[Hp + 0] = R1;
-        R1 = Hp - 3;
-        Sp = Sp + 4;
-        jump (I32[Sp + 0]) ();
-    cyb: jump stg_gc_unbx_r1 ();
-    cya:
-        I32[BaseReg + 112] = 8;
-        goto cyb;
-}
-
-
-
-==================== Optimised Cmm ====================
-soH_ret()
-        { [const 0;, const 32;]
-        }
-    czv:
-        I32[Sp - 4] = 0;
-        I32[Sp - 8] = 0;
-        I32[Sp - 12] = I32[R1 + 3];
-        I32[Sp + 0] = snz_info;
-        Sp = Sp - 12;
-        jump F.$wff_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-F.gg_entry()
-        { [const 65541;, const 0;, const 15;]
-        }
-    cAd:
-        if (Sp - 12 < I32[BaseReg + 84]) goto cAf;
-        R1 = I32[Sp + 0];
-        I32[Sp + 0] = soH_info;
-        if (R1 & 3 != 0) goto cAi;
-        jump I32[R1] ();
-    cAf:
-        R1 = F.gg_closure;
-        jump (I32[BaseReg - 4]) ();
-    cAi: jump soH_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-section "data" {
     F.$wf_closure:
         const F.$wf_info;
 }
@@ -207,7 +20,7 @@ section "data" {
 F.$wf_slow()
         { []
         }
-    cBI:
+    cpo:
         Sp = Sp + 0;
         jump F.$wf_info ();
 }
@@ -219,24 +32,24 @@ F.$wf_entry()
         { [const F.$wf_slow-F.$wf_info;, const 484;, const 0;,
    const 262144;, const 0;, const 15;]
         }
-    cC1:
-        _snG::I32 = I32[Sp + 0];
-        if (_snG::I32 != 0) goto cC5;
-        _cC9::I32 = I32[Sp + 8] + I32[Sp + 12];
-        R1 = _cC9::I32;
+    cpH:
+        _sn2::I32 = I32[Sp + 0];
+        if (_sn2::I32 != 0) goto cpL;
+        _cpP::I32 = I32[Sp + 8] + I32[Sp + 12];
+        R1 = _cpP::I32;
         Sp = Sp + 16;
         jump (I32[Sp + 0]) ();
-    cC5:
-        _soT::I32 = I32[Sp + 4] * 5;
-        _soO::I32 = I32[Sp + 12] + _soT::I32;
-        _soS::I32 = I32[Sp + 8] + _snG::I32;
-        _soR::I32 = _soS::I32 + 1;
-        _soQ::I32 = I32[Sp + 4] - 1;
-        _soP::I32 = _snG::I32 - 1;
-        I32[Sp + 12] = _soO::I32;
-        I32[Sp + 8] = _soR::I32;
-        I32[Sp + 4] = _soQ::I32;
-        I32[Sp + 0] = _soP::I32;
+    cpL:
+        _sop::I32 = I32[Sp + 4] * 5;
+        _sok::I32 = I32[Sp + 12] + _sop::I32;
+        _soo::I32 = I32[Sp + 8] + _sn2::I32;
+        _son::I32 = _soo::I32 + 1;
+        _som::I32 = I32[Sp + 4] - 1;
+        _sol::I32 = _sn2::I32 - 1;
+        I32[Sp + 12] = _sok::I32;
+        I32[Sp + 8] = _son::I32;
+        I32[Sp + 4] = _som::I32;
+        I32[Sp + 0] = _sol::I32;
         jump F.$wf_info ();
 }
 
@@ -251,35 +64,35 @@ section "data" {
 
 
 ==================== Optimised Cmm ====================
-sob_ret()
+snx_ret()
         { [const 0;, const 32;]
         }
-    cER:
+    csx:
         Hp = Hp + 8;
-        if (Hp > I32[BaseReg + 92]) goto cEX;
+        if (Hp > I32[BaseReg + 92]) goto csD;
         I32[Hp - 4] = GHC.Types.I#_con_info;
         I32[Hp + 0] = R1;
         R1 = Hp - 3;
         Sp = Sp + 4;
         jump (I32[Sp + 0]) ();
-    cEY: jump stg_gc_unbx_r1 ();
-    cEX:
+    csE: jump stg_gc_unbx_r1 ();
+    csD:
         I32[BaseReg + 112] = 8;
-        goto cEY;
+        goto csE;
 }
 
 
 
 ==================== Optimised Cmm ====================
-soZ_ret()
+sov_ret()
         { [const 227;, const 32;]
         }
-    cGi:
+    ctY:
         I32[Sp + 0] = I32[Sp + 8];
         I32[Sp + 8] = I32[R1 + 3];
         I32[Sp - 4] = I32[Sp + 4];
         I32[Sp + 4] = I32[Sp + 12];
-        I32[Sp + 12] = sob_info;
+        I32[Sp + 12] = snx_info;
         Sp = Sp - 4;
         jump F.$wf_info ();
 }
@@ -287,49 +100,49 @@ soZ_ret()
 
 
 ==================== Optimised Cmm ====================
-sp0_ret()
+sow_ret()
         { [const 99;, const 32;]
         }
-    cHs:
-        _cHv::I32 = I32[Sp + 12];
+    cv8:
+        _cvb::I32 = I32[Sp + 12];
         I32[Sp + 12] = I32[R1 + 3];
-        R1 = _cHv::I32;
-        I32[Sp + 0] = soZ_info;
-        if (R1 & 3 != 0) goto cHx;
+        R1 = _cvb::I32;
+        I32[Sp + 0] = sov_info;
+        if (R1 & 3 != 0) goto cvd;
         jump I32[R1] ();
-    cHx: jump soZ_info ();
+    cvd: jump sov_info ();
 }
 
 
 
 ==================== Optimised Cmm ====================
-sp1_ret()
+sox_ret()
         { [const 35;, const 32;]
         }
-    cIx:
-        _cIA::I32 = I32[Sp + 8];
+    cwd:
+        _cwg::I32 = I32[Sp + 8];
         I32[Sp + 8] = I32[R1 + 3];
-        R1 = _cIA::I32;
-        I32[Sp + 0] = sp0_info;
-        if (R1 & 3 != 0) goto cIC;
+        R1 = _cwg::I32;
+        I32[Sp + 0] = sow_info;
+        if (R1 & 3 != 0) goto cwi;
         jump I32[R1] ();
-    cIC: jump sp0_info ();
+    cwi: jump sow_info ();
 }
 
 
 
 ==================== Optimised Cmm ====================
-sp2_ret()
+soy_ret()
         { [const 3;, const 32;]
         }
-    cJC:
-        _cJF::I32 = I32[Sp + 4];
+    cxi:
+        _cxl::I32 = I32[Sp + 4];
         I32[Sp + 4] = I32[R1 + 3];
-        R1 = _cJF::I32;
-        I32[Sp + 0] = sp1_info;
-        if (R1 & 3 != 0) goto cJH;
+        R1 = _cxl::I32;
+        I32[Sp + 0] = sox_info;
+        if (R1 & 3 != 0) goto cxn;
         jump I32[R1] ();
-    cJH: jump sp1_info ();
+    cxn: jump sox_info ();
 }
 
 
@@ -338,16 +151,16 @@ sp2_ret()
 F.f_entry()
         { [const 262165;, const 0;, const 15;]
         }
-    cKH:
-        if (Sp - 4 < I32[BaseReg + 84]) goto cKJ;
+    cyn:
+        if (Sp - 4 < I32[BaseReg + 84]) goto cyp;
         R1 = I32[Sp + 0];
-        I32[Sp + 0] = sp2_info;
-        if (R1 & 3 != 0) goto cKM;
+        I32[Sp + 0] = soy_info;
+        if (R1 & 3 != 0) goto cys;
         jump I32[R1] ();
-    cKJ:
+    cyp:
         R1 = F.f_closure;
         jump (I32[BaseReg - 4]) ();
-    cKM: jump sp2_info ();
+    cys: jump soy_info ();
 }
 
 
@@ -361,35 +174,35 @@ section "data" {
 
 
 ==================== Optimised Cmm ====================
-soi_ret()
+snE_ret()
         { [const 0;, const 32;]
         }
-    cMk:
+    cA0:
         Hp = Hp + 8;
-        if (Hp > I32[BaseReg + 92]) goto cMq;
+        if (Hp > I32[BaseReg + 92]) goto cA6;
         I32[Hp - 4] = GHC.Types.I#_con_info;
         I32[Hp + 0] = R1;
         R1 = Hp - 3;
         Sp = Sp + 4;
         jump (I32[Sp + 0]) ();
-    cMr: jump stg_gc_unbx_r1 ();
-    cMq:
+    cA7: jump stg_gc_unbx_r1 ();
+    cA6:
         I32[BaseReg + 112] = 8;
-        goto cMr;
+        goto cA7;
 }
 
 
 
 ==================== Optimised Cmm ====================
-spc_ret()
+soI_ret()
         { [const 0;, const 32;]
         }
-    cNL:
+    cBr:
         I32[Sp - 4] = 0;
         I32[Sp - 8] = 0;
         I32[Sp - 12] = I32[R1 + 3];
         I32[Sp - 16] = I32[R1 + 3];
-        I32[Sp + 0] = soi_info;
+        I32[Sp + 0] = snE_info;
         Sp = Sp - 16;
         jump F.$wf_info ();
 }
@@ -400,16 +213,203 @@ spc_ret()
 F.g_entry()
         { [const 65541;, const 0;, const 15;]
         }
-    cOF:
-        if (Sp - 16 < I32[BaseReg + 84]) goto cOH;
+    cCl:
+        if (Sp - 16 < I32[BaseReg + 84]) goto cCn;
         R1 = I32[Sp + 0];
-        I32[Sp + 0] = spc_info;
-        if (R1 & 3 != 0) goto cOK;
+        I32[Sp + 0] = soI_info;
+        if (R1 & 3 != 0) goto cCq;
         jump I32[R1] ();
-    cOH:
+    cCn:
         R1 = F.g_closure;
         jump (I32[BaseReg - 4]) ();
-    cOK: jump spc_info ();
+    cCq: jump soI_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.$wff_closure:
+        const F.$wff_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+F.$wff_entry()
+        { [const 196621;, const 0;, const 15;]
+        }
+    cDR:
+        _snK::I32 = I32[Sp + 0];
+        if (_snK::I32 != 0) goto cDV;
+        _cDZ::I32 = I32[Sp + 4] + I32[Sp + 8];
+        R1 = _cDZ::I32;
+        Sp = Sp + 12;
+        jump (I32[Sp + 0]) ();
+    cDV:
+        _soT::I32 = _snK::I32 * 5;
+        _soP::I32 = I32[Sp + 8] + _soT::I32;
+        _soS::I32 = I32[Sp + 4] + _snK::I32;
+        _soR::I32 = _soS::I32 + 1;
+        _soQ::I32 = _snK::I32 - 1;
+        I32[Sp + 8] = _soP::I32;
+        I32[Sp + 4] = _soR::I32;
+        I32[Sp + 0] = _soQ::I32;
+        jump F.$wff_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.ff_closure:
+        const F.ff_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+so8_ret()
+        { [const 0;, const 32;]
+        }
+    cGh:
+        Hp = Hp + 8;
+        if (Hp > I32[BaseReg + 92]) goto cGn;
+        I32[Hp - 4] = GHC.Types.I#_con_info;
+        I32[Hp + 0] = R1;
+        R1 = Hp - 3;
+        Sp = Sp + 4;
+        jump (I32[Sp + 0]) ();
+    cGo: jump stg_gc_unbx_r1 ();
+    cGn:
+        I32[BaseReg + 112] = 8;
+        goto cGo;
+}
+
+
+
+==================== Optimised Cmm ====================
+soY_ret()
+        { [const 98;, const 32;]
+        }
+    cHI:
+        I32[Sp + 0] = I32[Sp + 8];
+        I32[Sp - 4] = I32[Sp + 4];
+        I32[Sp + 4] = I32[R1 + 3];
+        I32[Sp + 8] = so8_info;
+        Sp = Sp - 4;
+        jump F.$wff_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+soZ_ret()
+        { [const 34;, const 32;]
+        }
+    cIG:
+        _cIJ::I32 = I32[Sp + 8];
+        I32[Sp + 8] = I32[R1 + 3];
+        R1 = _cIJ::I32;
+        I32[Sp + 0] = soY_info;
+        if (R1 & 3 != 0) goto cIL;
+        jump I32[R1] ();
+    cIL: jump soY_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sp0_ret()
+        { [const 2;, const 32;]
+        }
+    cJL:
+        _cJO::I32 = I32[Sp + 4];
+        I32[Sp + 4] = I32[R1 + 3];
+        R1 = _cJO::I32;
+        I32[Sp + 0] = soZ_info;
+        if (R1 & 3 != 0) goto cJQ;
+        jump I32[R1] ();
+    cJQ: jump soZ_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.ff_entry()
+        { [const 196628;, const 0;, const 15;]
+        }
+    cKQ:
+        if (Sp - 4 < I32[BaseReg + 84]) goto cKS;
+        R1 = I32[Sp + 0];
+        I32[Sp + 0] = sp0_info;
+        if (R1 & 3 != 0) goto cKV;
+        jump I32[R1] ();
+    cKS:
+        R1 = F.ff_closure;
+        jump (I32[BaseReg - 4]) ();
+    cKV: jump sp0_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    F.gg_closure:
+        const F.gg_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+sof_ret()
+        { [const 0;, const 32;]
+        }
+    cMt:
+        Hp = Hp + 8;
+        if (Hp > I32[BaseReg + 92]) goto cMz;
+        I32[Hp - 4] = GHC.Types.I#_con_info;
+        I32[Hp + 0] = R1;
+        R1 = Hp - 3;
+        Sp = Sp + 4;
+        jump (I32[Sp + 0]) ();
+    cMA: jump stg_gc_unbx_r1 ();
+    cMz:
+        I32[BaseReg + 112] = 8;
+        goto cMA;
+}
+
+
+
+==================== Optimised Cmm ====================
+sp9_ret()
+        { [const 0;, const 32;]
+        }
+    cNU:
+        I32[Sp - 4] = 0;
+        I32[Sp - 8] = 0;
+        I32[Sp - 12] = I32[R1 + 3];
+        I32[Sp + 0] = sof_info;
+        Sp = Sp - 12;
+        jump F.$wff_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+F.gg_entry()
+        { [const 65541;, const 0;, const 15;]
+        }
+    cOC:
+        if (Sp - 12 < I32[BaseReg + 84]) goto cOE;
+        R1 = I32[Sp + 0];
+        I32[Sp + 0] = sp9_info;
+        if (R1 & 3 != 0) goto cOH;
+        jump I32[R1] ();
+    cOE:
+        R1 = F.gg_closure;
+        jump (I32[BaseReg - 4]) ();
+    cOH: jump sp9_info ();
 }
 
 
@@ -426,17 +426,17 @@ section "data" {
 __stginit_main:F_()
         { []
         }
-    cQa:
-        if (0 != I32[_module_registered]) goto cQb;
-        goto cQc;
-    cQb:
+    cQ7:
+        if (0 != I32[_module_registered]) goto cQ8;
+        goto cQ9;
+    cQ8:
         Sp = Sp + 4;
         jump (I32[Sp - 4]) ();
-    cQc:
+    cQ9:
         I32[_module_registered] = 1;
         Sp = Sp - 4;
         I32[Sp] = __stginit_base:Prelude_;
-        goto cQb;
+        goto cQ8;
 }
 
 
@@ -445,7 +445,7 @@ __stginit_main:F_()
 __stginit_main:F()
         { []
         }
-    cR6: jump __stginit_main:F_ ();
+    cR3: jump __stginit_main:F_ ();
 }
 
 
