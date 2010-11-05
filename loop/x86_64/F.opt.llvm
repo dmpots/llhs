@@ -1,0 +1,123 @@
+; ModuleID = '<stdin>'
+target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64"
+target triple = "x86_64-unknown-linux-gnu"
+
+%F_g_closure_struct = type <{ i64 }>
+%soI_ret_struct = type <{ i64, i64 }>
+
+@F_g_closure = global %F_g_closure_struct <{ i64 ptrtoint (void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* @F_g_info to i64) }> ; <%F_g_closure_struct*> [#uses=1]
+@ghczmprim_GHCziTypes_Izh_con_info = external global [0 x i64] ; <[0 x i64]*> [#uses=1]
+
+declare cc10 void @stg_gc_unbx_r1(i64* noalias nocapture, i64* noalias nocapture, i64* noalias nocapture, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double) align 8
+
+define internal cc10 void @snE_info(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind section ".text; .text 1#" align 8 {
+cGg:
+  %lnGi = getelementptr inbounds i64* %Hp_Arg, i64 2 ; <i64*> [#uses=4]
+  %lnGm = ptrtoint i64* %lnGi to i64              ; <i64> [#uses=2]
+  %lnGo = getelementptr inbounds i64* %Base_Arg, i64 18 ; <i64*> [#uses=1]
+  %lnGq = load i64* %lnGo                         ; <i64> [#uses=1]
+  %lnGr = icmp ugt i64 %lnGm, %lnGq               ; <i1> [#uses=1]
+  br i1 %lnGr, label %cGx, label %nGy
+
+nGy:                                              ; preds = %cGg
+  %lnGB = getelementptr inbounds i64* %Hp_Arg, i64 1 ; <i64*> [#uses=1]
+  store i64 ptrtoint ([0 x i64]* @ghczmprim_GHCziTypes_Izh_con_info to i64), i64* %lnGB
+  store i64 %R1_Arg, i64* %lnGi
+  %lnGH = add i64 %lnGm, -7                       ; <i64> [#uses=1]
+  %lnGJ = getelementptr inbounds i64* %Sp_Arg, i64 1 ; <i64*> [#uses=2]
+  %lnGP = load i64* %lnGJ                         ; <i64> [#uses=1]
+  %lnGQ = inttoptr i64 %lnGP to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* ; <void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*> [#uses=1]
+  tail call cc10 void %lnGQ(i64* %Base_Arg, i64* %lnGJ, i64* %lnGi, i64 %lnGH, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+
+cGx:                                              ; preds = %cGg
+  %lnHp = getelementptr inbounds i64* %Base_Arg, i64 23 ; <i64*> [#uses=1]
+  store i64 16, i64* %lnHp
+  tail call cc10 void @stg_gc_unbx_r1(i64* %Base_Arg, i64* %Sp_Arg, i64* %lnGi, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+}
+
+define internal cc10 void @soI_info(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind section ".text; .text 1#" align 8 {
+cHS:
+  %lnHU = add i64 %R1_Arg, 7                      ; <i64> [#uses=1]
+  %lnHV = inttoptr i64 %lnHU to i64*              ; <i64*> [#uses=1]
+  %lnHW = load i64* %lnHV                         ; <i64> [#uses=2]
+  store i64 ptrtoint (void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* @snE_info to i64), i64* %Sp_Arg
+  tail call cc10 void @F_zdwf_info(i64* %Base_Arg, i64* %Sp_Arg, i64* %Hp_Arg, i64 %R1_Arg, i64 %lnHW, i64 %lnHW, i64 0, i64 0, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+}
+
+define cc10 void @F_g_info(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind section ".text; .text 1#" align 8 {
+cJz:
+  %lnJB = getelementptr inbounds i64* %Sp_Arg, i64 -1 ; <i64*> [#uses=5]
+  %lnJC = ptrtoint i64* %lnJB to i64              ; <i64> [#uses=1]
+  %lnJE = icmp ult i64 %lnJC, %SpLim_Arg          ; <i1> [#uses=1]
+  br i1 %lnJE, label %cJG, label %nJH
+
+nJH:                                              ; preds = %cJz
+  store i64 ptrtoint (void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* @soI_info to i64), i64* %lnJB
+  %lnJR = and i64 %R2_Arg, 7                      ; <i64> [#uses=1]
+  %lnJS = icmp eq i64 %lnJR, 0                    ; <i1> [#uses=1]
+  br i1 %lnJS, label %nJW, label %cJV
+
+nJW:                                              ; preds = %nJH
+  %lnJY = inttoptr i64 %R2_Arg to i64*            ; <i64*> [#uses=1]
+  %lnJZ = load i64* %lnJY                         ; <i64> [#uses=1]
+  %lnK0 = inttoptr i64 %lnJZ to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* ; <void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*> [#uses=1]
+  tail call cc10 void %lnK0(i64* %Base_Arg, i64* %lnJB, i64* %Hp_Arg, i64 %R2_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+
+cJG:                                              ; preds = %cJz
+  %lnKj = getelementptr inbounds i64* %Base_Arg, i64 -1 ; <i64*> [#uses=1]
+  %lnKl = load i64* %lnKj                         ; <i64> [#uses=1]
+  %lnKm = inttoptr i64 %lnKl to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* ; <void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*> [#uses=1]
+  tail call cc10 void %lnKm(i64* %Base_Arg, i64* %Sp_Arg, i64* %Hp_Arg, i64 ptrtoint (%F_g_closure_struct* @F_g_closure to i64), i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+
+cJV:                                              ; preds = %nJH
+  %lnHU.i = add i64 %R2_Arg, 7                    ; <i64> [#uses=1]
+  %lnHV.i = inttoptr i64 %lnHU.i to i64*          ; <i64*> [#uses=1]
+  %lnHW.i = load i64* %lnHV.i                     ; <i64> [#uses=2]
+  store i64 ptrtoint (void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* @snE_info to i64), i64* %lnJB
+  tail call cc10 void @F_zdwf_info(i64* %Base_Arg, i64* %lnJB, i64* %Hp_Arg, i64 %R2_Arg, i64 %lnHW.i, i64 %lnHW.i, i64 0, i64 0, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+}
+
+define cc10 void @F_zdwf_info(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind section ".text; .text 1#" align 8 {
+crI:
+  %lnrL1 = icmp eq i64 %R2_Arg, 0                 ; <i1> [#uses=1]
+  br i1 %lnrL1, label %nrO, label %bb.nph
+
+nrO:                                              ; preds = %bb.nph, %crI
+  %R5_Arg.tr.lcssa = phi i64 [ %tmp26, %bb.nph ], [ %R5_Arg, %crI ] ; <i64> [#uses=2]
+  %R4_Arg.tr.lcssa = phi i64 [ %tmp19, %bb.nph ], [ %R4_Arg, %crI ] ; <i64> [#uses=2]
+  %R3_Arg.tr.lcssa = phi i64 [ %tmp, %bb.nph ], [ %R3_Arg, %crI ] ; <i64> [#uses=1]
+  %R2_Arg.tr.lcssa = phi i64 [ 0, %bb.nph ], [ %R2_Arg, %crI ] ; <i64> [#uses=1]
+  %lnrR = add i64 %R5_Arg.tr.lcssa, %R4_Arg.tr.lcssa ; <i64> [#uses=1]
+  %lnrW = load i64* %Sp_Arg                       ; <i64> [#uses=1]
+  %lnrX = inttoptr i64 %lnrW to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* ; <void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*> [#uses=1]
+  tail call cc10 void %lnrX(i64* %Base_Arg, i64* %Sp_Arg, i64* %Hp_Arg, i64 %lnrR, i64 %R2_Arg.tr.lcssa, i64 %R3_Arg.tr.lcssa, i64 %R4_Arg.tr.lcssa, i64 %R5_Arg.tr.lcssa, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) nounwind
+  ret void
+
+bb.nph:                                           ; preds = %crI
+  %tmp12 = add i64 %R2_Arg, -1                    ; <i64> [#uses=2]
+  %tmp13 = zext i64 %tmp12 to i65                 ; <i65> [#uses=1]
+  %tmp14 = add i64 %R2_Arg, -2                    ; <i64> [#uses=1]
+  %tmp15 = zext i64 %tmp14 to i65                 ; <i65> [#uses=1]
+  %tmp16 = mul i65 %tmp13, %tmp15                 ; <i65> [#uses=1]
+  %tmp17 = lshr i65 %tmp16, 1                     ; <i65> [#uses=1]
+  %tmp18 = trunc i65 %tmp17 to i64                ; <i64> [#uses=2]
+  %tmp20 = mul i64 %R3_Arg, 5                     ; <i64> [#uses=2]
+  %tmp21 = add i64 %tmp20, -5                     ; <i64> [#uses=1]
+  %tmp22 = mul i64 %tmp12, %tmp21                 ; <i64> [#uses=1]
+  %tmp9 = mul i64 %R2_Arg, %R2_Arg                ; <i64> [#uses=1]
+  %tmp25 = mul i64 %tmp18, 5                      ; <i64> [#uses=1]
+  %tmp23 = add i64 %tmp22, %R5_Arg                ; <i64> [#uses=1]
+  %tmp10 = add i64 %tmp9, %R4_Arg                 ; <i64> [#uses=1]
+  %tmp = sub i64 %R3_Arg, %R2_Arg                 ; <i64> [#uses=1]
+  %tmp11 = add i64 %tmp10, 1                      ; <i64> [#uses=1]
+  %tmp19 = sub i64 %tmp11, %tmp18                 ; <i64> [#uses=1]
+  %tmp24 = add i64 %tmp23, %tmp20                 ; <i64> [#uses=1]
+  %tmp26 = sub i64 %tmp24, %tmp25                 ; <i64> [#uses=1]
+  br label %nrO
+}
