@@ -1,0 +1,41 @@
+Hi David,
+
+At the end of your blog post
+http://www.dmpots.com/blog/2010/11/05/optimizing-haskell-loops-with-llvm.html
+you mention:
+
+"""
+I think LLVM would benefit a lot from having a larger optimization
+context. We could relieve some of the burden on LLVM by doing some
+inlining and eliminating tail calls in the cmm itself. GHC knows that
+it is passing arguments on the stack, so it should be able to inline
+and turn tail calls into loops much better than LLVM can.
+"""
+
+I wondered if you had made any progress towards that goal (or any of
+the others you listed)?
+
+I've just been bitten again by this problem, this time with a nested
+loop. What i have is an outer loop (r1Im_info) that calls into an
+inner loop (r1Il_info). Even though r1Il_info is called from
+r1Im_info, it does not seem that LLVM (opt -O3, LLVM v2.7) is always
+able to specialise r1ll_info for the case where the stack-carried
+return pointer is s1Km_info (which eventually calls back into
+r1Im_info to iterate the outer loop again). It is able to forward the
+store of the return pointer to the stack for the case where the inner
+loop returns immediately, but if the inner loop iterates *even once*
+the return pointer is fetched via memory again - almost certainly
+because LLVM cannot detect that there is no aliasing between the
+return pointer and the various stores done in the loop.
+
+As you might imagine, this is massively restricting what LLVM can do,
+because all it sees is the inner loop returning by making a call
+through some unknown pointer :-(
+
+I've attached the LLVM in case you want to take a look. I've also
+attached the original Haskell. They might make interesting examples if
+you do come up with any techniques to improve GHC's codegen.
+
+Cheers,
+Max
+
