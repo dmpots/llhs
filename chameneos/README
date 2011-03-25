@@ -1,0 +1,25 @@
+This is the chamenoes from ghc 6.12 that actually ran faster under dynamorio,
+although it had some odd behavior.
+
+This is very odd redirecting the stdout has a big effect on running time when
+going through dynamorio, but not when executing natively
+
+$ time ./chameneosredux 6000000
+real  0m8.110s
+user  0m8.099s
+sys 0m0.011s
+
+$ time ./chameneosredux 6000000 > _T
+real  0m8.042s
+user  0m8.035s
+sys 0m0.007s
+
+$ time /home/dave/dr/bin/drrun ./chameneosredux 6000000
+real  0m10.026s
+user  0m10.011s
+sys 0m0.027s
+
+$ time /home/dave/dr/bin/drrun ./chameneosredux 6000000 > _T
+real  0m6.546s
+user  0m6.531s
+sys 0m0.027s
