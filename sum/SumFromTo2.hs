@@ -1,0 +1,29 @@
+{-# LANGUAGE NoImplicitPrelude, BangPatterns, MagicHash #-}
+module Main where
+
+import GHC.Prim
+import GHC.Bool
+import GHC.Types
+import GHC.Base
+import GHC.Num
+import qualified Prelude
+
+{-# NOINLINE enumFromTo #-}
+enumFromTo :: Int -> Int -> [Int]
+enumFromTo from@(I# m) to@(I# n) =
+  if m ># n then [] else
+    from : enumFromTo (I# (m +# 1#)) to
+
+sum :: (Num a) => [a] -> a
+sum     l       = sum' l 0
+  where
+    sum' []     a = a
+    sum' (x:xs) a = sum' xs (a+x)
+
+{-# NOINLINE root #-}
+root :: Int -> Int
+root x = sum (enumFromTo 1 x)
+
+main = do
+  let res = root (I# 30#)
+  Prelude.putStrLn (Prelude.show res)
