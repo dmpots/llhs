@@ -1,120 +1,92 @@
 
-# Outer loop, `loop` in the source is `r1yk`
+# Outer loop, `loop` in the source is `$s$wa1_r1YZ`
 
 parameters
 0. state
 1. r
 2. nRounds
-3. ?? (unused)
-4. ?? (unused)
-5. k
+3. ??  (unused boxed #1)
+4. len (unused -- upper bound)
+5. k   (number of elements)
 6. arr
 
-$s$wa1_r1yK
-  :: forall s_ay0.
-     GHC.Prim.State# s_ay0
-     -> GHC.Prim.Int#
-     -> GHC.Prim.Int#
-     -> GHC.Types.Int
-     -> GHC.Types.Int
-     -> GHC.Types.Int
-     -> GHC.Prim.MutableByteArray# s_ay0
-     -> (# GHC.Prim.State# s_ay0, () #)
-[GblId, Arity=7, Caf=NoCafRefs, Str=DmdType LLLLLLL]
-$s$wa1_r1yK =
-  \ (@ s_ay0)
-    (sc_s1xZ :: GHC.Prim.State# s_ay0)
-    (sc1_s1y0 :: GHC.Prim.Int#)
-    (sc2_s1y1 :: GHC.Prim.Int#)
-    (sc3_s1y2 :: GHC.Types.Int)
-    (sc4_s1y3 :: GHC.Types.Int)
-    (sc5_s1y4 :: GHC.Types.Int)
-    (sc6_s1y5 :: GHC.Prim.MutableByteArray# s_ay0) ->
-    case GHC.Prim.># sc1_s1y0 sc2_s1y1 of _ {
+$s$wa1_r1YZ =
+  \ (@ s_az6)
+    (sc_s1Ye :: GHC.Prim.State# s_az6)
+    (sc1_s1Yf :: GHC.Prim.Int#)
+    (sc2_s1Yg :: GHC.Prim.Int#)
+    (sc3_s1Yh :: GHC.Types.Int)
+    (sc4_s1Yi :: GHC.Types.Int)
+    (sc5_s1Yj :: GHC.Prim.Int#)
+    (sc6_s1Yk :: GHC.Prim.MutableByteArray# s_az6) ->
+    case GHC.Prim.># sc1_s1Yf sc2_s1Yg of _ {
       GHC.Bool.False ->
-        case sc5_s1y4 of wild1_aLl { GHC.Types.I# x_aLn ->
-        case $s$wa_r1yI
-               @ s_ay0
-               sc_s1xZ
-               (GHC.Prim.-# x_aLn 1)
+        case $s$wa_r1YX
+               @ s_az6
+               sc_s1Ye
+               (GHC.Prim.-# sc5_s1Yj 1)
                0
-               sc1_s1y0
-               sc3_s1y2
-               sc4_s1y3
-               wild1_aLl
-               sc6_s1y5
-        of _ { (# new_s_aKF, _ #) ->
-        $s$wa1_r1yK
-          @ s_ay0
-          new_s_aKF
-          (GHC.Prim.+# sc1_s1y0 1)
-          sc2_s1y1
-          sc3_s1y2
-          sc4_s1y3
-          wild1_aLl
-          sc6_s1y5
-        }
+               sc1_s1Yf
+               sc3_s1Yh
+               sc4_s1Yi
+               (GHC.Types.I# sc5_s1Yj)
+               sc6_s1Yk
+        of _ { (# new_s_aMq, _ #) ->
+        $s$wa1_r1YZ
+          @ s_az6
+          new_s_aMq
+          (GHC.Prim.+# sc1_s1Yf 1)
+          sc2_s1Yg
+          sc3_s1Yh
+          sc4_s1Yi
+          sc5_s1Yj
+          sc6_s1Yk
         };
-      GHC.Bool.True -> (# sc_s1xZ, GHC.Unit.() #)
+      GHC.Bool.True -> (# sc_s1Ye, GHC.Unit.() #)
     }
 
 # Inner loop
 
-Inner loop `spin` in the source is `r1yI`
+Inner loop `spin` in the source is `$s$wa_r1YX`
 
 parameters
 0. state
-1. n
+1. n (== k)
 2. i
 3. r
-4. ?? (unused) `sc3_s1y2` above
-5. ?? (unused) `sc4_s1y3` above
+3. ??  (unused boxed #1)
+4. len (unused -- upper bound)
 6. (boxed `k`)
 7. arr
 
-
-$s$wa_r1yI
-  :: forall s_aqP.
-     GHC.Prim.State# s_aqP
-     -> GHC.Prim.Int#
-     -> GHC.Prim.Int#
-     -> GHC.Prim.Int#
-     -> GHC.Types.Int
-     -> GHC.Types.Int
-     -> GHC.Types.Int
-     -> GHC.Prim.MutableByteArray# s_aqP
-     -> (# GHC.Prim.State# s_aqP, () #)
-[GblId, Arity=8, Caf=NoCafRefs, Str=DmdType LLLLLLLL]
-$s$wa_r1yI =
-  \ (@ s_aqP)
-    (sc_s1xt :: GHC.Prim.State# s_aqP)
-    (sc1_s1xu :: GHC.Prim.Int#)
-    (sc2_s1xv :: GHC.Prim.Int#)
-    (sc3_s1xw :: GHC.Prim.Int#)
-    (sc4_s1xx :: GHC.Types.Int)
-    (sc5_s1xy :: GHC.Types.Int)
-    (sc6_s1xz :: GHC.Types.Int)
-    (sc7_s1xA :: GHC.Prim.MutableByteArray# s_aqP) ->
-    case GHC.Prim.># sc2_s1xv sc1_s1xu of _ {
+$s$wa_r1YX =
+  \ (@ s_as1)
+    (sc_s1XI :: GHC.Prim.State# s_as1)
+    (sc1_s1XJ :: GHC.Prim.Int#)
+    (sc2_s1XK :: GHC.Prim.Int#)
+    (sc3_s1XL :: GHC.Prim.Int#)
+    (sc4_s1XM :: GHC.Types.Int)
+    (sc5_s1XN :: GHC.Types.Int)
+    (sc6_s1XO :: GHC.Types.Int)
+    (sc7_s1XP :: GHC.Prim.MutableByteArray# s_as1) ->
+    case GHC.Prim.># sc2_s1XK sc1_s1XJ of _ {
       GHC.Bool.False ->
-        case GHC.Prim.readIntArray# @ s_aqP sc7_s1xA sc2_s1xv sc_s1xt
-        of _ { (# s2#_aJM, e#_aJN #) ->
+        case GHC.Prim.readIntArray# @ s_as1 sc7_s1XP sc2_s1XK sc_s1XI
+        of _ { (# s2#_aLy, e#_aLz #) ->
         case GHC.Prim.writeIntArray#
-               @ s_aqP sc7_s1xA sc2_s1xv (GHC.Prim.+# e#_aJN sc3_s1xw) s2#_aJM
-        of s2#1_aKh { __DEFAULT ->
-        $s$wa_r1yI
-          @ s_aqP
-          s2#1_aKh
-          sc1_s1xu
-          (GHC.Prim.+# sc2_s1xv 1)
-          sc3_s1xw
-          sc4_s1xx
-          sc5_s1xy
-          sc6_s1xz
-          sc7_s1xA
+               @ s_as1 sc7_s1XP sc2_s1XK (GHC.Prim.+# e#_aLz sc3_s1XL) s2#_aLy
+        of s2#1_aM2 { __DEFAULT ->
+        $s$wa_r1YX
+          @ s_as1
+          s2#1_aM2
+          sc1_s1XJ
+          (GHC.Prim.+# sc2_s1XK 1)
+          sc3_s1XL
+          sc4_s1XM
+          sc5_s1XN
+          sc6_s1XO
+          sc7_s1XP
         }
         };
-      GHC.Bool.True -> (# sc_s1xt, GHC.Unit.() #)
+      GHC.Bool.True -> (# sc_s1XI, GHC.Unit.() #)
     }
-
-

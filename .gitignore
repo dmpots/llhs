@@ -112,3 +112,5 @@ TAGS/
 *.beam
 
 #llhs
+_T.*
+STUArray-Rewrite2
