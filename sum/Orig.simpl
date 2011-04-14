@@ -1,0 +1,139 @@
+
+==================== Tidy Core ====================
+lvl_rMo :: GHC.Types.Int
+[GblId, Caf=NoCafRefs, Str=DmdType m]
+lvl_rMo = GHC.Types.I# 1
+
+lvl1_rMq :: GHC.Integer.Type.Integer
+[GblId, Caf=NoCafRefs, Str=DmdType]
+lvl1_rMq = GHC.Integer.Type.S# 0
+
+Main.sum [InlPrag=NOINLINE]
+  :: forall a_aci. GHC.Num.Num a_aci => [a_aci] -> a_aci
+[GblId, Arity=2, Caf=NoCafRefs, Str=DmdType U(AALAAAAAS)S]
+Main.sum =
+  \ (@ a_ale) ($dNum_alf :: GHC.Num.Num a_ale) (l_acn :: [a_ale]) ->
+    letrec {
+      sum'_sMa [Occ=LoopBreaker] :: [a_ale] -> a_ale -> a_ale
+      [LclId, Arity=2, Str=DmdType SS]
+      sum'_sMa =
+        \ (ds_dnO :: [a_ale]) (a_acp :: a_ale) ->
+          case ds_dnO of _ {
+            [] -> a_acp;
+            : x_acq xs_acr ->
+              case a_acp of a1_XcB { __DEFAULT ->
+              sum'_sMa xs_acr (GHC.Num.+ @ a_ale $dNum_alf a1_XcB x_acq)
+              }
+          }; } in
+    sum'_sMa l_acn (GHC.Num.fromInteger @ a_ale $dNum_alf lvl1_rMq)
+
+Rec {
+Main.enumFromTo [InlPrag=NOINLINE, Occ=LoopBreaker]
+  :: GHC.Types.Int -> GHC.Types.Int -> [GHC.Types.Int]
+[GblId, Arity=2, Caf=NoCafRefs, Str=DmdType U(L)U(L)]
+Main.enumFromTo =
+  \ (from_acj :: GHC.Types.Int) (to_acl :: GHC.Types.Int) ->
+    case from_acj of wild_B1 { GHC.Types.I# m_ack ->
+    case to_acl of wild1_X8 { GHC.Types.I# n_acm ->
+    case GHC.Prim.># m_ack n_acm of _ {
+      GHC.Bool.False ->
+        GHC.Types.:
+          @ GHC.Types.Int
+          wild_B1
+          (Main.enumFromTo (GHC.Types.I# (GHC.Prim.+# m_ack 1)) wild1_X8);
+      GHC.Bool.True -> GHC.Types.[] @ GHC.Types.Int
+    }
+    }
+    }
+end Rec }
+
+Main.root [InlPrag=NOINLINE] :: GHC.Types.Int -> GHC.Types.Int
+[GblId, Arity=1, Caf=NoCafRefs, Str=DmdType U(L)]
+Main.root =
+  \ (x_act :: GHC.Types.Int) ->
+    Main.sum
+      @ GHC.Types.Int GHC.Num.$fNumInt (Main.enumFromTo lvl_rMo x_act)
+
+Main.main3 :: GHC.Types.Int
+[GblId,
+ Caf=NoCafRefs,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=IF_ARGS [] 1 2}]
+Main.main3 = GHC.Types.I# 30
+
+Main.main2 :: GHC.Base.String
+[GblId,
+ Str=DmdType,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=False,
+         ConLike=False, Cheap=False, Expandable=False,
+         Guidance=IF_ARGS [] 7 0}]
+Main.main2 =
+  case Main.root Main.main3 of _ { GHC.Types.I# ww_aLM ->
+  GHC.Show.$wshowSignedInt 0 ww_aLM (GHC.Types.[] @ GHC.Types.Char)
+  }
+
+Main.main1
+  :: GHC.Prim.State# GHC.Prim.RealWorld
+     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+[GblId,
+ Arity=1,
+ Str=DmdType L,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=IF_ARGS [] 4 6}]
+Main.main1 =
+  GHC.IO.Handle.Text.hPutStr2
+    GHC.IO.Handle.FD.stdout Main.main2 GHC.Bool.True
+
+Main.main :: GHC.Types.IO ()
+[GblId,
+ Arity=1,
+ Str=DmdType L,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=ALWAYS_IF(unsat_ok=True,boring_ok=True)}]
+Main.main =
+  Main.main1
+  `cast` (sym (GHC.Types.NTCo:IO ())
+          :: (GHC.Prim.State# GHC.Prim.RealWorld
+              -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #))
+               ~
+             GHC.Types.IO ())
+
+Main.main4
+  :: GHC.Prim.State# GHC.Prim.RealWorld
+     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+[GblId,
+ Arity=1,
+ Str=DmdType L,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=IF_ARGS [] 2 6}]
+Main.main4 =
+  GHC.TopHandler.runMainIO1
+    @ ()
+    (Main.main1
+     `cast` (sym (GHC.Types.NTCo:IO ())
+             :: (GHC.Prim.State# GHC.Prim.RealWorld
+                 -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #))
+                  ~
+                GHC.Types.IO ()))
+
+:Main.main :: GHC.Types.IO ()
+[GblId,
+ Arity=1,
+ Str=DmdType L,
+ Unf=Unf{Src=<vanilla>, TopLvl=True, Arity=0, Value=True,
+         ConLike=True, Cheap=True, Expandable=True,
+         Guidance=ALWAYS_IF(unsat_ok=True,boring_ok=True)}]
+:Main.main =
+  Main.main4
+  `cast` (sym (GHC.Types.NTCo:IO ())
+          :: (GHC.Prim.State# GHC.Prim.RealWorld
+              -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #))
+               ~
+             GHC.Types.IO ())
+
+
+

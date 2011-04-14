@@ -1,0 +1,79 @@
+
+==================== STG syntax: ====================
+lvl_rMo = NO_CCS GHC.Types.I#! [1];
+SRT(lvl_rMo): []
+lvl1_rMq = NO_CCS GHC.Integer.Type.S#! [0];
+SRT(lvl1_rMq): []
+Main.sum =
+    \r [$dNum_sME l_sMJ]
+        let-no-escape {
+          sum'_sMH =
+              sat-only \r [ds_sMx a_sMz]
+                  case ds_sMx of wild_sN7 {
+                    [] -> a_sMz;
+                    : x_sMG xs_sMD ->
+                        case a_sMz of a1_sMF {
+                          __DEFAULT ->
+                              case GHC.Num.+ $dNum_sME a1_sMF x_sMG of sat_sN8 {
+                                __DEFAULT -> sum'_sMH xs_sMD sat_sN8;
+                              };
+                        };
+                  };
+        } in 
+          case GHC.Num.fromInteger $dNum_sME lvl1_rMq of sat_sN9 {
+            __DEFAULT -> sum'_sMH l_sMJ sat_sN9;
+          };
+SRT(Main.sum): []
+Main.enumFromTo =
+    \r [from_sMN to_sMQ]
+        case from_sMN of wild_sMW {
+          GHC.Types.I# m_sMT ->
+              case to_sMQ of wild1_sMZ {
+                GHC.Types.I# n_sMU ->
+                    case ># [m_sMT n_sMU] of wild2_sNb {
+                      GHC.Bool.False ->
+                          let {
+                            sat_sNd =
+                                \u []
+                                    case +# [m_sMT 1] of sat_sNa {
+                                      __DEFAULT ->
+                                          let { sat_sNc = NO_CCS GHC.Types.I#! [sat_sNa];
+                                          } in  Main.enumFromTo sat_sNc wild1_sMZ;
+                                    };
+                          } in  : [wild_sMW sat_sNd];
+                      GHC.Bool.True -> [] [];
+                    };
+              };
+        };
+SRT(Main.enumFromTo): []
+Main.root =
+    \r [x_sN2]
+        case Main.enumFromTo lvl_rMo x_sN2 of sat_sNe {
+          __DEFAULT -> Main.sum GHC.Num.$fNumInt sat_sNe;
+        };
+SRT(Main.root): []
+Main.main3 = NO_CCS GHC.Types.I#! [30];
+SRT(Main.main3): []
+Main.main2 =
+    \u []
+        case Main.root Main.main3 of w_sNf {
+          GHC.Types.I# ww_sN6 ->
+              GHC.Show.$wshowSignedInt 0 ww_sN6 GHC.Types.[];
+        };
+SRT(Main.main2): []
+Main.main1 =
+    \r srt:(0,*bitmap*) [eta_B1]
+        GHC.IO.Handle.Text.hPutStr2
+            GHC.IO.Handle.FD.stdout Main.main2 GHC.Bool.True eta_B1;
+SRT(Main.main1): [Main.main2, GHC.IO.Handle.FD.stdout,
+                  GHC.IO.Handle.Text.hPutStr2]
+Main.main = \r srt:(0,*bitmap*) [eta_B1] Main.main1 eta_B1;
+SRT(Main.main): [Main.main1]
+Main.main4 =
+    \r srt:(0,*bitmap*) [eta_B1]
+        GHC.TopHandler.runMainIO1 Main.main1 eta_B1;
+SRT(Main.main4): [GHC.TopHandler.runMainIO1, Main.main1]
+:Main.main = \r srt:(0,*bitmap*) [eta_B1] Main.main4 eta_B1;
+SRT(:Main.main): [Main.main4]
+
+

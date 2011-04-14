@@ -1,0 +1,509 @@
+
+==================== Optimised Cmm ====================
+section "data" {
+    lvl_rMo_closure:
+        const GHC.Types.I#_static_info;
+        const 1;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    lvl1_rMq_closure:
+        const GHC.Integer.Type.S#_static_info;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.sum_closure:
+        const Main.sum_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+sNi_ret()
+        { [const 2;, const 32;]
+        }
+    cNH:
+        R2 = R1;
+        R1 = I64[Sp + 8];
+        Sp = Sp + 8;
+        jump sMI_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sMG_ret()
+        { [const 3;, const 32;]
+        }
+    cNL:
+        I64[Sp + 0] = I64[Sp + 8];
+        I64[Sp - 8] = R1;
+        I64[Sp - 16] = I64[PicBaseReg + stg_ap_pp_info@GOTPCREL];
+        R2 = I64[Sp + 24];
+        I64[Sp + 8] = PicBaseReg + sNi_info;
+        Sp = Sp - 16;
+        jump GHC.Num.+_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sNh_ret()
+        { [const 2;, const 32;]
+        }
+    cO1:
+        if (R1 & 7 >= 2) goto cO2;
+        R1 = I64[Sp + 8];
+        Sp = Sp + 24;
+        jump stg_ap_0_fast ();
+    cO2:
+        I64[Sp + 0] = I64[R1 + 6];
+        _cNY::I64 = I64[Sp + 8];
+        I64[Sp + 8] = I64[R1 + 14];
+        R1 = _cNY::I64;
+        I64[Sp - 8] = PicBaseReg + sMG_info;
+        Sp = Sp - 8;
+        jump stg_ap_0_fast ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sMI_ret()
+        { [const 1;, const 32;]
+        }
+    cOf:
+        I64[Sp + 0] = R2;
+        I64[Sp - 8] = PicBaseReg + sNh_info;
+        Sp = Sp - 8;
+        if (R1 & 7 != 0) goto cOi;
+        jump I64[R1] ();
+    cOi: jump sNh_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sNj_ret()
+        { [const 2;, const 32;]
+        }
+    cOq:
+        R2 = R1;
+        R1 = I64[Sp + 8];
+        Sp = Sp + 8;
+        jump sMI_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.sum_entry()
+        { [const 8589934604;, const 0;, const 15;]
+        }
+    cOu:
+        if ((Sp + -48) < SpLim) goto cOw;
+        I64[Sp - 8] = R2;
+        I64[Sp - 16] = R3;
+        I64[Sp - 32] = PicBaseReg + lvl1_rMq_closure + 1;
+        I64[Sp - 40] = I64[PicBaseReg + stg_ap_p_info@GOTPCREL];
+        I64[Sp - 24] = PicBaseReg + sNj_info;
+        Sp = Sp - 40;
+        jump GHC.Num.fromInteger_info ();
+    cOw:
+        R1 = PicBaseReg + Main.sum_closure;
+        jump (I64[BaseReg - 8]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.enumFromTo_closure:
+        const Main.enumFromTo_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+sat_sOO_entry()
+        { [const 4294967297;, const 20;]
+        }
+    cPa:
+        if ((Sp + -16) < SpLim) goto cPc;
+        Hp = Hp + 16;
+        if (Hp > I64[BaseReg + 144]) goto cPe;
+        I64[Sp - 16] = I64[PicBaseReg + stg_upd_frame_info@GOTPCREL];
+        I64[Sp - 8] = R1;
+        // case +# [m 1] of sat_sOL {
+  __DEFAULT ->
+      let { sat_sON = NO_CCS GHC.Types.I#! [sat_sOL];
+      } in  Main.enumFromTo sat_sON wild1;
+}
+        _sOL::I64 = I64[R1 + 24] + 1;
+        I64[Hp - 8] = PicBaseReg + GHC.Types.I#_con_info;
+        I64[Hp + 0] = _sOL::I64;
+        R2 = Hp - 7;
+        R3 = I64[R1 + 16];
+        Sp = Sp - 16;
+        jump Main.enumFromTo_info ();
+    cPc: jump (I64[BaseReg - 16]) ();
+    cPe:
+        I64[BaseReg + 184] = 16;
+        goto cPc;
+}
+
+
+
+==================== Optimised Cmm ====================
+sN0_ret()
+        { [const 130;, const 32;]
+        }
+    cPr:
+        Hp = Hp + 56;
+        if (Hp > I64[BaseReg + 144]) goto cPu;
+        ;
+        if (%MO_S_Gt_W64(I64[Sp + 16], I64[R1 + 7])) goto cPw;
+        I64[Hp - 48] = PicBaseReg + sat_sOO_info;
+        I64[Hp - 32] = R1;
+        I64[Hp - 24] = I64[Sp + 16];
+        I64[Hp - 16] = PicBaseReg + :_con_info;
+        I64[Hp - 8] = I64[Sp + 8];
+        I64[Hp + 0] = Hp - 48;
+        R1 = Hp - 14;
+        Sp = Sp + 24;
+        jump (I64[Sp + 0]) ();
+    cPx: jump (I64[BaseReg - 16]) ();
+    cPu:
+        I64[BaseReg + 184] = 56;
+        goto cPx;
+    cPw:
+        R1 = PicBaseReg + []_closure + 1;
+        Sp = Sp + 24;
+        Hp = Hp - 56;
+        jump (I64[Sp + 0]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sMX_ret()
+        { [const 1;, const 32;]
+        }
+    cPS:
+        I64[Sp + 0] = R1;
+        _cPQ::I64 = I64[Sp + 8];
+        I64[Sp + 8] = I64[R1 + 7];
+        R1 = _cPQ::I64;
+        I64[Sp - 8] = PicBaseReg + sN0_info;
+        Sp = Sp - 8;
+        if (R1 & 7 != 0) goto cPU;
+        jump I64[R1] ();
+    cPU: jump sN0_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.enumFromTo_entry()
+        { [const 8589934604;, const 0;, const 15;]
+        }
+    cQ2:
+        if ((Sp + -24) < SpLim) goto cQ4;
+        I64[Sp - 8] = R3;
+        R1 = R2;
+        I64[Sp - 16] = PicBaseReg + sMX_info;
+        Sp = Sp - 16;
+        if (R1 & 7 != 0) goto cQ7;
+        jump I64[R1] ();
+    cQ4:
+        R1 = PicBaseReg + Main.enumFromTo_closure;
+        jump (I64[BaseReg - 8]) ();
+    cQ7: jump sMX_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.root_closure:
+        const Main.root_info;
+}
+
+
+
+==================== Optimised Cmm ====================
+sQg_ret()
+        { [const 0;, const 32;]
+        }
+    cQq:
+        R2 = PicBaseReg + GHC.Num.$fNumInt_closure;
+        R3 = R1;
+        Sp = Sp + 8;
+        jump Main.sum_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.root_entry()
+        { [const 4294967301;, const 0;, const 15;]
+        }
+    cQu:
+        if ((Sp + -8) < SpLim) goto cQw;
+        R3 = R2;
+        R2 = PicBaseReg + lvl_rMo_closure + 1;
+        I64[Sp - 8] = PicBaseReg + sQg_info;
+        Sp = Sp - 8;
+        jump Main.enumFromTo_info ();
+    cQw:
+        R1 = PicBaseReg + Main.root_closure;
+        jump (I64[BaseReg - 8]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.main3_closure:
+        const GHC.Types.I#_static_info;
+        const 30;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.main2_closure:
+        const Main.main2_info;
+        const 0;
+        const 0;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+sQL_ret()
+        { [const 0;, const 32;]
+        }
+    cQV:
+        R2 = 0;
+        R3 = I64[R1 + 7];
+        R4 = PicBaseReg + GHC.Types.[]_closure + 1;
+        Sp = Sp + 8;
+        jump GHC.Show.$wshowSignedInt_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main2_entry()
+        { [const 0;, const 22;]
+        }
+    cR2:
+        if ((Sp + -24) < SpLim) goto cR4;
+        Hp = Hp + 16;
+        if (Hp > I64[BaseReg + 144]) goto cR6;
+        I64[Hp - 8] = I64[PicBaseReg + stg_CAF_BLACKHOLE_info@GOTPCREL];
+        I64[Hp + 0] = I64[BaseReg + 152];
+        foreign "ccall"
+          newCAF((BaseReg, PtrHint), (R1, PtrHint))[_unsafe_call_];
+        I64[R1 + 8] = Hp - 8;
+        I64[R1] = I64[PicBaseReg + stg_IND_STATIC_info@GOTPCREL];
+        I64[Sp - 16] = I64[PicBaseReg + stg_bh_upd_frame_info@GOTPCREL];
+        I64[Sp - 8] = Hp - 8;
+        // case Main.root Main.main3 of w {
+  GHC.Types.I# ww -> GHC.Show.$wshowSignedInt 0 ww GHC.Types.[];
+}
+        R2 = PicBaseReg + Main.main3_closure + 1;
+        I64[Sp - 24] = PicBaseReg + sQL_info;
+        Sp = Sp - 24;
+        jump Main.root_info ();
+    cR4: jump (I64[BaseReg - 16]) ();
+    cR6:
+        I64[BaseReg + 184] = 16;
+        goto cR4;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "relreadonly" {
+    Main.main1_srt:
+        const Main.main2_closure;
+        const GHC.IO.Handle.FD.stdout_closure;
+        const GHC.IO.Handle.Text.hPutStr2_closure;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.main1_closure:
+        const Main.main1_info;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main1_entry()
+        { [const Main.main1_srt-Main.main1_info;, const 4294967299;,
+       const 0;, const 30064771087;]
+        }
+    cRB:
+        R2 = PicBaseReg + GHC.IO.Handle.FD.stdout_closure;
+        R3 = PicBaseReg + Main.main2_closure;
+        R4 = PicBaseReg + GHC.Bool.True_closure + 2;
+        jump GHC.IO.Handle.Text.hPutStr2_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "relreadonly" {
+    Main.main_srt:
+        const Main.main1_closure;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.main_closure:
+        const Main.main_info;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main_entry()
+        { [const Main.main_srt-Main.main_info;, const 4294967299;,
+       const 0;, const 4294967311;]
+        }
+    cRQ: jump Main.main1_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "relreadonly" {
+    Main.main4_srt:
+        const GHC.TopHandler.runMainIO1_closure;
+        const Main.main1_closure;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    Main.main4_closure:
+        const Main.main4_info;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main4_entry()
+        { [const Main.main4_srt-Main.main4_info;, const 4294967299;,
+       const 0;, const 12884901903;]
+        }
+    cS3:
+        R2 = PicBaseReg + Main.main1_closure + 1;
+        jump GHC.TopHandler.runMainIO1_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "relreadonly" {
+    :Main.main_srt:
+        const Main.main4_closure;
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    :Main.main_closure:
+        const :Main.main_info;
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+:Main.main_entry()
+        { [const :Main.main_srt-:Main.main_info;, const 4294967299;,
+       const 0;, const 4294967311;]
+        }
+    cSi: jump Main.main4_info ();
+}
+
+
+
+==================== Optimised Cmm ====================
+section "data" {
+    _module_registered:
+        const 0;
+}
+
+
+
+==================== Optimised Cmm ====================
+__stginit_main:Main_()
+        { []
+        }
+    cSs:
+        if (I64[PicBaseReg + _module_registered] != 0) goto cSt;
+        goto cSu;
+    cSt:
+        Sp = Sp + 8;
+        jump (I64[Sp - 8]) ();
+    cSu:
+        I64[PicBaseReg + _module_registered] = 1;
+        Sp = Sp - 8;
+        I64[Sp] = PicBaseReg + __stginit_ghc-prim:GHC.Bool_;
+        Sp = Sp - 8;
+        I64[Sp] = PicBaseReg + __stginit_ghc-prim:GHC.Types_;
+        Sp = Sp - 8;
+        I64[Sp] = PicBaseReg + __stginit_base:GHC.Base_;
+        Sp = Sp - 8;
+        I64[Sp] = PicBaseReg + __stginit_base:GHC.Num_;
+        Sp = Sp - 8;
+        I64[Sp] = PicBaseReg + __stginit_base:Prelude_;
+        Sp = Sp - 8;
+        I64[Sp] = PicBaseReg + __stginit_base:GHC.TopHandler_;
+        goto cSt;
+}
+
+
+
+==================== Optimised Cmm ====================
+__stginit_main:Main()
+        { []
+        }
+    cSK: jump __stginit_main:Main_ ();
+}
+
+
+
+==================== Optimised Cmm ====================
+__stginit_main::Main()
+        { []
+        }
+    cSO:
+        Sp = Sp + 8;
+        jump (I64[Sp - 8]) ();
+}
+
+
