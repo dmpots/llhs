@@ -50,6 +50,7 @@ _sNh_info_dsp:
 	.quad	32
 _sNh_info:
 LcO7:
+  #jmp _sNh_trace
 	movq %rbx,%rax
 	andq $7,%rax
 	cmpq $2,%rax
@@ -584,7 +585,124 @@ _stg_upd_frame_trace:
 	orq     %rcx,%rdx
 	cmpw    $0x00,0x34(%rdx)
 	jne     fail_trace
-	jmp _sNh_info
+	#jmp _sNh_info
+	jmp _sNh_trace
+
+
+# TRACE 2
+_sNh_trace:
+	movq %rbx,%rax
+	andq $7,%rax
+	cmpq $2,%rax
+	#jae LcO8
+  jb _exit_trace_2
+#LcO8:
+	movq 6(%rbx),%rax
+	movq %rax,0(%rbp)
+	movq 8(%rbp),%rax
+	movq 14(%rbx),%rcx
+	movq %rcx,8(%rbp)
+	movq %rax,%rbx
+	leaq _sMG_info(%rip),%rax
+	movq %rax,-8(%rbp)
+	addq $-8,%rbp
+	#jmp _stg_ap_0_fast
+_stg_ap_0_fast_trace:
+  testq   $0x00000007,%rbx
+  je      fail_trace # %rbx has an unexpected unevaluated value
+  #jmp     *0x00(%rbp)
+_sMG_trace:
+	movq 8(%rbp),%rax
+	movq %rax,0(%rbp)
+	movq %rbx,-8(%rbp)
+	movq _stg_ap_pp_info@GOTPCREL(%rip),%rax
+	movq %rax,-16(%rbp)
+	movq 24(%rbp),%r14
+	leaq _sNi_info(%rip),%rax
+	movq %rax,8(%rbp)
+	addq $-16,%rbp
+	#jmp _base_GHCziNum_zp_info
+_base_GHCziNum_zp_trace:
+  leaq   -0x8(%rbp),%rax
+  cmpq   %r15,%rax
+  jb     fail_stack #0x10014acca <base_GHCziNum_zp_info+42>
+  movq   %r14,%rbx
+  #leaq   _sPf_info(%rip),%rax        # 0x10014ac70 <sPf_info>
+  #leaq   fail_trace@GOTPCREL(%rip),%rax        # sPf_info not visible to linker
+  leaq  0x10014ac70, %rax
+  movq   %rax,-0x8(%rbp)
+  addq   $-8,%rbp
+## DIRTY HACK -- Need to count the dict as evaluated
+  incq    %rbx
+## DIRTY HACK
+  testq  $0x7,%rbx
+  je      fail_trace # %rbx has an unexpected unevaluated value
+  #jne    0x10014ac70 <sPf_info>
+	mov    0x17(%rbx),%rbx
+	add    $0x8,%rbp
+	#jmpq   0x1003705e8 <stg_ap_0_fast>
+_stg_ap_0_fast_trace_again:
+  testq   $0x00000007,%rbx
+  je      fail_trace # %rbx has an unexpected unevaluated value
+  #jmp     *0x00(%rbp)
+_stg_ap_pp_info_trace:
+  movq    %rbx,%rax
+  andq    $0x7,%rax
+  cmpq    $0x2,%rax
+  #je     0x10037e450 <stg_ap_pp_info+776>
+  jne     fail_trace # %rbx does not have an arity 2 function
+  mov    0x10(%rbp),%rsi
+  mov    0x8(%rbp),%r14
+  add    $0x18,%rbp
+  #jmpq   *-0x2(%rbx) #jumps to plusInt_info
+base_GHCziBase_plusInt_info_trace:
+  leaq    -0x10(%rbp),%rax
+  cmpq   %r15,%rax
+  jb     fail_stack              # stack overflow
+  movq   %rsi,-0x8(%rbp)
+  movq   %r14,%rbx
+  #leaq   fail_trace@GOTPCREL(%rip),%rax        # 0x10001ffe8 <s10X_info>
+  leaq  0x10001ffe8,%rax
+  movq   %rax,-0x10(%rbp)
+  addq   $-16,%rbp
+  testq  $0x7,%rbx
+  #jne    0x10001ffe8 <s10X_info>
+  je    fail_trace    # R2 is unevaluated
+s10X_info_trace:
+  movq   0x8(%rbp),%rax
+  movq   0x7(%rbx),%rcx
+  movq   %rcx,0x8(%rbp)
+  movq   %rax,%rbx
+  #leaq   s10W_info_trace@GOTPCREL(%rip),%rax        # 0x10001ff90 <s10W_info>
+  #leaq   s10W_info@GOTPCREL(%rip),%rax        # 0x10001ff90 <s10W_info>
+  #movq   s10W_info@GOTPCREL(%rip),%rax        # 0x10001ff90 <s10W_info>
+  #movq   0x1001defb0,%rax        # 0x10001ff90 <s10W_info>
+  movq   _s10W_info_table_addr(%rip),%rax        # 0x10001ff90 <s10W_info>
+  #leaq  0x1001defb0,%rax        # 0x10001ff90 <s10W_info>
+  movq   %rax,0x0(%rbp)
+  testq  $0x7,%rbx
+  #jne    0x10001ff90 <s10W_info>
+  je    fail_trace   # R3 is unevaluated
+  #jmpq   *(%rbx)
+s10W_info_trace:
+  add    $0x10,%r12
+  cmp    0x90(%r13),%r12
+  #ja     0x10001ffc1 <s10W_info+49>
+  ja     fail_heap_s10W
+  mov    0x8(%rbp),%rcx
+  add    0x7(%rbx),%rcx
+  lea   _ghczmprim_GHCziTypes_Izh_con_info(%rip),%rax        # 0x100352770 <ghczmprim_GHCziTypes_Izh_con_info>
+  mov    %rax,-0x8(%r12)
+  mov    %rcx,(%r12)
+  lea    -0x7(%r12),%rbx
+  add    $0x10,%rbp
+  #jmpq   *0x0(%rbp)
+sNi_info_trace:
+	movq %rbx,%r14
+	movq 8(%rbp),%rbx
+	addq $8,%rbp
+	jmp _sMI_info
+
 
 #
 # Expected trace exit (cons check fails and return the accumulated value)
@@ -597,6 +715,12 @@ _exit_trace:
 	jmp *0(%rbp)
 	.long  _sN0_info - _sN0_info_dsp
 
+.globl _exit_trace_2
+_exit_trace_2:
+	movq 8(%rbp),%rbx
+	addq $24,%rbp
+	jmp _stg_ap_0_fast
+
 
 #
 # Off trace paths for heap allocation failure
@@ -607,6 +731,10 @@ fail_heap_sN0:
 fail_heap_sOO:
 	movq $16,184(%r13)
 	jmp *-16(%r13)
+
+fail_heap_s10W:
+  movq   $0x10,0xb8(%r13)
+  jmpq   *-0x10(%r13)
 
 #
 # Off trace paths for stack allocation failure
@@ -641,6 +769,14 @@ LCFI4:
 	leaq	___func__.1928(%rip), %rdi
 	call	___assert_rtn
 ####################### FAIL FUNCTION ########################
+
+.data
+.align 3
+_s10W_info_table_addr:
+  .quad 0x000000010001ff90
+  #^^^ NON-DEBUG ADDRESS OF info table
+  .quad 0x000000010001fd70
+  #^^^ DEBUG ADDRESS OF info table
 
 
 .subsections_via_symbols

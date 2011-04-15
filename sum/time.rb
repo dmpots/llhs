@@ -20,12 +20,13 @@ iters = ARGV.shift || 10
 iters = iters.to_i
 
 (1..iters).each do |i|
-	print "."; puts  "" if (i % 50) == 0; $stdout.flush
 	start  = Time.new
 	`#{bench}`
 	finish = Time.new
 
 	$times << (finish - start)
+
+  print "."; puts  "" if (i % 25) == 0; $stdout.flush
 end
 
 display_times

@@ -98,6 +98,10 @@ define pheap
 pmem $r12-16 16
 end
 
+define dumph
+pmem $r12-$arg0*8 $arg0
+end
+
 define dpc
 display /i $pc
 end
