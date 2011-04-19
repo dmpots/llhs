@@ -1,9 +1,6 @@
 {-# LANGUAGE NoImplicitPrelude, BangPatterns, MagicHash #-}
 module Main where
 
-import GHC.Prim
-import GHC.Bool
-import GHC.Types
 import GHC.Base
 import GHC.Num
 import qualified Prelude
