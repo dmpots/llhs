@@ -1,7 +1,7 @@
-
-sNg == sNj
-sMF == sMi
-sNe == sNh
+vbox == mac     == linux
+sNg == sNj      == sNl
+sMF == sMi      == sMK
+sNe == sNh      == sNj
 sPe == (Num.+)
 sZS == s10X
 sZR == s10W
