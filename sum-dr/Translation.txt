@@ -1,0 +1,94 @@
+
+sNg == sNj
+sMF == sMi
+sNe == sNh
+sPe == (Num.+)
+sZS == s10X
+sZR == s10W
+sNf == sNI
+
+
+Trace 71
+	sNe
+	ap_0_fast
+	sMG_
+	Num.+
+	Exit:
+		Goes to evaluate the dictionary and finds it not evaluted.
+		The code for evaluating the dictionary just does inc and return so it never gets evaluated.
+		Pushes 0x000000000407e80(sPe) onto the stack which is the code that extracts the + function,
+		ensures that it is evaluted and then calls stg_ap_pp.
+		The trace should jump directly here, but the dictionary never gets marked as evaluated 
+		so we always go through the jump+inc+return to sPe (0x407e80)
+	--> ibl (sPe == 0x407e80, Trace 199 could deduce that from the trace)
+
+Trace 199
+	sPe_info (part of the Num.+ function. Not shown on trace diagram)	
+		Pulls function out of dictionary 
+	ap_0
+		and makes sure it is evaluted
+	ap_pp
+		Applies the function to the unknown arguments by:
+			checking to see that the function is arity two
+			loading arguments from stack to correct registers for calling convention
+			jump to plusInt
+	plusInt
+		stack check
+		save R3 onto stack
+		check R2 is evaluated
+	--> Trace 80
+	
+
+	Redundant comparison optimiztion
+		in ap_0 we check against 0x7 to make sure it is evaluated
+		in ap_pp we check against 0x7 to make sure it is 0x2 so that it has the correc number of arguments
+
+
+Trace 80
+	sZS_info:
+		load X from the stack
+		load a# from R1
+		check if X is evaluated
+	--> Trace 214
+
+Trace 214
+	sZR_info:
+		heap check
+		load a# from stack
+		load x# from R1
+		add a# + x# and store result on the heap
+		return result in R1
+	sNf:
+		cp R1 to R2
+		pull list tail off of stack
+		jump to sMf
+	sMf:
+		check that tail is evaluated
+		since it is not we jump to the trace to evaluate it
+	--> Trace 32
+
+Trace 32
+    sMF_info:
+    	jump to R1 to evaluate the list tail
+    sOv_info
+    sOv_info
+    sOv_info
+    --> Trace 223
+
+Trace 223
+    Main_enumFromTo_info
+    --> Trace 203
+
+Trace 203
+    sMU_info
+    --> Trace 188
+
+Trace 188
+    sMX_info
+    sMX_info
+    sMX_info
+    stg_upd_frame_info
+    stg_upd_frame_info
+    --> ibl (405b78 == sNe_info, Trace 71)
+	
+		
