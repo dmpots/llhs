@@ -70,6 +70,9 @@ if __name__ == "__main__":
     src = sys.argv[1]
     target = sys.argv[2]
     link = (" ".join(opts(src, target)))
-    print("Linking " + src +" => "+ target)
-    print(os.system(link))
-
+    sys.stdout.write( "Linking " + src +" => "+ target + "... ")
+    res = os.system(link)
+    if res == 0:
+        print("Success")
+    else:
+        print("Failed")
