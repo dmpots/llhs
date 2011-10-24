@@ -1,0 +1,31 @@
+Prefix
+-------------
+sQg      s1Cl
+
+Sum
+-------------
+sNj      s1Cm
+sMi      s1C4
+sNh      s1Cp
+sMG      s1C2
+(Num.+)  
+s10X     sxg_info
+s10W     sxf_info
+sNI      s1Cn (jumps to) s1C4
+
+EnumFromTo
+-------------
+upto    Main_enumFromTo
+sMX     s1BI
+sN0     s1BM
+sat_s00 s1Co
+
+
+External
+-------------
+base_GHCziNum_zp_info  (GHC.Num.hs)
+plusInt_info           (GHC.Base.hs)
+stg_ap_0_fast          (Apply.cmm)
+stg_ap_pp_info         (AutoApply.cmm)
+
+
