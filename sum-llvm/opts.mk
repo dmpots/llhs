@@ -13,4 +13,10 @@ ifeq ($(VER),2)
 OPT=-O2
 endif
 
+ifeq ($(VER),3)
+OPT=-O2
+endif
 
+ifeq ($(VER),4)
+OPT=-O2
+endif

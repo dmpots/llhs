@@ -22,8 +22,14 @@ $(S).unmangled.s: $(S).opt.ll
 $(S).opt.ll: $(S).ll opts.mk
 	opt $(OPT) $< | llvm-dis -o $@
 
+ifeq ($(VER),3)
+$(S).ll: SumFromTo2.combined.ll
+	cp $< $@
+else
 $(S).ll: SumFromTo2.orig.ll
 	cp $< $@
+endif
+
 
 .PHONEY: clean bench
 bench: $S
@@ -34,6 +40,7 @@ clean:
 	make clean-files VER=0
 	make clean-files VER=1
 	make clean-files VER=2
+	make clean-files VER=3
 	rm -f *.hi *.o SumFromTo2 mangle mangler/*.o mangler/*.hi
 	rm -rf __pycache__
 
