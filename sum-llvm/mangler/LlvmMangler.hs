@@ -157,7 +157,7 @@ fixTables ss = fixed
 -}
 fixupStack :: B.ByteString -> B.ByteString -> B.ByteString
 
-#if !darwin_TARGET_OS
+#if !darwin_TARGET_OS || x86_64_TARGET_ARCH
 fixupStack = const
 
 #else

@@ -1,366 +1,400 @@
 [1 of 1] Compiling Main             ( SumFromTo2.hs, SumFromTo2.o )
 
-==================== Optimised Cmm ====================
-sat_s1L1_entry()
-        { Just sat_s1L1_info:
-                   const 4294967297;
-                   const 20;
-        }
-    c1Ln:
-        if (Sp - 16 < SpLim) goto c1Lp;
-        Hp = Hp + 16;
-        if (Hp > I64[BaseReg + 144]) goto c1Lr;
-        I64[Sp - 16] = stg_upd_frame_info;
-        I64[Sp - 8] = R1;
-        _s1Kn::I64 = I64[R1 + 24] + 1;
-        I64[Hp - 8] = GHC.Types.I#_con_info;
-        I64[Hp + 0] = _s1Kn::I64;
-        R2 = Hp - 7;
-        R3 = I64[R1 + 16];
-        Sp = Sp - 16;
-        jump Main.enumFromTo_info ();
-    c1Lp: jump (I64[BaseReg - 16]) ();
-    c1Lr:
-        I64[BaseReg + 184] = 16;
-        goto c1Lp;
-}
-
-
-
-==================== Optimised Cmm ====================
-s1Kp_ret()
-        { Just s1Kp_info:
-                   const 130;
-                   const 32;
-        }
-    c1Od:
-        Hp = Hp + 56;
-        if (Hp > I64[BaseReg + 144]) goto c1Og;
-        _c1Oh::I64 = %MO_S_Gt_W64(I64[Sp + 16], I64[R1 + 7]);
-        ;
-        if (_c1Oh::I64 >= 1) goto c1Oj;
-        I64[Hp - 48] = sat_s1L1_info;
-        I64[Hp - 32] = R1;
-        I64[Hp - 24] = I64[Sp + 16];
-        I64[Hp - 16] = :_con_info;
-        I64[Hp - 8] = I64[Sp + 8];
-        I64[Hp + 0] = Hp - 48;
-        R1 = Hp - 14;
-        Sp = Sp + 24;
-        jump (I64[Sp + 0]) ();
-    c1Ok: jump (I64[BaseReg - 16]) ();
-    c1Og:
-        I64[BaseReg + 184] = 56;
-        goto c1Ok;
-    c1Oj:
-        R1 = []_closure+1;
-        Sp = Sp + 24;
-        Hp = Hp - 56;
-        jump (I64[Sp + 0]) ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1Kl_ret()
-        { Just s1Kl_info:
-                   const 1;
-                   const 32;
-        }
-    c1SE:
-        I64[Sp + 0] = R1;
-        _c1SH::I64 = I64[Sp + 8];
-        I64[Sp + 8] = I64[R1 + 7];
-        R1 = _c1SH::I64;
-        I64[Sp - 8] = s1Kp_info;
-        Sp = Sp - 8;
-        if (R1 & 7 != 0) goto c1SJ;
-        jump I64[R1] ();
-    c1SJ: jump s1Kp_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.enumFromTo_entry()
-        { Just Main.enumFromTo_info:
-                   const 8589934604;
-                   const 0;
-                   const 15;
-        }
-    c1UJ:
-        if (Sp - 24 < SpLim) goto c1UL;
-        I64[Sp - 8] = R3;
-        R1 = R2;
-        I64[Sp - 16] = s1Kl_info;
-        Sp = Sp - 16;
-        if (R1 & 7 != 0) goto c1UO;
-        jump I64[R1] ();
-    c1UL:
-        R1 = Main.enumFromTo_closure;
-        jump (I64[BaseReg - 8]) ();
-    c1UO: jump s1Kl_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1L0_ret()
-        { Just s1L0_info:
-                   const 2;
-                   const 32;
-        }
-    c1XG:
-        R2 = R1;
-        R1 = I64[Sp + 8];
-        Sp = Sp + 8;
-        jump s1KH_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1KF_ret()
-        { Just s1KF_info:
-                   const 3;
-                   const 32;
-        }
-    c1Yw:
-        I64[Sp + 0] = I64[Sp + 8];
-        I64[Sp - 8] = R1;
-        I64[Sp - 16] = stg_ap_pp_info;
-        R2 = I64[Sp + 24];
-        I64[Sp + 8] = s1L0_info;
-        Sp = Sp - 16;
-        jump GHC.Num.+_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1L2_ret()
-        { Just s1L2_info:
-                   const 2;
-                   const 32;
-        }
-    c1ZQ:
-        _c1ZR::I64 = R1 & 7;
-        if (_c1ZR::I64 >= 2) goto c1ZS;
-        R1 = I64[Sp + 8];
-        Sp = Sp + 24;
-        jump stg_ap_0_fast ();
-    c1ZS:
-        I64[Sp + 0] = I64[R1 + 6];
-        _c1ZV::I64 = I64[Sp + 8];
-        I64[Sp + 8] = I64[R1 + 14];
-        R1 = _c1ZV::I64;
-        I64[Sp - 8] = s1KF_info;
-        Sp = Sp - 8;
-        jump stg_ap_0_fast ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1KH_ret()
-        { Just s1KH_info:
-                   const 1;
-                   const 32;
-        }
-    c22b:
-        I64[Sp + 0] = R2;
-        I64[Sp - 8] = s1L2_info;
-        Sp = Sp - 8;
-        if (R1 & 7 != 0) goto c22e;
-        jump I64[R1] ();
-    c22e: jump s1L2_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1KZ_ret()
-        { Just s1KZ_info:
-                   const 2;
-                   const 32;
-        }
-    c23U:
-        R2 = R1;
-        R1 = I64[Sp + 8];
-        Sp = Sp + 8;
-        jump s1KH_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.sum_entry()
-        { Just Main.sum_info:
-                   const 8589934604;
-                   const 0;
-                   const 15;
-        }
-    c24K:
-        if (Sp - 48 < SpLim) goto c24M;
-        Hp = Hp + 16;
-        if (Hp > I64[BaseReg + 144]) goto c24O;
-        I64[Sp - 8] = R2;
-        I64[Hp - 8] = GHC.Integer.Type.S#_con_info;
-        I64[Hp + 0] = 0;
-        I64[Sp - 16] = R3;
-        I64[Sp - 32] = Hp - 7;
-        I64[Sp - 40] = stg_ap_p_info;
-        I64[Sp - 24] = s1KZ_info;
-        Sp = Sp - 40;
-        jump GHC.Num.fromInteger_info ();
-    c24M:
-        R1 = Main.sum_closure;
-        jump (I64[BaseReg - 8]) ();
-    c24O:
-        I64[BaseReg + 184] = 16;
-        goto c24M;
-}
-
-
-
-==================== Optimised Cmm ====================
-s1KY_ret()
-        { Just s1KY_info:
-                   const Main.root_srt-s1KY_info;
-                   const 0;
-                   const 4294967328;
-        }
-    c27F:
-        R2 = GHC.Num.$fNumInt_closure;
-        R3 = R1;
-        Sp = Sp + 8;
-        jump Main.sum_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.root_entry()
-        { Just Main.root_info:
-                   const Main.root_srt-Main.root_info;
-                   const 4294967301;
-                   const 0;
-                   const 4294967311;
-        }
-    c28p:
-        if (Sp - 8 < SpLim) goto c28r;
-        R3 = R2;
-        R2 = lvl_r1K9_closure+1;
-        I64[Sp - 8] = s1KY_info;
-        Sp = Sp - 8;
-        jump Main.enumFromTo_info ();
-    c28r:
-        R1 = Main.root_closure;
-        jump (I64[BaseReg - 8]) ();
-}
-
-
-
-==================== Optimised Cmm ====================
-s1KX_ret()
-        { Just s1KX_info:
-                   const 0;
-                   const 32;
-        }
-    c2aj:
-        R2 = I64[R1 + 7];
-        R3 = GHC.Types.[]_closure+1;
-        Sp = Sp + 8;
-        jump GHC.Show.itos_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.main2_entry()
-        { Just Main.main2_info:
-                   const Main.main2_srt-Main.main2_info;
-                   const 0;
-                   const 4294967318;
-        }
-    c2bc:
-        if (Sp - 24 < SpLim) goto c2be;
-        Hp = Hp + 16;
-        if (Hp > I64[BaseReg + 144]) goto c2bg;
-        I64[Hp - 8] = stg_CAF_BLACKHOLE_info;
-        I64[Hp + 0] = I64[BaseReg + 152];
-        foreign "ccall"
-          newCAF((BaseReg, PtrHint), (R1, PtrHint))[_unsafe_call_];
-        I64[R1 + 8] = Hp - 8;
-        I64[R1] = stg_IND_STATIC_info;
-        I64[Sp - 16] = stg_bh_upd_frame_info;
-        I64[Sp - 8] = Hp - 8;
-        R2 = Main.main3_closure+1;
-        I64[Sp - 24] = s1KX_info;
-        Sp = Sp - 24;
-        jump Main.root_info ();
-    c2be: jump (I64[BaseReg - 16]) ();
-    c2bg:
-        I64[BaseReg + 184] = 16;
-        goto c2be;
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.main1_entry()
-        { Just Main.main1_info:
-                   const Main.main1_srt-Main.main1_info;
-                   const 4294967299;
-                   const 0;
-                   const 30064771087;
-        }
-    c2et:
-        R2 = GHC.IO.Handle.FD.stdout_closure;
-        R3 = Main.main2_closure;
-        R4 = GHC.Types.True_closure+2;
-        jump GHC.IO.Handle.Text.hPutStr2_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.main_entry()
-        { Just Main.main_info:
-                   const Main.main_srt-Main.main_info;
-                   const 4294967299;
-                   const 0;
-                   const 4294967311;
-        }
-    c2fc: jump Main.main1_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-Main.main4_entry()
-        { Just Main.main4_info:
-                   const Main.main4_srt-Main.main4_info;
-                   const 4294967299;
-                   const 0;
-                   const 12884901903;
-        }
-    c2fN:
-        R2 = Main.main1_closure+1;
-        jump GHC.TopHandler.runMainIO1_info ();
-}
-
-
-
-==================== Optimised Cmm ====================
-:Main.main_entry()
-        { Just :Main.main_info:
-                   const :Main.main_srt-:Main.main_info;
-                   const 4294967299;
-                   const 0;
-                   const 4294967311;
-        }
-    c2gs: jump Main.main4_info ();
-}
+==================== Cmm ====================
+[section "data" { __stginit_Main:
+ },
+ __stginit_ZCMain()
+         { update_frame: <none>
+         }
+ }]
+ 
+-------------------
+ 
+[section "data" {
+     Main_enumFromTo_closure:
+         const Main_enumFromTo_info;
+ },
+ s1Co_entry()
+         { update_frame: <none>
+           label: s1Co_info
+           rep:HeapRep 1 ptrs 1 nonptrs { Thunk }
+         }
+     c1CK:
+         if (Sp - 16 < SpLim) goto c1CM;
+         Hp = Hp + 16;
+         if (Hp > HpLim) goto c1CO;
+         I64[Sp - 16] = stg_upd_frame_info;
+         I64[Sp - 8] = R1;
+         _s1BK::I64 = I64[R1 + 24] + 1;
+         I64[Hp - 8] = ghczmprim_GHCziTypes_Izh_con_info;
+         I64[Hp + 0] = _s1BK::I64;
+         R2 = Hp - 7;
+         R3 = I64[R1 + 16];
+         Sp = Sp - 16;
+         jump Main_enumFromTo_info ();
+     c1CM: jump stg_gc_enter_1 ();
+     c1CO:
+         HpAlloc = 16;
+         goto c1CM;
+ },
+ s1BM_ret()
+         { update_frame: <none>
+           label: s1BM_info
+           rep:StackRep [False, True]
+         }
+     c1CQ:
+         Hp = Hp + 56;
+         if (Hp > HpLim) goto c1CT;
+         _c1CU::I64 = %MO_S_Gt_W64(I64[Sp + 16], I64[R1 + 7]);
+         ;
+         if (_c1CU::I64 >= 1) goto c1CW;
+         I64[Hp - 48] = s1Co_info;
+         I64[Hp - 32] = R1;
+         I64[Hp - 24] = I64[Sp + 16];
+         I64[Hp - 16] = ghczmprim_GHCziTypes_ZC_con_info;
+         I64[Hp - 8] = I64[Sp + 8];
+         I64[Hp + 0] = Hp - 48;
+         R1 = Hp - 14;
+         Sp = Sp + 24;
+         jump (I64[Sp + 0]) ();
+     c1CX: jump stg_gc_enter_1 ();
+     c1CT:
+         HpAlloc = 56;
+         goto c1CX;
+     c1CW:
+         R1 = ghczmprim_GHCziTypes_ZMZN_closure+1;
+         Sp = Sp + 24;
+         Hp = Hp - 56;
+         jump (I64[Sp + 0]) ();
+ },
+ s1BI_ret()
+         { update_frame: <none>
+           label: s1BI_info
+           rep:StackRep [False]
+         }
+     c1CZ:
+         I64[Sp + 0] = R1;
+         _c1D2::I64 = I64[Sp + 8];
+         I64[Sp + 8] = I64[R1 + 7];
+         R1 = _c1D2::I64;
+         I64[Sp - 8] = s1BM_info;
+         Sp = Sp - 8;
+         if (R1 & 7 != 0) goto c1D4;
+         jump I64[R1] ();
+     c1D4: jump s1BM_info ();
+ },
+ Main_enumFromTo_entry()
+         { update_frame: <none>
+           label: Main_enumFromTo_info
+           rep:HeapRep static { Fun {arity: 2 fun_type: ArgSpec 12} }
+         }
+     c1D6:
+         if (Sp - 24 < SpLim) goto c1D8;
+         I64[Sp - 8] = R3;
+         R1 = R2;
+         I64[Sp - 16] = s1BI_info;
+         Sp = Sp - 16;
+         if (R1 & 7 != 0) goto c1Db;
+         jump I64[R1] ();
+     c1D8:
+         R1 = Main_enumFromTo_closure;
+         jump stg_gc_fun ();
+     c1Db: jump s1BI_info ();
+ }]
+ 
+-------------------
+ 
+[section "data" {
+     Main_sum_closure:
+         const Main_sum_info;
+ },
+ s1Cn_ret()
+         { update_frame: <none>
+           label: s1Cn_info
+           rep:StackRep [False, False]
+         }
+     c1Dv:
+         R2 = R1;
+         R1 = I64[Sp + 8];
+         Sp = Sp + 8;
+         jump s1C4_info ();
+ },
+ s1C2_ret()
+         { update_frame: <none>
+           label: s1C2_info
+           rep:StackRep [False, False, False]
+         }
+     c1Dx:
+         I64[Sp + 0] = I64[Sp + 8];
+         I64[Sp - 8] = R1;
+         I64[Sp - 16] = stg_ap_pp_info;
+         R2 = I64[Sp + 24];
+         I64[Sp + 8] = s1Cn_info;
+         Sp = Sp - 16;
+         jump base_GHCziNum_zp_info ();
+ },
+ s1Cp_ret()
+         { update_frame: <none>
+           label: s1Cp_info
+           rep:StackRep [False, False]
+         }
+     c1DB:
+         _c1DC::I64 = R1 & 7;
+         if (_c1DC::I64 >= 2) goto c1DD;
+         R1 = I64[Sp + 8];
+         Sp = Sp + 24;
+         jump stg_ap_0_fast ();
+     c1DD:
+         I64[Sp + 0] = I64[R1 + 6];
+         _c1DG::I64 = I64[Sp + 8];
+         I64[Sp + 8] = I64[R1 + 14];
+         R1 = _c1DG::I64;
+         I64[Sp - 8] = s1C2_info;
+         Sp = Sp - 8;
+         jump stg_ap_0_fast ();
+ },
+ s1C4_ret()
+         { update_frame: <none>
+           label: s1C4_info
+           rep:StackRep [False]
+         }
+     c1DI:
+         I64[Sp + 0] = R2;
+         I64[Sp - 8] = s1Cp_info;
+         Sp = Sp - 8;
+         if (R1 & 7 != 0) goto c1DL;
+         jump I64[R1] ();
+     c1DL: jump s1Cp_info ();
+ },
+ s1Cm_ret()
+         { update_frame: <none>
+           label: s1Cm_info
+           rep:StackRep [False, False]
+         }
+     c1DP:
+         R2 = R1;
+         R1 = I64[Sp + 8];
+         Sp = Sp + 8;
+         jump s1C4_info ();
+ },
+ Main_sum_entry()
+         { update_frame: <none>
+           label: Main_sum_info
+           rep:HeapRep static { Fun {arity: 2 fun_type: ArgSpec 12} }
+         }
+     c1DR:
+         if (Sp - 48 < SpLim) goto c1DT;
+         Hp = Hp + 16;
+         if (Hp > HpLim) goto c1DV;
+         I64[Sp - 8] = R2;
+         I64[Hp - 8] = integerzmgmp_GHCziIntegerziType_Szh_con_info;
+         I64[Hp + 0] = 0;
+         I64[Sp - 16] = R3;
+         I64[Sp - 32] = Hp - 7;
+         I64[Sp - 40] = stg_ap_p_info;
+         I64[Sp - 24] = s1Cm_info;
+         Sp = Sp - 40;
+         jump base_GHCziNum_fromInteger_info ();
+     c1DT:
+         R1 = Main_sum_closure;
+         jump stg_gc_fun ();
+     c1DV:
+         HpAlloc = 16;
+         goto c1DT;
+ }]
+ 
+-------------------
+ 
+[section "data" {
+     r1Bw_closure:
+         const ghczmprim_GHCziTypes_Izh_static_info;
+         const 1;
+ }]
+ 
+-------------------
+ 
+[section "relreadonly" {
+     Main_root_srt:
+         const Main_sum_closure;
+ },
+ section "data" {
+     Main_root_closure:
+         const Main_root_info;
+         const 0;
+ },
+ s1Cl_ret()
+         { update_frame: <none>
+           label: s1Cl_info
+           rep:StackRep []
+         }
+     c1E4:
+         R2 = base_GHCziNum_zdfNumInt_closure;
+         R3 = R1;
+         Sp = Sp + 8;
+         jump Main_sum_info ();
+ },
+ Main_root_entry()
+         { update_frame: <none>
+           label: Main_root_info
+           rep:HeapRep static { Fun {arity: 1 fun_type: ArgSpec 5} }
+         }
+     c1E6:
+         if (Sp - 8 < SpLim) goto c1E8;
+         R3 = R2;
+         R2 = r1Bw_closure+1;
+         I64[Sp - 8] = s1Cl_info;
+         Sp = Sp - 8;
+         jump Main_enumFromTo_info ();
+     c1E8:
+         R1 = Main_root_closure;
+         jump stg_gc_fun ();
+ }]
+ 
+-------------------
+ 
+[section "data" {
+     Main_main3_closure:
+         const ghczmprim_GHCziTypes_Izh_static_info;
+         const 300000000;
+ }]
+ 
+-------------------
+ 
+[section "relreadonly" {
+     Main_main2_srt:
+         const Main_sum_closure;
+ },
+ section "data" {
+     Main_main2_closure:
+         const Main_main2_info;
+         const 0;
+         const 0;
+         const 0;
+ },
+ s1Ck_ret()
+         { update_frame: <none>
+           label: s1Ck_info
+           rep:StackRep []
+         }
+     c1Ej:
+         R2 = I64[R1 + 7];
+         R3 = ghczmprim_GHCziTypes_ZMZN_closure+1;
+         Sp = Sp + 8;
+         jump base_GHCziShow_itos_info ();
+ },
+ Main_main2_entry()
+         { update_frame: <none>
+           label: Main_main2_info
+           rep:HeapRep static { Thunk }
+         }
+     c1Em:
+         if (Sp - 24 < SpLim) goto c1Eo;
+         Hp = Hp + 16;
+         if (Hp > HpLim) goto c1Eq;
+         I64[Hp - 8] = stg_CAF_BLACKHOLE_info;
+         I64[Hp + 0] = CurrentTSO;
+         (_c1Er::I64,) = foreign "ccall"
+           newCAF((BaseReg, PtrHint), (R1, PtrHint),
+                  (Hp - 8, PtrHint))[_unsafe_call_];
+         if (_c1Er::I64 == 0) goto c1Es;
+         goto c1Et;
+     c1Eo: jump stg_gc_enter_1 ();
+     c1Eq:
+         HpAlloc = 16;
+         goto c1Eo;
+     c1Es: jump I64[R1] ();
+     c1Et:
+         I64[Sp - 16] = stg_bh_upd_frame_info;
+         I64[Sp - 8] = Hp - 8;
+         R2 = Main_main3_closure+1;
+         I64[Sp - 24] = s1Ck_info;
+         Sp = Sp - 24;
+         jump Main_root_info ();
+ }]
+ 
+-------------------
+ 
+[section "relreadonly" {
+     Main_main1_srt:
+         const Main_main2_closure;
+         const base_GHCziIOziHandleziFD_stdout_closure;
+         const base_GHCziIOziHandleziText_hPutStr2_closure;
+ },
+ section "data" {
+     Main_main1_closure:
+         const Main_main1_info;
+         const 0;
+ },
+ Main_main1_entry()
+         { update_frame: <none>
+           label: Main_main1_info
+           rep:HeapRep static { Fun {arity: 1 fun_type: ArgSpec 3} }
+         }
+     c1Ey:
+         R2 = base_GHCziIOziHandleziFD_stdout_closure;
+         R3 = Main_main2_closure;
+         R4 = ghczmprim_GHCziTypes_True_closure+2;
+         jump base_GHCziIOziHandleziText_hPutStr2_info ();
+ }]
+ 
+-------------------
+ 
+[section "relreadonly" {
+     Main_main_srt:
+         const Main_main1_closure;
+ },
+ section "data" {
+     Main_main_closure:
+         const Main_main_info;
+         const 0;
+ },
+ Main_main_entry()
+         { update_frame: <none>
+           label: Main_main_info
+           rep:HeapRep static { Fun {arity: 1 fun_type: ArgSpec 3} }
+         }
+     c1ED: jump Main_main1_info ();
+ }]
+ 
+-------------------
+ 
+[section "relreadonly" {
+     Main_main4_srt:
+         const base_GHCziTopHandler_runMainIO1_closure;
+         const Main_main1_closure;
+ },
+ section "data" {
+     Main_main4_closure:
+         const Main_main4_info;
+         const 0;
+ },
+ Main_main4_entry()
+         { update_frame: <none>
+           label: Main_main4_info
+           rep:HeapRep static { Fun {arity: 1 fun_type: ArgSpec 3} }
+         }
+     c1EI:
+         R2 = Main_main1_closure+1;
+         jump base_GHCziTopHandler_runMainIO1_info ();
+ }]
+ 
+-------------------
+ 
+[section "relreadonly" {
+     ZCMain_main_srt:
+         const Main_main4_closure;
+ },
+ section "data" {
+     ZCMain_main_closure:
+         const ZCMain_main_info;
+         const 0;
+ },
+ ZCMain_main_entry()
+         { update_frame: <none>
+           label: ZCMain_main_info
+           rep:HeapRep static { Fun {arity: 1 fun_type: ArgSpec 3} }
+         }
+     c1EN: jump Main_main4_info ();
+ }]
 
 
