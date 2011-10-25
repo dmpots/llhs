@@ -26,14 +26,19 @@ ifeq ($(VER),3)
 $(S).ll: SumFromTo2.combined.ll
 	cp $< $@
 else
+ifeq ($(VER),4)
+$(S).ll: SumFromTo2.combined.trace.ll
+	cp $< $@
+else
 $(S).ll: SumFromTo2.orig.ll
 	cp $< $@
+endif
 endif
 
 
 .PHONEY: clean bench
 bench: $S
-	@echo "VERSION $(VER) ($(OPT))"
+	@echo "VERSION $(VER) (opt=$(OPT))"
 	time ./$S
 
 clean:
@@ -41,6 +46,7 @@ clean:
 	make clean-files VER=1
 	make clean-files VER=2
 	make clean-files VER=3
+	make clean-files VER=4
 	rm -f *.hi *.o SumFromTo2 mangle mangler/*.o mangler/*.hi
 	rm -rf __pycache__
 
