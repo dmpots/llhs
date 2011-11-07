@@ -71,12 +71,14 @@ EXTERN_LL_FILES=Apply.ntnt.ll AutoApply.ntnt.ll Updates.ntnt.ll\
 EXTERN_BC_FILES=${EXTERN_LL_FILES:.ll=.bc}
 LINKED_LL_FILES=$(EXTERN_LL_FILES) SumFromTo2.ntnt.ll
 LINKED_BC_FILES=${LINKED_LL_FILES:.ll=.bc}
+LLI_ENV=DYLD_LIBRARY_PATH=$(GHC_NTNT_DYLIB_DIRS) DYLD_INSERT_LIBRARIES=$(GHC_NTNT_DYLIBS) DYLD_FORCE_FLAT_NAMESPACE=1
+LLVM_LIBDIR:=$(shell llvm-config --libdir)
 
 SumFromTo2.ntnt.linked.ll: $(LINKED_LL_FILES)
 	llvm-link $^ -S > $@
 
 SumFromTo2.ntnt.ll:
-	$(GHC_NTNT) -fforce-recomp -O2 -fllvm -keep-llvm-files SumFromTo2.hs
+	$(GHC_NTNT) -fforce-recomp -O2 -fllvm -keep-llvm-files -ddump-opt-cmm SumFromTo2.hs > SumFromTo.ntnt.cmm
 	cp SumFromTo2.ll $@
 
 HsMain.ll: HsMain.c
@@ -86,9 +88,20 @@ interp: $(LINKED_BC_FILES)
 	llvm-ld -liconv $(LINKED_BC_FILES) -o $@
 
 run-interp: interp	
-	DYLD_LIBRARY_PATH=$(GHC_NTNT_DYLIB_DIRS) DYLD_INSERT_LIBRARIES=$(GHC_NTNT_DYLIBS) DYLD_FORCE_FLAT_NAMESPACE=1 ./interp
+	 $(LLI_ENV) ./interp
 
+SumFromTo2.ntnt.linked.bc.prof: SumFromTo2.ntnt.linked.bc
+	opt -insert-edge-profiling $< -o $@
 
+prof: SumFromTo2.ntnt.linked.bc.prof
+	llvm-ld -liconv -lprofile_rt -L$(LLVM_LIBDIR) $^ -o $@
+	$(LLI_ENV) ./$@
+	rm $^
+	llvm-prof SumFromTo2.ntnt.linked.bc llvmprof.out
+
+#
+# Bytecode from LLVM IR
+#
 %.bc: %.ll
 	opt $(OPT) $< -o $@
 
@@ -112,6 +125,7 @@ clean:
 	rm -f *.hi *.o SumFromTo2 mangle mangler/*.o mangler/*.hi
 	rm -f SumFromTo2.ntnt.linked.ll SumFromTo2.ntnt.linked.bc 
 	rm -f a.out a.out.bc interp interp.bc
+	rm -f prof llvmprof.out prof.bc
 	rm -rf __pycache__
 
 clean-files:

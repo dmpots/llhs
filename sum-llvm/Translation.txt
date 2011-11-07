@@ -1,24 +1,26 @@
+Orig new ntnt
+
 Prefix
 -------------
 sQg      s1Cl
 
 Sum
 -------------
-sNj      s1Cm
-sMi      s1C4
-sNh      s1Cp
-sMG      s1C2
+sNj      s1Cm                   s1Cj
+sMi      s1C4                   s1C1
+sNh      s1Cp                   s1Cm
+sMG      s1C2                   s1Bz
 (Num.+)  
-s10X     sxg_info
-s10W     sxf_info
-sNI      s1Cn (jumps to) s1C4
+s10X     sxg_info               sxz_info
+s10W     sxf_info               sxy_info
+sNI      s1Cn => s1C4           s1Ck => s1Cl
 
 EnumFromTo
 -------------
 upto    Main_enumFromTo
-sMX     s1BI
-sN0     s1BM
-sat_s00 s1Co
+sMX     s1BI                    s1BF
+sN0     s1BM                    s1BJ
+sat_s00 s1Co                    sat_s1Cl_entry
 
 
 External
