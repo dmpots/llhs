@@ -8,7 +8,7 @@ target triple = "x86_64-apple-darwin10.0.0"
 @stg_bh_upd_frame_info =  global %stg_bh_upd_frame_info_struct<{i64 ptrtoint (void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)* @stg_bh_upd_frame_ret to i64), i64 1, i64 36}>
 define  cc 10 void @stg_upd_frame_ret(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) align 8 nounwind
 {
-cO:
+cI:
 %Base_Var = alloca i64*, i32 1
 store i64* %Base_Arg, i64** %Base_Var
 %Sp_Var = alloca i64*, i32 1
@@ -41,121 +41,121 @@ store float %F4_Arg, float* %F4_Var
 store double %D1_Arg, double* %D1_Var
 %D2_Var = alloca double, i32 1
 store double %D2_Arg, double* %D2_Var
-%lcL = alloca i64, i32 1
+%lcF = alloca i64, i32 1
+%lcG = alloca i64, i32 1
 %lcM = alloca i64, i32 1
-%lcS = alloca i64, i32 1
-%lcT = alloca i64, i32 1
-%lcU = alloca i64, i32 1
-%lcV = alloca i64, i32 1
+%lcN = alloca i64, i32 1
+%lcO = alloca i64, i32 1
+%lcP = alloca i64, i32 1
+%ln3u = load i64** %Sp_Var
+%ln3v = getelementptr inbounds i64* %ln3u, i32 1
+%ln3w = ptrtoint i64* %ln3v to i64
+%ln3x = add i64 %ln3w, 0
+%ln3y = inttoptr i64 %ln3x to i64*
+%ln3z = load i64* %ln3y
+store i64 %ln3z, i64* %lcF
 %ln3A = load i64** %Sp_Var
-%ln3B = getelementptr inbounds i64* %ln3A, i32 1
-%ln3C = ptrtoint i64* %ln3B to i64
-%ln3D = add i64 %ln3C, 0
+%ln3B = ptrtoint i64* %ln3A to i64
+%ln3C = add i64 8, 8
+%ln3D = add i64 %ln3B, %ln3C
 %ln3E = inttoptr i64 %ln3D to i64*
-%ln3F = load i64* %ln3E
-store i64 %ln3F, i64* %lcL
-%ln3G = load i64** %Sp_Var
-%ln3H = ptrtoint i64* %ln3G to i64
-%ln3I = add i64 8, 8
-%ln3J = add i64 %ln3H, %ln3I
-%ln3K = inttoptr i64 %ln3J to i64*
-store i64* %ln3K, i64** %Sp_Var
-%ln3L = load i64* %lcL
-%ln3M = add i64 %ln3L, 8
-%ln3N = add i64 %ln3M, 0
-%ln3O = load i64* %R1_Var
-%ln3P = inttoptr i64 %ln3N to i64*
-store i64 %ln3O, i64* %ln3P
-%ln3Q = load i64* %lcL
-%ln3R = add i64 %ln3Q, 0
-%ln3S = ptrtoint [0 x i64]* @stg_BLACKHOLE_info to i64
-%ln3T = inttoptr i64 %ln3R to i64*
-store i64 %ln3S, i64* %ln3T
-%ln3U = load i64* %lcL
-%ln3V = shl i64 1, 20
-%ln3W = sub i64 %ln3V, 1
-%ln3X = and i64 %ln3U, %ln3W
-%ln3Y = shl i64 1, 12
-%ln3Z = sub i64 %ln3Y, 1
-%ln40 = xor i64 -1, %ln3Z
-%ln41 = and i64 %ln3X, %ln40
-%ln42 = sub i64 12, 6
-%ln43 = lshr i64 %ln41, %ln42
-%ln44 = load i64* %lcL
-%ln45 = shl i64 1, 20
-%ln46 = sub i64 %ln45, 1
-%ln47 = xor i64 -1, %ln46
-%ln48 = and i64 %ln44, %ln47
-%ln49 = or i64 %ln43, %ln48
-store i64 %ln49, i64* %lcM
-%ln4a = load i64* %lcM
-%ln4b = add i64 %ln4a, 40
-%ln4c = inttoptr i64 %ln4b to i16*
-%ln4d = load i16* %ln4c
-%ln4e = icmp ne i16 %ln4d, 0
-br i1 %ln4e, label %cN, label %n4f
-n4f:
-%ln4g = load i64** %Sp_Var
-%ln4h = ptrtoint i64* %ln4g to i64
-%ln4i = mul i64 0, 8
-%ln4j = add i64 %ln4h, %ln4i
-%ln4k = inttoptr i64 %ln4j to i64*
-%ln4l = load i64* %ln4k
-%ln4m = inttoptr i64 %ln4l to i64*
-%ln4n = load i64* %ln4m
-%ln4o = inttoptr i64 %ln4n to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
-%ln4p = load i64** %Base_Var
-%ln4q = load i64** %Sp_Var
-%ln4r = load i64** %Hp_Var
-%ln4s = load i64* %R1_Var
-%ln4t = load i64* %R2_Var
-%ln4u = load i64* %R3_Var
-%ln4v = load i64* %R4_Var
-%ln4w = load i64* %R5_Var
-%ln4x = load i64* %R6_Var
-%ln4y = load i64* %SpLim_Var
-%ln4z = load float* %F1_Var
-%ln4A = load float* %F2_Var
-%ln4B = load float* %F3_Var
-%ln4C = load float* %F4_Var
-%ln4D = load double* %D1_Var
-%ln4E = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln4o( i64* %ln4p, i64* %ln4q, i64* %ln4r, i64 %ln4s, i64 %ln4t, i64 %ln4u, i64 %ln4v, i64 %ln4w, i64 %ln4x, i64 %ln4y, float %ln4z, float %ln4A, float %ln4B, float %ln4C, double %ln4D, double %ln4E ) nounwind
+store i64* %ln3E, i64** %Sp_Var
+%ln3F = load i64* %lcF
+%ln3G = add i64 %ln3F, 8
+%ln3H = add i64 %ln3G, 0
+%ln3I = load i64* %R1_Var
+%ln3J = inttoptr i64 %ln3H to i64*
+store i64 %ln3I, i64* %ln3J
+%ln3K = load i64* %lcF
+%ln3L = add i64 %ln3K, 0
+%ln3M = ptrtoint [0 x i64]* @stg_BLACKHOLE_info to i64
+%ln3N = inttoptr i64 %ln3L to i64*
+store i64 %ln3M, i64* %ln3N
+%ln3O = load i64* %lcF
+%ln3P = shl i64 1, 20
+%ln3Q = sub i64 %ln3P, 1
+%ln3R = and i64 %ln3O, %ln3Q
+%ln3S = shl i64 1, 12
+%ln3T = sub i64 %ln3S, 1
+%ln3U = xor i64 -1, %ln3T
+%ln3V = and i64 %ln3R, %ln3U
+%ln3W = sub i64 12, 6
+%ln3X = lshr i64 %ln3V, %ln3W
+%ln3Y = load i64* %lcF
+%ln3Z = shl i64 1, 20
+%ln40 = sub i64 %ln3Z, 1
+%ln41 = xor i64 -1, %ln40
+%ln42 = and i64 %ln3Y, %ln41
+%ln43 = or i64 %ln3X, %ln42
+store i64 %ln43, i64* %lcG
+%ln44 = load i64* %lcG
+%ln45 = add i64 %ln44, 40
+%ln46 = inttoptr i64 %ln45 to i16*
+%ln47 = load i16* %ln46
+%ln48 = icmp ne i16 %ln47, 0
+br i1 %ln48, label %cH, label %n49
+n49:
+%ln4a = load i64** %Sp_Var
+%ln4b = ptrtoint i64* %ln4a to i64
+%ln4c = mul i64 0, 8
+%ln4d = add i64 %ln4b, %ln4c
+%ln4e = inttoptr i64 %ln4d to i64*
+%ln4f = load i64* %ln4e
+%ln4g = inttoptr i64 %ln4f to i64*
+%ln4h = load i64* %ln4g
+%ln4i = inttoptr i64 %ln4h to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
+%ln4j = load i64** %Base_Var
+%ln4k = load i64** %Sp_Var
+%ln4l = load i64** %Hp_Var
+%ln4m = load i64* %R1_Var
+%ln4n = load i64* %R2_Var
+%ln4o = load i64* %R3_Var
+%ln4p = load i64* %R4_Var
+%ln4q = load i64* %R5_Var
+%ln4r = load i64* %R6_Var
+%ln4s = load i64* %SpLim_Var
+%ln4t = load float* %F1_Var
+%ln4u = load float* %F2_Var
+%ln4v = load float* %F3_Var
+%ln4w = load float* %F4_Var
+%ln4x = load double* %D1_Var
+%ln4y = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln4i( i64* %ln4j, i64* %ln4k, i64* %ln4l, i64 %ln4m, i64 %ln4n, i64 %ln4o, i64 %ln4p, i64 %ln4q, i64 %ln4r, i64 %ln4s, float %ln4t, float %ln4u, float %ln4v, float %ln4w, double %ln4x, double %ln4y ) nounwind
 ret void
-cN:
-%ln4F = load i64** %Base_Var
-%ln4G = getelementptr inbounds i64* %ln4F, i32 -3
-%ln4H = ptrtoint i64* %ln4G to i64
-%ln4I = add i64 %ln4H, 272
-%ln4J = inttoptr i64 %ln4I to i64*
-%ln4K = load i64* %ln4J
-%ln4L = load i64* %lcM
-%ln4M = add i64 %ln4L, 40
-%ln4N = inttoptr i64 %ln4M to i16*
-%ln4O = load i16* %ln4N
-%ln4P = sext i16 %ln4O to i64
-%ln4Q = mul i64 %ln4P, 8
-%ln4R = add i64 %ln4K, %ln4Q
-store i64 %ln4R, i64* %lcS
-%ln4S = load i64* %lcS
-%ln4T = inttoptr i64 %ln4S to i64*
-%ln4U = load i64* %ln4T
-store i64 %ln4U, i64* %lcT
-%ln4V = load i64* %lcT
-%ln4W = add i64 %ln4V, 8
-%ln4X = inttoptr i64 %ln4W to i64*
-%ln4Y = load i64* %ln4X
-%ln4Z = load i64* %lcT
-%ln50 = add i64 %ln4Z, 0
-%ln51 = inttoptr i64 %ln50 to i64*
-%ln52 = load i64* %ln51
-%ln53 = shl i64 1, 12
-%ln54 = add i64 %ln52, %ln53
-%ln55 = icmp uge i64 %ln4Y, %ln54
-br i1 %ln55, label %cP, label %n56
-n56:
-br label %cQ
-cP:
+cH:
+%ln4z = load i64** %Base_Var
+%ln4A = getelementptr inbounds i64* %ln4z, i32 -3
+%ln4B = ptrtoint i64* %ln4A to i64
+%ln4C = add i64 %ln4B, 272
+%ln4D = inttoptr i64 %ln4C to i64*
+%ln4E = load i64* %ln4D
+%ln4F = load i64* %lcG
+%ln4G = add i64 %ln4F, 40
+%ln4H = inttoptr i64 %ln4G to i16*
+%ln4I = load i16* %ln4H
+%ln4J = sext i16 %ln4I to i64
+%ln4K = mul i64 %ln4J, 8
+%ln4L = add i64 %ln4E, %ln4K
+store i64 %ln4L, i64* %lcM
+%ln4M = load i64* %lcM
+%ln4N = inttoptr i64 %ln4M to i64*
+%ln4O = load i64* %ln4N
+store i64 %ln4O, i64* %lcN
+%ln4P = load i64* %lcN
+%ln4Q = add i64 %ln4P, 8
+%ln4R = inttoptr i64 %ln4Q to i64*
+%ln4S = load i64* %ln4R
+%ln4T = load i64* %lcN
+%ln4U = add i64 %ln4T, 0
+%ln4V = inttoptr i64 %ln4U to i64*
+%ln4W = load i64* %ln4V
+%ln4X = shl i64 1, 12
+%ln4Y = add i64 %ln4W, %ln4X
+%ln4Z = icmp uge i64 %ln4S, %ln4Y
+br i1 %ln4Z, label %cJ, label %n50
+n50:
+br label %cK
+cJ:
 store i64 undef, i64* %R3_Var
 store i64 undef, i64* %R4_Var
 store i64 undef, i64* %R5_Var
@@ -166,73 +166,73 @@ store float undef, float* %F3_Var
 store float undef, float* %F4_Var
 store double undef, double* %D1_Var
 store double undef, double* %D2_Var
-%ln57 = call ccc i8* ()* @allocBlock_lock( ) nounwind
-%ln58 = ptrtoint i8* %ln57 to i64
-store i64 %ln58, i64* %lcU
-%ln59 = load i64* %lcU
-%ln5a = add i64 %ln59, 16
-%ln5b = load i64* %lcT
-%ln5c = inttoptr i64 %ln5a to i64*
-store i64 %ln5b, i64* %ln5c
-%ln5d = load i64* %lcU
-store i64 %ln5d, i64* %lcT
-%ln5e = load i64* %lcS
-%ln5f = load i64* %lcT
-%ln5g = inttoptr i64 %ln5e to i64*
-store i64 %ln5f, i64* %ln5g
-br label %cQ
-cQ:
-%ln5h = load i64* %lcT
-%ln5i = add i64 %ln5h, 8
-%ln5j = inttoptr i64 %ln5i to i64*
-%ln5k = load i64* %ln5j
-store i64 %ln5k, i64* %lcV
-%ln5l = load i64* %lcV
-%ln5m = load i64* %lcL
-%ln5n = inttoptr i64 %ln5l to i64*
+%ln51 = call ccc i8* ()* @allocBlock_lock( ) nounwind
+%ln52 = ptrtoint i8* %ln51 to i64
+store i64 %ln52, i64* %lcO
+%ln53 = load i64* %lcO
+%ln54 = add i64 %ln53, 16
+%ln55 = load i64* %lcN
+%ln56 = inttoptr i64 %ln54 to i64*
+store i64 %ln55, i64* %ln56
+%ln57 = load i64* %lcO
+store i64 %ln57, i64* %lcN
+%ln58 = load i64* %lcM
+%ln59 = load i64* %lcN
+%ln5a = inttoptr i64 %ln58 to i64*
+store i64 %ln59, i64* %ln5a
+br label %cK
+cK:
+%ln5b = load i64* %lcN
+%ln5c = add i64 %ln5b, 8
+%ln5d = inttoptr i64 %ln5c to i64*
+%ln5e = load i64* %ln5d
+store i64 %ln5e, i64* %lcP
+%ln5f = load i64* %lcP
+%ln5g = load i64* %lcF
+%ln5h = inttoptr i64 %ln5f to i64*
+store i64 %ln5g, i64* %ln5h
+%ln5i = load i64* %lcN
+%ln5j = add i64 %ln5i, 8
+%ln5k = load i64* %lcP
+%ln5l = mul i64 1, 8
+%ln5m = add i64 %ln5k, %ln5l
+%ln5n = inttoptr i64 %ln5j to i64*
 store i64 %ln5m, i64* %ln5n
-%ln5o = load i64* %lcT
-%ln5p = add i64 %ln5o, 8
-%ln5q = load i64* %lcV
-%ln5r = mul i64 1, 8
-%ln5s = add i64 %ln5q, %ln5r
-%ln5t = inttoptr i64 %ln5p to i64*
-store i64 %ln5s, i64* %ln5t
-%ln5u = load i64** %Sp_Var
-%ln5v = ptrtoint i64* %ln5u to i64
-%ln5w = mul i64 0, 8
-%ln5x = add i64 %ln5v, %ln5w
-%ln5y = inttoptr i64 %ln5x to i64*
-%ln5z = load i64* %ln5y
-%ln5A = inttoptr i64 %ln5z to i64*
-%ln5B = load i64* %ln5A
-%ln5C = inttoptr i64 %ln5B to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
-%ln5D = load i64** %Base_Var
-%ln5E = load i64** %Sp_Var
-%ln5F = load i64** %Hp_Var
-%ln5G = load i64* %R1_Var
-%ln5H = load i64* %R2_Var
-%ln5I = load i64* %R3_Var
-%ln5J = load i64* %R4_Var
-%ln5K = load i64* %R5_Var
-%ln5L = load i64* %R6_Var
-%ln5M = load i64* %SpLim_Var
-%ln5N = load float* %F1_Var
-%ln5O = load float* %F2_Var
-%ln5P = load float* %F3_Var
-%ln5Q = load float* %F4_Var
-%ln5R = load double* %D1_Var
-%ln5S = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln5C( i64* %ln5D, i64* %ln5E, i64* %ln5F, i64 %ln5G, i64 %ln5H, i64 %ln5I, i64 %ln5J, i64 %ln5K, i64 %ln5L, i64 %ln5M, float %ln5N, float %ln5O, float %ln5P, float %ln5Q, double %ln5R, double %ln5S ) nounwind
+%ln5o = load i64** %Sp_Var
+%ln5p = ptrtoint i64* %ln5o to i64
+%ln5q = mul i64 0, 8
+%ln5r = add i64 %ln5p, %ln5q
+%ln5s = inttoptr i64 %ln5r to i64*
+%ln5t = load i64* %ln5s
+%ln5u = inttoptr i64 %ln5t to i64*
+%ln5v = load i64* %ln5u
+%ln5w = inttoptr i64 %ln5v to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
+%ln5x = load i64** %Base_Var
+%ln5y = load i64** %Sp_Var
+%ln5z = load i64** %Hp_Var
+%ln5A = load i64* %R1_Var
+%ln5B = load i64* %R2_Var
+%ln5C = load i64* %R3_Var
+%ln5D = load i64* %R4_Var
+%ln5E = load i64* %R5_Var
+%ln5F = load i64* %R6_Var
+%ln5G = load i64* %SpLim_Var
+%ln5H = load float* %F1_Var
+%ln5I = load float* %F2_Var
+%ln5J = load float* %F3_Var
+%ln5K = load float* %F4_Var
+%ln5L = load double* %D1_Var
+%ln5M = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %ln5w( i64* %ln5x, i64* %ln5y, i64* %ln5z, i64 %ln5A, i64 %ln5B, i64 %ln5C, i64 %ln5D, i64 %ln5E, i64 %ln5F, i64 %ln5G, float %ln5H, float %ln5I, float %ln5J, float %ln5K, double %ln5L, double %ln5M ) nounwind
 ret void
-cR:
-br label %cR
+cL:
+br label %cL
 }
 @stg_BLACKHOLE_info = external global [0 x i64]
 declare  ccc i8* @allocBlock_lock() align 8
 define  cc 10 void @stg_marked_upd_frame_ret(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) align 8 nounwind
 {
-cZ:
+cT:
 %Base_Var = alloca i64*, i32 1
 store i64* %Base_Arg, i64** %Base_Var
 %Sp_Var = alloca i64*, i32 1
@@ -265,297 +265,297 @@ store float %F4_Arg, float* %F4_Var
 store double %D1_Arg, double* %D1_Var
 %D2_Var = alloca double, i32 1
 store double %D2_Arg, double* %D2_Var
-%lcW = alloca i64, i32 1
-%lcX = alloca i64, i32 1
+%lcQ = alloca i64, i32 1
+%lcR = alloca i64, i32 1
+%lc11 = alloca i64, i32 1
+%lc12 = alloca i64, i32 1
+%lc13 = alloca i64, i32 1
+%lc14 = alloca i64, i32 1
+%lc15 = alloca i64, i32 1
+%lc16 = alloca i64, i32 1
 %lc17 = alloca i64, i32 1
 %lc18 = alloca i64, i32 1
 %lc19 = alloca i64, i32 1
 %lc1a = alloca i64, i32 1
-%lc1b = alloca i64, i32 1
-%lc1c = alloca i64, i32 1
-%lc1d = alloca i64, i32 1
-%lc1e = alloca i64, i32 1
-%lc1f = alloca i64, i32 1
-%lc1g = alloca i64, i32 1
-%ln9K = load i64** %Sp_Var
-%ln9L = getelementptr inbounds i64* %ln9K, i32 1
-%ln9M = ptrtoint i64* %ln9L to i64
-%ln9N = add i64 %ln9M, 0
-%ln9O = inttoptr i64 %ln9N to i64*
-%ln9P = load i64* %ln9O
-store i64 %ln9P, i64* %lcW
-%ln9Q = load i64* %lcW
-%ln9R = add i64 %ln9Q, 8
-%ln9S = add i64 %ln9R, 0
+%ln9E = load i64** %Sp_Var
+%ln9F = getelementptr inbounds i64* %ln9E, i32 1
+%ln9G = ptrtoint i64* %ln9F to i64
+%ln9H = add i64 %ln9G, 0
+%ln9I = inttoptr i64 %ln9H to i64*
+%ln9J = load i64* %ln9I
+store i64 %ln9J, i64* %lcQ
+%ln9K = load i64* %lcQ
+%ln9L = add i64 %ln9K, 8
+%ln9M = add i64 %ln9L, 0
+%ln9N = inttoptr i64 %ln9M to i64*
+%ln9O = load i64* %ln9N
+store i64 %ln9O, i64* %lcR
+%ln9P = load i64** %Sp_Var
+%ln9Q = ptrtoint i64* %ln9P to i64
+%ln9R = add i64 8, 8
+%ln9S = add i64 %ln9Q, %ln9R
 %ln9T = inttoptr i64 %ln9S to i64*
-%ln9U = load i64* %ln9T
-store i64 %ln9U, i64* %lcX
-%ln9V = load i64** %Sp_Var
-%ln9W = ptrtoint i64* %ln9V to i64
-%ln9X = add i64 8, 8
-%ln9Y = add i64 %ln9W, %ln9X
-%ln9Z = inttoptr i64 %ln9Y to i64*
-store i64* %ln9Z, i64** %Sp_Var
-%lna0 = load i64* %lcX
-%lna1 = shl i64 1, 3
-%lna2 = sub i64 %lna1, 1
-%lna3 = and i64 %lna0, %lna2
-%lna4 = icmp ne i64 %lna3, 0
-br i1 %lna4, label %cY, label %na5
-na5:
+store i64* %ln9T, i64** %Sp_Var
+%ln9U = load i64* %lcR
+%ln9V = shl i64 1, 3
+%ln9W = sub i64 %ln9V, 1
+%ln9X = and i64 %ln9U, %ln9W
+%ln9Y = icmp ne i64 %ln9X, 0
+br i1 %ln9Y, label %cS, label %n9Z
+n9Z:
+br label %cU
+cS:
+%lna0 = load i64* %lcR
+store i64 %lna0, i64* %R1_Var
+%lna1 = load i64** %Base_Var
+%lna2 = getelementptr inbounds i64* %lna1, i32 -3
+%lna3 = ptrtoint i64* %lna2 to i64
+store i64 %lna3, i64* %lc11
+%lna4 = load i64** %Base_Var
+%lna5 = getelementptr inbounds i64* %lna4, i32 19
+%lna6 = bitcast i64* %lna5 to i64*
+%lna7 = load i64* %lna6
+store i64 %lna7, i64* %lc12
+%lna8 = load i64* %lc11
+%lna9 = inttoptr i64 %lna8 to i8*
+%lnaa = load i64* %lc12
+%lnab = inttoptr i64 %lnaa to i8*
+store i64 undef, i64* %R3_Var
+store i64 undef, i64* %R4_Var
+store i64 undef, i64* %R5_Var
+store i64 undef, i64* %R6_Var
+store float undef, float* %F1_Var
+store float undef, float* %F2_Var
+store float undef, float* %F3_Var
+store float undef, float* %F4_Var
+store double undef, double* %D1_Var
+store double undef, double* %D2_Var
+call ccc void (i8*,i8*)* @checkBlockingQueues( i8* %lna9, i8* %lnab ) nounwind
+%lnac = load i64** %Sp_Var
+%lnad = ptrtoint i64* %lnac to i64
+%lnae = mul i64 0, 8
+%lnaf = add i64 %lnad, %lnae
+%lnag = inttoptr i64 %lnaf to i64*
+%lnah = load i64* %lnag
+%lnai = inttoptr i64 %lnah to i64*
+%lnaj = load i64* %lnai
+%lnak = inttoptr i64 %lnaj to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
+%lnal = load i64** %Base_Var
+%lnam = load i64** %Sp_Var
+%lnan = load i64** %Hp_Var
+%lnao = load i64* %R1_Var
+%lnap = load i64* %R2_Var
+%lnaq = load i64* %R3_Var
+%lnar = load i64* %R4_Var
+%lnas = load i64* %R5_Var
+%lnat = load i64* %R6_Var
+%lnau = load i64* %SpLim_Var
+%lnav = load float* %F1_Var
+%lnaw = load float* %F2_Var
+%lnax = load float* %F3_Var
+%lnay = load float* %F4_Var
+%lnaz = load double* %D1_Var
+%lnaA = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnak( i64* %lnal, i64* %lnam, i64* %lnan, i64 %lnao, i64 %lnap, i64 %lnaq, i64 %lnar, i64 %lnas, i64 %lnat, i64 %lnau, float %lnav, float %lnaw, float %lnax, float %lnay, double %lnaz, double %lnaA ) nounwind
+ret void
+cU:
+%lnaB = load i64* %lcR
+%lnaC = load i64** %Base_Var
+%lnaD = getelementptr inbounds i64* %lnaC, i32 19
+%lnaE = bitcast i64* %lnaD to i64*
+%lnaF = load i64* %lnaE
+%lnaG = icmp eq i64 %lnaB, %lnaF
+br i1 %lnaG, label %cV, label %naH
+naH:
 br label %c10
+cV:
+%lnaI = load i64* %lcQ
+%lnaJ = add i64 %lnaI, 8
+%lnaK = add i64 %lnaJ, 0
+%lnaL = load i64* %R1_Var
+%lnaM = inttoptr i64 %lnaK to i64*
+store i64 %lnaL, i64* %lnaM
+%lnaN = load i64* %lcQ
+%lnaO = add i64 %lnaN, 0
+%lnaP = ptrtoint [0 x i64]* @stg_BLACKHOLE_info to i64
+%lnaQ = inttoptr i64 %lnaO to i64*
+store i64 %lnaP, i64* %lnaQ
+%lnaR = load i64* %lcQ
+%lnaS = shl i64 1, 20
+%lnaT = sub i64 %lnaS, 1
+%lnaU = and i64 %lnaR, %lnaT
+%lnaV = shl i64 1, 12
+%lnaW = sub i64 %lnaV, 1
+%lnaX = xor i64 -1, %lnaW
+%lnaY = and i64 %lnaU, %lnaX
+%lnaZ = sub i64 12, 6
+%lnb0 = lshr i64 %lnaY, %lnaZ
+%lnb1 = load i64* %lcQ
+%lnb2 = shl i64 1, 20
+%lnb3 = sub i64 %lnb2, 1
+%lnb4 = xor i64 -1, %lnb3
+%lnb5 = and i64 %lnb1, %lnb4
+%lnb6 = or i64 %lnb0, %lnb5
+store i64 %lnb6, i64* %lc13
+%lnb7 = load i64* %lc13
+%lnb8 = add i64 %lnb7, 40
+%lnb9 = inttoptr i64 %lnb8 to i16*
+%lnba = load i16* %lnb9
+%lnbb = icmp ne i16 %lnba, 0
+br i1 %lnbb, label %cW, label %nbc
+nbc:
+%lnbd = load i64** %Sp_Var
+%lnbe = ptrtoint i64* %lnbd to i64
+%lnbf = mul i64 0, 8
+%lnbg = add i64 %lnbe, %lnbf
+%lnbh = inttoptr i64 %lnbg to i64*
+%lnbi = load i64* %lnbh
+%lnbj = inttoptr i64 %lnbi to i64*
+%lnbk = load i64* %lnbj
+%lnbl = inttoptr i64 %lnbk to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
+%lnbm = load i64** %Base_Var
+%lnbn = load i64** %Sp_Var
+%lnbo = load i64** %Hp_Var
+%lnbp = load i64* %R1_Var
+%lnbq = load i64* %R2_Var
+%lnbr = load i64* %R3_Var
+%lnbs = load i64* %R4_Var
+%lnbt = load i64* %R5_Var
+%lnbu = load i64* %R6_Var
+%lnbv = load i64* %SpLim_Var
+%lnbw = load float* %F1_Var
+%lnbx = load float* %F2_Var
+%lnby = load float* %F3_Var
+%lnbz = load float* %F4_Var
+%lnbA = load double* %D1_Var
+%lnbB = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnbl( i64* %lnbm, i64* %lnbn, i64* %lnbo, i64 %lnbp, i64 %lnbq, i64 %lnbr, i64 %lnbs, i64 %lnbt, i64 %lnbu, i64 %lnbv, float %lnbw, float %lnbx, float %lnby, float %lnbz, double %lnbA, double %lnbB ) nounwind
+ret void
+cW:
+%lnbC = load i64** %Base_Var
+%lnbD = getelementptr inbounds i64* %lnbC, i32 -3
+%lnbE = ptrtoint i64* %lnbD to i64
+%lnbF = add i64 %lnbE, 272
+%lnbG = inttoptr i64 %lnbF to i64*
+%lnbH = load i64* %lnbG
+%lnbI = load i64* %lc13
+%lnbJ = add i64 %lnbI, 40
+%lnbK = inttoptr i64 %lnbJ to i16*
+%lnbL = load i16* %lnbK
+%lnbM = sext i16 %lnbL to i64
+%lnbN = mul i64 %lnbM, 8
+%lnbO = add i64 %lnbH, %lnbN
+store i64 %lnbO, i64* %lc14
+%lnbP = load i64* %lc14
+%lnbQ = inttoptr i64 %lnbP to i64*
+%lnbR = load i64* %lnbQ
+store i64 %lnbR, i64* %lc15
+%lnbS = load i64* %lc15
+%lnbT = add i64 %lnbS, 8
+%lnbU = inttoptr i64 %lnbT to i64*
+%lnbV = load i64* %lnbU
+%lnbW = load i64* %lc15
+%lnbX = add i64 %lnbW, 0
+%lnbY = inttoptr i64 %lnbX to i64*
+%lnbZ = load i64* %lnbY
+%lnc0 = shl i64 1, 12
+%lnc1 = add i64 %lnbZ, %lnc0
+%lnc2 = icmp uge i64 %lnbV, %lnc1
+br i1 %lnc2, label %cX, label %nc3
+nc3:
+br label %cY
+cX:
+store i64 undef, i64* %R3_Var
+store i64 undef, i64* %R4_Var
+store i64 undef, i64* %R5_Var
+store i64 undef, i64* %R6_Var
+store float undef, float* %F1_Var
+store float undef, float* %F2_Var
+store float undef, float* %F3_Var
+store float undef, float* %F4_Var
+store double undef, double* %D1_Var
+store double undef, double* %D2_Var
+%lnc4 = call ccc i8* ()* @allocBlock_lock( ) nounwind
+%lnc5 = ptrtoint i8* %lnc4 to i64
+store i64 %lnc5, i64* %lc16
+%lnc6 = load i64* %lc16
+%lnc7 = add i64 %lnc6, 16
+%lnc8 = load i64* %lc15
+%lnc9 = inttoptr i64 %lnc7 to i64*
+store i64 %lnc8, i64* %lnc9
+%lnca = load i64* %lc16
+store i64 %lnca, i64* %lc15
+%lncb = load i64* %lc14
+%lncc = load i64* %lc15
+%lncd = inttoptr i64 %lncb to i64*
+store i64 %lncc, i64* %lncd
+br label %cY
 cY:
-%lna6 = load i64* %lcX
-store i64 %lna6, i64* %R1_Var
-%lna7 = load i64** %Base_Var
-%lna8 = getelementptr inbounds i64* %lna7, i32 -3
-%lna9 = ptrtoint i64* %lna8 to i64
-store i64 %lna9, i64* %lc17
-%lnaa = load i64** %Base_Var
-%lnab = getelementptr inbounds i64* %lnaa, i32 19
-%lnac = bitcast i64* %lnab to i64*
-%lnad = load i64* %lnac
-store i64 %lnad, i64* %lc18
-%lnae = load i64* %lc17
-%lnaf = inttoptr i64 %lnae to i8*
-%lnag = load i64* %lc18
-%lnah = inttoptr i64 %lnag to i8*
-store i64 undef, i64* %R3_Var
-store i64 undef, i64* %R4_Var
-store i64 undef, i64* %R5_Var
-store i64 undef, i64* %R6_Var
-store float undef, float* %F1_Var
-store float undef, float* %F2_Var
-store float undef, float* %F3_Var
-store float undef, float* %F4_Var
-store double undef, double* %D1_Var
-store double undef, double* %D2_Var
-call ccc void (i8*,i8*)* @checkBlockingQueues( i8* %lnaf, i8* %lnah ) nounwind
-%lnai = load i64** %Sp_Var
-%lnaj = ptrtoint i64* %lnai to i64
-%lnak = mul i64 0, 8
-%lnal = add i64 %lnaj, %lnak
-%lnam = inttoptr i64 %lnal to i64*
-%lnan = load i64* %lnam
-%lnao = inttoptr i64 %lnan to i64*
-%lnap = load i64* %lnao
-%lnaq = inttoptr i64 %lnap to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
-%lnar = load i64** %Base_Var
-%lnas = load i64** %Sp_Var
-%lnat = load i64** %Hp_Var
-%lnau = load i64* %R1_Var
-%lnav = load i64* %R2_Var
-%lnaw = load i64* %R3_Var
-%lnax = load i64* %R4_Var
-%lnay = load i64* %R5_Var
-%lnaz = load i64* %R6_Var
-%lnaA = load i64* %SpLim_Var
-%lnaB = load float* %F1_Var
-%lnaC = load float* %F2_Var
-%lnaD = load float* %F3_Var
-%lnaE = load float* %F4_Var
-%lnaF = load double* %D1_Var
-%lnaG = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnaq( i64* %lnar, i64* %lnas, i64* %lnat, i64 %lnau, i64 %lnav, i64 %lnaw, i64 %lnax, i64 %lnay, i64 %lnaz, i64 %lnaA, float %lnaB, float %lnaC, float %lnaD, float %lnaE, double %lnaF, double %lnaG ) nounwind
-ret void
-c10:
-%lnaH = load i64* %lcX
-%lnaI = load i64** %Base_Var
-%lnaJ = getelementptr inbounds i64* %lnaI, i32 19
-%lnaK = bitcast i64* %lnaJ to i64*
-%lnaL = load i64* %lnaK
-%lnaM = icmp eq i64 %lnaH, %lnaL
-br i1 %lnaM, label %c11, label %naN
-naN:
-br label %c16
-c11:
-%lnaO = load i64* %lcW
-%lnaP = add i64 %lnaO, 8
-%lnaQ = add i64 %lnaP, 0
-%lnaR = load i64* %R1_Var
-%lnaS = inttoptr i64 %lnaQ to i64*
-store i64 %lnaR, i64* %lnaS
-%lnaT = load i64* %lcW
-%lnaU = add i64 %lnaT, 0
-%lnaV = ptrtoint [0 x i64]* @stg_BLACKHOLE_info to i64
-%lnaW = inttoptr i64 %lnaU to i64*
-store i64 %lnaV, i64* %lnaW
-%lnaX = load i64* %lcW
-%lnaY = shl i64 1, 20
-%lnaZ = sub i64 %lnaY, 1
-%lnb0 = and i64 %lnaX, %lnaZ
-%lnb1 = shl i64 1, 12
-%lnb2 = sub i64 %lnb1, 1
-%lnb3 = xor i64 -1, %lnb2
-%lnb4 = and i64 %lnb0, %lnb3
-%lnb5 = sub i64 12, 6
-%lnb6 = lshr i64 %lnb4, %lnb5
-%lnb7 = load i64* %lcW
-%lnb8 = shl i64 1, 20
-%lnb9 = sub i64 %lnb8, 1
-%lnba = xor i64 -1, %lnb9
-%lnbb = and i64 %lnb7, %lnba
-%lnbc = or i64 %lnb6, %lnbb
-store i64 %lnbc, i64* %lc19
-%lnbd = load i64* %lc19
-%lnbe = add i64 %lnbd, 40
-%lnbf = inttoptr i64 %lnbe to i16*
-%lnbg = load i16* %lnbf
-%lnbh = icmp ne i16 %lnbg, 0
-br i1 %lnbh, label %c12, label %nbi
-nbi:
-%lnbj = load i64** %Sp_Var
-%lnbk = ptrtoint i64* %lnbj to i64
-%lnbl = mul i64 0, 8
-%lnbm = add i64 %lnbk, %lnbl
-%lnbn = inttoptr i64 %lnbm to i64*
-%lnbo = load i64* %lnbn
-%lnbp = inttoptr i64 %lnbo to i64*
-%lnbq = load i64* %lnbp
-%lnbr = inttoptr i64 %lnbq to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
-%lnbs = load i64** %Base_Var
-%lnbt = load i64** %Sp_Var
-%lnbu = load i64** %Hp_Var
-%lnbv = load i64* %R1_Var
-%lnbw = load i64* %R2_Var
-%lnbx = load i64* %R3_Var
-%lnby = load i64* %R4_Var
-%lnbz = load i64* %R5_Var
-%lnbA = load i64* %R6_Var
-%lnbB = load i64* %SpLim_Var
-%lnbC = load float* %F1_Var
-%lnbD = load float* %F2_Var
-%lnbE = load float* %F3_Var
-%lnbF = load float* %F4_Var
-%lnbG = load double* %D1_Var
-%lnbH = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnbr( i64* %lnbs, i64* %lnbt, i64* %lnbu, i64 %lnbv, i64 %lnbw, i64 %lnbx, i64 %lnby, i64 %lnbz, i64 %lnbA, i64 %lnbB, float %lnbC, float %lnbD, float %lnbE, float %lnbF, double %lnbG, double %lnbH ) nounwind
-ret void
-c12:
-%lnbI = load i64** %Base_Var
-%lnbJ = getelementptr inbounds i64* %lnbI, i32 -3
-%lnbK = ptrtoint i64* %lnbJ to i64
-%lnbL = add i64 %lnbK, 272
-%lnbM = inttoptr i64 %lnbL to i64*
-%lnbN = load i64* %lnbM
-%lnbO = load i64* %lc19
-%lnbP = add i64 %lnbO, 40
-%lnbQ = inttoptr i64 %lnbP to i16*
-%lnbR = load i16* %lnbQ
-%lnbS = sext i16 %lnbR to i64
-%lnbT = mul i64 %lnbS, 8
-%lnbU = add i64 %lnbN, %lnbT
-store i64 %lnbU, i64* %lc1a
-%lnbV = load i64* %lc1a
-%lnbW = inttoptr i64 %lnbV to i64*
-%lnbX = load i64* %lnbW
-store i64 %lnbX, i64* %lc1b
-%lnbY = load i64* %lc1b
-%lnbZ = add i64 %lnbY, 8
-%lnc0 = inttoptr i64 %lnbZ to i64*
-%lnc1 = load i64* %lnc0
-%lnc2 = load i64* %lc1b
-%lnc3 = add i64 %lnc2, 0
-%lnc4 = inttoptr i64 %lnc3 to i64*
-%lnc5 = load i64* %lnc4
-%lnc6 = shl i64 1, 12
-%lnc7 = add i64 %lnc5, %lnc6
-%lnc8 = icmp uge i64 %lnc1, %lnc7
-br i1 %lnc8, label %c13, label %nc9
-nc9:
-br label %c14
-c13:
-store i64 undef, i64* %R3_Var
-store i64 undef, i64* %R4_Var
-store i64 undef, i64* %R5_Var
-store i64 undef, i64* %R6_Var
-store float undef, float* %F1_Var
-store float undef, float* %F2_Var
-store float undef, float* %F3_Var
-store float undef, float* %F4_Var
-store double undef, double* %D1_Var
-store double undef, double* %D2_Var
-%lnca = call ccc i8* ()* @allocBlock_lock( ) nounwind
-%lncb = ptrtoint i8* %lnca to i64
-store i64 %lncb, i64* %lc1c
-%lncc = load i64* %lc1c
-%lncd = add i64 %lncc, 16
-%lnce = load i64* %lc1b
-%lncf = inttoptr i64 %lncd to i64*
-store i64 %lnce, i64* %lncf
-%lncg = load i64* %lc1c
-store i64 %lncg, i64* %lc1b
-%lnch = load i64* %lc1a
-%lnci = load i64* %lc1b
-%lncj = inttoptr i64 %lnch to i64*
-store i64 %lnci, i64* %lncj
-br label %c14
-c14:
-%lnck = load i64* %lc1b
-%lncl = add i64 %lnck, 8
-%lncm = inttoptr i64 %lncl to i64*
-%lncn = load i64* %lncm
-store i64 %lncn, i64* %lc1d
-%lnco = load i64* %lc1d
-%lncp = load i64* %lcW
-%lncq = inttoptr i64 %lnco to i64*
+%lnce = load i64* %lc15
+%lncf = add i64 %lnce, 8
+%lncg = inttoptr i64 %lncf to i64*
+%lnch = load i64* %lncg
+store i64 %lnch, i64* %lc17
+%lnci = load i64* %lc17
+%lncj = load i64* %lcQ
+%lnck = inttoptr i64 %lnci to i64*
+store i64 %lncj, i64* %lnck
+%lncl = load i64* %lc15
+%lncm = add i64 %lncl, 8
+%lncn = load i64* %lc17
+%lnco = mul i64 1, 8
+%lncp = add i64 %lncn, %lnco
+%lncq = inttoptr i64 %lncm to i64*
 store i64 %lncp, i64* %lncq
-%lncr = load i64* %lc1b
-%lncs = add i64 %lncr, 8
-%lnct = load i64* %lc1d
-%lncu = mul i64 1, 8
-%lncv = add i64 %lnct, %lncu
-%lncw = inttoptr i64 %lncs to i64*
-store i64 %lncv, i64* %lncw
-%lncx = load i64** %Sp_Var
-%lncy = ptrtoint i64* %lncx to i64
-%lncz = mul i64 0, 8
-%lncA = add i64 %lncy, %lncz
-%lncB = inttoptr i64 %lncA to i64*
-%lncC = load i64* %lncB
-%lncD = inttoptr i64 %lncC to i64*
-%lncE = load i64* %lncD
-%lncF = inttoptr i64 %lncE to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
-%lncG = load i64** %Base_Var
-%lncH = load i64** %Sp_Var
-%lncI = load i64** %Hp_Var
-%lncJ = load i64* %R1_Var
-%lncK = load i64* %R2_Var
-%lncL = load i64* %R3_Var
-%lncM = load i64* %R4_Var
-%lncN = load i64* %R5_Var
-%lncO = load i64* %R6_Var
-%lncP = load i64* %SpLim_Var
-%lncQ = load float* %F1_Var
-%lncR = load float* %F2_Var
-%lncS = load float* %F3_Var
-%lncT = load float* %F4_Var
-%lncU = load double* %D1_Var
-%lncV = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lncF( i64* %lncG, i64* %lncH, i64* %lncI, i64 %lncJ, i64 %lncK, i64 %lncL, i64 %lncM, i64 %lncN, i64 %lncO, i64 %lncP, float %lncQ, float %lncR, float %lncS, float %lncT, double %lncU, double %lncV ) nounwind
+%lncr = load i64** %Sp_Var
+%lncs = ptrtoint i64* %lncr to i64
+%lnct = mul i64 0, 8
+%lncu = add i64 %lncs, %lnct
+%lncv = inttoptr i64 %lncu to i64*
+%lncw = load i64* %lncv
+%lncx = inttoptr i64 %lncw to i64*
+%lncy = load i64* %lncx
+%lncz = inttoptr i64 %lncy to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
+%lncA = load i64** %Base_Var
+%lncB = load i64** %Sp_Var
+%lncC = load i64** %Hp_Var
+%lncD = load i64* %R1_Var
+%lncE = load i64* %R2_Var
+%lncF = load i64* %R3_Var
+%lncG = load i64* %R4_Var
+%lncH = load i64* %R5_Var
+%lncI = load i64* %R6_Var
+%lncJ = load i64* %SpLim_Var
+%lncK = load float* %F1_Var
+%lncL = load float* %F2_Var
+%lncM = load float* %F3_Var
+%lncN = load float* %F4_Var
+%lncO = load double* %D1_Var
+%lncP = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lncz( i64* %lncA, i64* %lncB, i64* %lncC, i64 %lncD, i64 %lncE, i64 %lncF, i64 %lncG, i64 %lncH, i64 %lncI, i64 %lncJ, float %lncK, float %lncL, float %lncM, float %lncN, double %lncO, double %lncP ) nounwind
 ret void
-c15:
-br label %c16
-c16:
-%lncW = load i64** %Base_Var
-%lncX = getelementptr inbounds i64* %lncW, i32 -3
-%lncY = ptrtoint i64* %lncX to i64
-store i64 %lncY, i64* %lc1e
-%lncZ = load i64** %Base_Var
-%lnd0 = getelementptr inbounds i64* %lncZ, i32 19
-%lnd1 = bitcast i64* %lnd0 to i64*
-%lnd2 = load i64* %lnd1
-store i64 %lnd2, i64* %lc1f
-%lnd3 = load i64* %R1_Var
-store i64 %lnd3, i64* %lc1g
-%lnd4 = load i64* %lc1e
+cZ:
+br label %c10
+c10:
+%lncQ = load i64** %Base_Var
+%lncR = getelementptr inbounds i64* %lncQ, i32 -3
+%lncS = ptrtoint i64* %lncR to i64
+store i64 %lncS, i64* %lc18
+%lncT = load i64** %Base_Var
+%lncU = getelementptr inbounds i64* %lncT, i32 19
+%lncV = bitcast i64* %lncU to i64*
+%lncW = load i64* %lncV
+store i64 %lncW, i64* %lc19
+%lncX = load i64* %R1_Var
+store i64 %lncX, i64* %lc1a
+%lncY = load i64* %lc18
+%lncZ = inttoptr i64 %lncY to i8*
+%lnd0 = load i64* %lc19
+%lnd1 = inttoptr i64 %lnd0 to i8*
+%lnd2 = load i64* %lcQ
+%lnd3 = inttoptr i64 %lnd2 to i8*
+%lnd4 = load i64* %lc1a
 %lnd5 = inttoptr i64 %lnd4 to i8*
-%lnd6 = load i64* %lc1f
-%lnd7 = inttoptr i64 %lnd6 to i8*
-%lnd8 = load i64* %lcW
-%lnd9 = inttoptr i64 %lnd8 to i8*
-%lnda = load i64* %lc1g
-%lndb = inttoptr i64 %lnda to i8*
 store i64 undef, i64* %R3_Var
 store i64 undef, i64* %R4_Var
 store i64 undef, i64* %R5_Var
@@ -566,40 +566,40 @@ store float undef, float* %F3_Var
 store float undef, float* %F4_Var
 store double undef, double* %D1_Var
 store double undef, double* %D2_Var
-call ccc void (i8*,i8*,i8*,i8*)* @updateThunk( i8* %lnd5, i8* %lnd7, i8* %lnd9, i8* %lndb ) nounwind
-%lndc = load i64** %Sp_Var
-%lndd = ptrtoint i64* %lndc to i64
-%lnde = mul i64 0, 8
-%lndf = add i64 %lndd, %lnde
-%lndg = inttoptr i64 %lndf to i64*
-%lndh = load i64* %lndg
-%lndi = inttoptr i64 %lndh to i64*
-%lndj = load i64* %lndi
-%lndk = inttoptr i64 %lndj to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
-%lndl = load i64** %Base_Var
-%lndm = load i64** %Sp_Var
-%lndn = load i64** %Hp_Var
-%lndo = load i64* %R1_Var
-%lndp = load i64* %R2_Var
-%lndq = load i64* %R3_Var
-%lndr = load i64* %R4_Var
-%lnds = load i64* %R5_Var
-%lndt = load i64* %R6_Var
-%lndu = load i64* %SpLim_Var
-%lndv = load float* %F1_Var
-%lndw = load float* %F2_Var
-%lndx = load float* %F3_Var
-%lndy = load float* %F4_Var
-%lndz = load double* %D1_Var
-%lndA = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lndk( i64* %lndl, i64* %lndm, i64* %lndn, i64 %lndo, i64 %lndp, i64 %lndq, i64 %lndr, i64 %lnds, i64 %lndt, i64 %lndu, float %lndv, float %lndw, float %lndx, float %lndy, double %lndz, double %lndA ) nounwind
+call ccc void (i8*,i8*,i8*,i8*)* @updateThunk( i8* %lncZ, i8* %lnd1, i8* %lnd3, i8* %lnd5 ) nounwind
+%lnd6 = load i64** %Sp_Var
+%lnd7 = ptrtoint i64* %lnd6 to i64
+%lnd8 = mul i64 0, 8
+%lnd9 = add i64 %lnd7, %lnd8
+%lnda = inttoptr i64 %lnd9 to i64*
+%lndb = load i64* %lnda
+%lndc = inttoptr i64 %lndb to i64*
+%lndd = load i64* %lndc
+%lnde = inttoptr i64 %lndd to void (i64*, i64*, i64*, i64, i64, i64, i64, i64, i64, i64, float, float, float, float, double, double)*
+%lndf = load i64** %Base_Var
+%lndg = load i64** %Sp_Var
+%lndh = load i64** %Hp_Var
+%lndi = load i64* %R1_Var
+%lndj = load i64* %R2_Var
+%lndk = load i64* %R3_Var
+%lndl = load i64* %R4_Var
+%lndm = load i64* %R5_Var
+%lndn = load i64* %R6_Var
+%lndo = load i64* %SpLim_Var
+%lndp = load float* %F1_Var
+%lndq = load float* %F2_Var
+%lndr = load float* %F3_Var
+%lnds = load float* %F4_Var
+%lndt = load double* %D1_Var
+%lndu = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* %lnde( i64* %lndf, i64* %lndg, i64* %lndh, i64 %lndi, i64 %lndj, i64 %lndk, i64 %lndl, i64 %lndm, i64 %lndn, i64 %lndo, float %lndp, float %lndq, float %lndr, float %lnds, double %lndt, double %lndu ) nounwind
 ret void
 }
 declare  ccc void @checkBlockingQueues(i8*, i8*) align 8
 declare  ccc void @updateThunk(i8*, i8*, i8*, i8*) align 8
 define  cc 10 void @stg_bh_upd_frame_ret(i64* noalias nocapture %Base_Arg, i64* noalias nocapture %Sp_Arg, i64* noalias nocapture %Hp_Arg, i64 %R1_Arg, i64 %R2_Arg, i64 %R3_Arg, i64 %R4_Arg, i64 %R5_Arg, i64 %R6_Arg, i64 %SpLim_Arg, float %F1_Arg, float %F2_Arg, float %F3_Arg, float %F4_Arg, double %D1_Arg, double %D2_Arg) align 8 nounwind
 {
-cdS:
+cdM:
 %Base_Var = alloca i64*, i32 1
 store i64* %Base_Arg, i64** %Base_Var
 %Sp_Var = alloca i64*, i32 1
@@ -632,23 +632,23 @@ store float %F4_Arg, float* %F4_Var
 store double %D1_Arg, double* %D1_Var
 %D2_Var = alloca double, i32 1
 store double %D2_Arg, double* %D2_Var
-%lndT = load i64** %Base_Var
-%lndU = load i64** %Sp_Var
-%lndV = load i64** %Hp_Var
-%lndW = load i64* %R1_Var
-%lndX = load i64* %R2_Var
-%lndY = load i64* %R3_Var
-%lndZ = load i64* %R4_Var
-%lne0 = load i64* %R5_Var
-%lne1 = load i64* %R6_Var
-%lne2 = load i64* %SpLim_Var
-%lne3 = load float* %F1_Var
-%lne4 = load float* %F2_Var
-%lne5 = load float* %F3_Var
-%lne6 = load float* %F4_Var
-%lne7 = load double* %D1_Var
-%lne8 = load double* %D2_Var
-tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @stg_marked_upd_frame_ret( i64* %lndT, i64* %lndU, i64* %lndV, i64 %lndW, i64 %lndX, i64 %lndY, i64 %lndZ, i64 %lne0, i64 %lne1, i64 %lne2, float %lne3, float %lne4, float %lne5, float %lne6, double %lne7, double %lne8 ) nounwind
+%lndN = load i64** %Base_Var
+%lndO = load i64** %Sp_Var
+%lndP = load i64** %Hp_Var
+%lndQ = load i64* %R1_Var
+%lndR = load i64* %R2_Var
+%lndS = load i64* %R3_Var
+%lndT = load i64* %R4_Var
+%lndU = load i64* %R5_Var
+%lndV = load i64* %R6_Var
+%lndW = load i64* %SpLim_Var
+%lndX = load float* %F1_Var
+%lndY = load float* %F2_Var
+%lndZ = load float* %F3_Var
+%lne0 = load float* %F4_Var
+%lne1 = load double* %D1_Var
+%lne2 = load double* %D2_Var
+tail call cc 10 void (i64*,i64*,i64*,i64,i64,i64,i64,i64,i64,i64,float,float,float,float,double,double)* @stg_marked_upd_frame_ret( i64* %lndN, i64* %lndO, i64* %lndP, i64 %lndQ, i64 %lndR, i64 %lndS, i64 %lndT, i64 %lndU, i64 %lndV, i64 %lndW, float %lndX, float %lndY, float %lndZ, float %lne0, double %lne1, double %lne2 ) nounwind
 ret void
 }
 @llvm.used = appending global [0 x i8*] [], section "llvm.metadata"

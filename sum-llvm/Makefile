@@ -1,6 +1,10 @@
 include opts.mk
 S=SumFromTo2-$(VER)
 
+.SUFFIXES: .ll .bc
+.PHONEY: clean bench run-interp
+
+
 $(S): $(S).o link.py
 	./link.py $(VER) $(S).o $(S)
 
@@ -55,10 +59,43 @@ endif
 endif
 endif
 
-SumFromTo2.ntnt.linked.ll: Apply.ntnt.ll AutoApply.ntnt.ll Base.ntnt.ll Num.ntnt.ll Updates.ntnt.ll SumFromTo2.ntnt.ll
+#
+# LLI Interp Targets
+#
+GHC_NTNT_P=$(HOME)/Research/git/ghc-bc-notntc
+GHC_NTNT=$(GHC_NTNT_P)/inplace/bin/ghc-stage2
+GHC_NTNT_DYLIB_DIRS=$(GHC_NTNT_P)/rts/dist/build:$(GHC_NTNT_P)/libraries/base/dist-install/build:$(GHC_NTNT_P)/libraries/ghc-prim/dist-install/build:$(GHC_NTNT_P)/libraries/integer-gmp/dist-install/build
+GHC_NTNT_DYLIBS=$(GHC_NTNT_P)/rts/dist/build/libHSrts-ghc7.3.20111020.dylib:$(GHC_NTNT_P)/libraries/base/dist-install/build/libHSbase-4.4.0.0-ghc7.3.20111020.dylib:$(GHC_NTNT_P)/libraries/ghc-prim/dist-install/build/libHSghc-prim-0.2.0.0-ghc7.3.20111020.dylib:$(GHC_NTNT_P)/libraries/integer-gmp/dist-install/build/libHSinteger-gmp-0.3.0.0-ghc7.3.20111020.dylib
+EXTERN_LL_FILES=Apply.ntnt.ll AutoApply.ntnt.ll Updates.ntnt.ll\
+	        Base.ntnt.ll Num.ntnt.ll  HsMain.ll
+EXTERN_BC_FILES=${EXTERN_LL_FILES:.ll=.bc}
+LINKED_LL_FILES=$(EXTERN_LL_FILES) SumFromTo2.ntnt.ll
+LINKED_BC_FILES=${LINKED_LL_FILES:.ll=.bc}
+
+SumFromTo2.ntnt.linked.ll: $(LINKED_LL_FILES)
 	llvm-link $^ -S > $@
 
-.PHONEY: clean bench
+SumFromTo2.ntnt.ll:
+	$(GHC_NTNT) -fforce-recomp -O2 -fllvm -keep-llvm-files SumFromTo2.hs
+	cp SumFromTo2.ll $@
+
+HsMain.ll: HsMain.c
+	clang -S -emit-llvm -o $@ $<
+
+interp: $(LINKED_BC_FILES)
+	llvm-ld -liconv $(LINKED_BC_FILES) -o $@
+
+run-interp: interp	
+	DYLD_LIBRARY_PATH=$(GHC_NTNT_DYLIB_DIRS) DYLD_INSERT_LIBRARIES=$(GHC_NTNT_DYLIBS) DYLD_FORCE_FLAT_NAMESPACE=1 ./interp
+
+
+%.bc: %.ll
+	opt $(OPT) $< -o $@
+
+#
+# Clean and Benchmark Targets
+#
+
 bench: $S
 	@echo "VERSION $(VER) (opt=$(OPT))"
 	time ./$S
@@ -71,7 +108,10 @@ clean:
 	make clean-files VER=4
 	make clean-files VER=5
 	make clean-files VER=6
-	rm -f *.hi *.o SumFromTo2 mangle mangler/*.o mangler/*.hi SumFromTo2.ntnt.linked.ll
+	rm -f $(LINKED_BC_FILES)
+	rm -f *.hi *.o SumFromTo2 mangle mangler/*.o mangler/*.hi
+	rm -f SumFromTo2.ntnt.linked.ll SumFromTo2.ntnt.linked.bc 
+	rm -f a.out a.out.bc interp interp.bc
 	rm -rf __pycache__
 
 clean-files:
