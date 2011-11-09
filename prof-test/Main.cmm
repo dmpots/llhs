@@ -1,0 +1,266 @@
+[1 of 1] Compiling Main             ( Main.hs, Main.o )
+
+==================== Optimised Cmm ====================
+Main.add_entry()
+        { Nothing
+        }
+    c1Ca: jump GHC.Base.plusInt_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.mul_entry()
+        { Nothing
+        }
+    c1CL: jump GHC.Base.timesInt_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sat_s1C2_entry()
+        { Nothing
+        }
+    c1Dy:
+        if (Sp - 16 < SpLim) goto c1DA;
+        I64[Sp - 16] = stg_upd_frame_info;
+        I64[Sp - 8] = R1;
+        R2 = I64[R1 + 16];
+        R3 = I64[R1 + 16];
+        Sp = Sp - 16;
+        jump Main.mul_entry ();
+    c1DA: jump (I64[BaseReg - 16]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+s1BF_ret()
+        { Nothing
+        }
+    c1FA:
+        Hp = Hp + 24;
+        if (Hp > I64[BaseReg + 144]) goto c1FD;
+        I64[Hp - 16] = sat_s1C2_info;
+        I64[Hp + 0] = R1;
+        _s1C3::I64 = I64[Sp + 8] - 1;
+        R2 = _s1C3::I64;
+        R3 = Hp - 16;
+        Sp = Sp + 16;
+        jump Main.foo_entry ();
+    c1FE: jump (I64[BaseReg - 16]) ();
+    c1FD:
+        I64[BaseReg + 184] = 24;
+        goto c1FE;
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.bar_entry()
+        { Nothing
+        }
+    c1HW:
+        if (Sp - 16 < SpLim) goto c1HY;
+        _s1BD::I64 = R2;
+        if (_s1BD::I64 != 0) goto c1I0;
+        R1 = lvl1_r1Bv_closure+1;
+        jump (I64[I64[Sp + 0]]) ();
+    c1HY:
+        R1 = Main.bar_closure;
+        jump (I64[BaseReg - 8]) ();
+    c1I0:
+        I64[Sp - 8] = _s1BD::I64;
+        R1 = R3;
+        I64[Sp - 16] = s1BF_info;
+        Sp = Sp - 16;
+        if (R1 & 7 != 0) goto c1I3;
+        jump (I64[I64[R1]]) ();
+    c1I3: jump (I64[s1BF_info]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+sat_s1C0_entry()
+        { Nothing
+        }
+    c1LY:
+        if (Sp - 16 < SpLim) goto c1M0;
+        I64[Sp - 16] = stg_upd_frame_info;
+        I64[Sp - 8] = R1;
+        R2 = I64[R1 + 16];
+        R3 = I64[R1 + 16];
+        Sp = Sp - 16;
+        jump Main.add_entry ();
+    c1M0: jump (I64[BaseReg - 16]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+s1BQ_ret()
+        { Nothing
+        }
+    c1O0:
+        Hp = Hp + 24;
+        if (Hp > I64[BaseReg + 144]) goto c1O3;
+        I64[Hp - 16] = sat_s1C0_info;
+        I64[Hp + 0] = R1;
+        _s1C1::I64 = I64[Sp + 8] - 1;
+        R2 = _s1C1::I64;
+        R3 = Hp - 16;
+        Sp = Sp + 16;
+        jump Main.bar_entry ();
+    c1O4: jump (I64[BaseReg - 16]) ();
+    c1O3:
+        I64[BaseReg + 184] = 24;
+        goto c1O4;
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.foo_entry()
+        { Nothing
+        }
+    c1Qm:
+        if (Sp - 16 < SpLim) goto c1Qo;
+        _s1BO::I64 = R2;
+        if (_s1BO::I64 != 0) goto c1Qq;
+        R1 = lvl_r1Bu_closure+1;
+        jump (I64[I64[Sp + 0]]) ();
+    c1Qo:
+        R1 = Main.foo_closure;
+        jump (I64[BaseReg - 8]) ();
+    c1Qq:
+        I64[Sp - 8] = _s1BO::I64;
+        R1 = R3;
+        I64[Sp - 16] = s1BQ_info;
+        Sp = Sp - 16;
+        if (R1 & 7 != 0) goto c1Qt;
+        jump (I64[I64[R1]]) ();
+    c1Qt: jump (I64[s1BQ_info]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.root_entry()
+        { Nothing
+        }
+    c1Ui:
+        if (Sp - 16 < SpLim) goto c1Uk;
+        Hp = Hp + 16;
+        if (Hp > I64[BaseReg + 144]) goto c1Um;
+        I64[Hp - 8] = stg_CAF_BLACKHOLE_info;
+        I64[Hp + 0] = I64[BaseReg + 152];
+        (_c1Un::I64,) = foreign "ccall"
+          newCAF((BaseReg, PtrHint), (R1, PtrHint),
+                 (Hp - 8, PtrHint))[_unsafe_call_];
+        if (_c1Un::I64 == 0) goto c1Uo;
+        goto c1Up;
+    c1Uk: jump (I64[BaseReg - 16]) ();
+    c1Um:
+        I64[BaseReg + 184] = 16;
+        goto c1Uk;
+    c1Uo: jump (I64[I64[R1]]) ();
+    c1Up:
+        I64[Sp - 16] = stg_bh_upd_frame_info;
+        I64[Sp - 8] = Hp - 8;
+        R2 = 1000000000;
+        R3 = lvl_r1Bu_closure+1;
+        Sp = Sp - 16;
+        jump Main.foo_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+s1BZ_ret()
+        { Nothing
+        }
+    c1Yh:
+        R2 = I64[R1 + 7];
+        R3 = GHC.Types.[]_closure+1;
+        Sp = Sp + 8;
+        jump GHC.Show.itos_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main2_entry()
+        { Nothing
+        }
+    c1Zb:
+        if (Sp - 24 < SpLim) goto c1Zd;
+        Hp = Hp + 16;
+        if (Hp > I64[BaseReg + 144]) goto c1Zf;
+        I64[Hp - 8] = stg_CAF_BLACKHOLE_info;
+        I64[Hp + 0] = I64[BaseReg + 152];
+        (_c1Zg::I64,) = foreign "ccall"
+          newCAF((BaseReg, PtrHint), (R1, PtrHint),
+                 (Hp - 8, PtrHint))[_unsafe_call_];
+        if (_c1Zg::I64 == 0) goto c1Zh;
+        goto c1Zi;
+    c1Zd: jump (I64[BaseReg - 16]) ();
+    c1Zf:
+        I64[BaseReg + 184] = 16;
+        goto c1Zd;
+    c1Zh: jump (I64[I64[R1]]) ();
+    c1Zi:
+        I64[Sp - 16] = stg_bh_upd_frame_info;
+        I64[Sp - 8] = Hp - 8;
+        R1 = Main.root_closure;
+        I64[Sp - 24] = s1BZ_info;
+        Sp = Sp - 24;
+        if (R1 & 7 != 0) goto c1Zj;
+        jump (I64[I64[R1]]) ();
+    c1Zj: jump (I64[s1BZ_info]) ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main1_entry()
+        { Nothing
+        }
+    c248:
+        R2 = GHC.IO.Handle.FD.stdout_closure;
+        R3 = Main.main2_closure;
+        R4 = GHC.Types.True_closure+2;
+        jump GHC.IO.Handle.Text.hPutStr2_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main_entry()
+        { Nothing
+        }
+    c24R: jump Main.main1_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+Main.main3_entry()
+        { Nothing
+        }
+    c25s:
+        R2 = Main.main1_closure+1;
+        jump GHC.TopHandler.runMainIO1_entry ();
+}
+
+
+
+==================== Optimised Cmm ====================
+:Main.main_entry()
+        { Nothing
+        }
+    c267: jump Main.main3_entry ();
+}
+
+

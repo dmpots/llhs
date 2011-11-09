@@ -1,0 +1,10 @@
+Add optimization pass that will promote indirect calls to direct test and call
+    ifcp
+
+Add JITEventListener to lli to get llvm function -> code address
+    tools/lli/lli.cpp:  EE->RegisterJITEventListener(createOProfileJITEventListener());
+    include/llvm/ExecutionEngine/JITEventListener.h
+
+Modify profiling pass to insert profiling code to track the targets of indirect branches
+    lib/Transforms/Instrumentation/EdgeProfiling.cpp
+    runtime/libprofile/PathProfiling.c
