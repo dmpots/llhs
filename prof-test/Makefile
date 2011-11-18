@@ -4,11 +4,16 @@
 M=Main
 LLVM_CONFIG=$(HOME)/Research/git/llvm/Debug+Asserts/bin/llvm-config
 LLVM_BIN:=$(shell $(LLVM_CONFIG) --bindir)
+LLVM_LIB:=$(shell $(LLVM_CONFIG) --libdir)
 OPT:=$(LLVM_BIN)/opt
+LLI:=$(LLVM_BIN)/lli
 LLVM_LD:=$(LLVM_BIN)/llvm-ld
 LLVM_LINK:=$(LLVM_BIN)/llvm-link
 LLVM_PROF:=$(LLVM_BIN)/llvm-prof
 
+#
+# Default Target
+#
 default: $(M)
 	@
 
@@ -24,7 +29,6 @@ EXTERN_BC_FILES=${EXTERN_LL_FILES:.ll=.bc}
 LINKED_LL_FILES=$(EXTERN_LL_FILES) Main.opt.ll
 LINKED_BC_FILES=${LINKED_LL_FILES:.ll=.bc}
 LLI_ENV=DYLD_LIBRARY_PATH=$(GHC_NTNT_DYLIB_DIRS) DYLD_INSERT_LIBRARIES=$(GHC_NTNT_DYLIBS) DYLD_FORCE_FLAT_NAMESPACE=1
-LLVM_LIBDIR:=$(shell llvm-config --libdir)
 
 GHC_OPTS=-fforce-recomp -O2 -fllvm -keep-llvm-files -ddump-opt-cmm
 
@@ -35,7 +39,7 @@ $(M).ll:
 	$(GHC_NTNT) $(GHC_OPTS) $(M).hs > $(M).cmm
 
 $(M).opt.ll: $(M).ll
-	$(OPT) -mem2reg -ifcp -S -o $@ $^
+	$(OPT) -mem2reg -S -o $@ $^
 
 $(M).linked.ll: $(LINKED_LL_FILES)
 	$(LLVM_LINK) $^ -S > $@
@@ -66,12 +70,20 @@ run: $(P)
 # Profilied Versions
 #
 $(M).bc.prof: $(M).linked.bc
-	$(OPT) -insert-edge-profiling $< -o $@
+	$(OPT) -insert-ifc-profiling $< -o $@
 
-prof: SumFromTo2.ntnt.linked.bc.prof
-	$(LLVM_LD) -liconv -lprofile_rt -L$(LLVM_LIBDIR) $^ -o $@
-	$(LLI_ENV) ./$@
-	rm $^
+prof.bc: $(M).bc.prof
+	$(LLVM_LD) -liconv -lprofile_rt -L$(LLVM_LIB) $< -o _prof
+	mv _prof.bc prof.bc
+
+prof: prof.bc
+	$(LLI_ENV) $(LLI) \
+		-load=/usr/lib/libiconv.dylib \
+		-load=$(LLVM_LIB)/libprofile_rt.dylib \
+		-use-ifcprofile-listener \
+		-debug-only=ifcprofile-jit-event-listener \
+		prof.bc
+view-prof:
 	$(LLVM_PROF) $(M).linked.bc llvmprof.out
 
 #
@@ -89,7 +101,8 @@ clean:
 	rm -f $(LINKED_BC_FILES)
 	rm -f *.hi *.o
 	rm -f a.out a.out.bc interp interp.bc interp-hand
-	rm -f prof llvmprof.out prof.bc
+	rm -f prof _prof llvmprof.out prof.bc
+	rm -f $(M).bc.prof.ll Main.linked.bc
 	rm -f $(M).opt.ll $(M)
 	rm -f $(M).linked.ll
 	rm -rf __pycache__
