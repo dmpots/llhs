@@ -1146,7 +1146,7 @@ store i64 %ln1XE, i64* %ln1XG
 %ln1XK = load i64** %Sp_Var
 %ln1XL = getelementptr inbounds i64* %ln1XK, i32 -1
 store i64 %ln1XJ, i64* %ln1XL
-store i64 100, i64* %R2_Var
+store i64 1000000000, i64* %R2_Var
 %ln1XM = ptrtoint %r1Bu_closure_struct* @r1Bu_closure to i64
 %ln1XN = add i64 %ln1XM, 1
 store i64 %ln1XN, i64* %R3_Var

@@ -6,7 +6,8 @@ import GHC.Base
 main = putStrLn (show $ root)
 
 {-# NOINLINE root #-}
-root = foo (1000000000#) 1
+--root = foo (1000000000#) 1
+root = foo (100#) 1
 
 {-# NOINLINE foo #-}
 foo :: Int# -> Int -> Int
