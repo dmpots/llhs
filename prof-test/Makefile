@@ -84,7 +84,7 @@ prof: prof.bc
 		-debug-only=ifcprofile-jit-event-listener \
 		prof.bc
 view-prof:
-	$(LLVM_PROF) $(M).linked.bc llvmprof.out
+	$(LLVM_PROF) -stats -profile-type=ifc $(M).linked.bc llvmprof.out
 
 #
 # Bytecode from LLVM IR
