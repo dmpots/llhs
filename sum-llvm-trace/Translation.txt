@@ -1,0 +1,24 @@
+orig ntnt
+
+Prefix
+-------------
+sQg      s1Ci_ret
+
+Sum
+-------------
+sNj      s1Cj_ret
+sMi      s1BJ_ret
+sNh      s1Cm_info
+sMG      s1BH_ret
+(Num.+, Num:D, sj9_ret, ap_0_fast) 
+ap_pp_ret
+s10X     sxz_ret
+s10W     sxy_ret
+sNI      s1Ck_ret
+
+EnumFromTo
+-------------
+upto    Main_enumFromTo
+sMX     s1C0_ret
+sN0     s1C4_ret
+sat_s00 s1Cl_entry
