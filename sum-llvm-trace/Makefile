@@ -88,15 +88,19 @@ view-prof:
 #
 # Indirect Function Call Promotion Optimization
 #
-$(M).linked.ifcp.ll: llvmprof.out $(M).linked.ll
-	$(OPT) $(M).linked.ll -stats \
+$(M).linked.ifcp.ll: $(M).linked.bc llvmprof.out
+	$(OPT) $< -stats \
 		-load-ifc-profile \
 		-ifc-profile-loader-file=llvmprof.out \
 		-ifcp \
 		-debug-only=ifcp \
+		-S \
 		-o $@
 
-$(M)-ifcp: $(M).linked.ifcp.bc
+$(M).linked.ifcp.opt.bc: $(M).linked.ifcp.ll
+	$(OPT) $(OPT_POST_IFCP) $< -o $@
+
+$(M)-ifcp: $(M).linked.ifcp.opt.bc
 	llc $< -o $<.s
 	$(GHC_NTNT) $<.s -o $@
 
