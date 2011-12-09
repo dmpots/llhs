@@ -8,7 +8,7 @@ Sum
 -------------
 sNj      s1Cj_ret
 sMi      s1BJ_ret
-sNh      s1Cm_info
+sNh      s1Cm_ret
 sMG      s1BH_ret
 (Num.+, Num:D, sj9_ret, ap_0_fast) 
 ap_pp_ret
