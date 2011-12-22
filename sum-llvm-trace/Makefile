@@ -108,6 +108,23 @@ $(M)-ifcp: $(M).linked.ifcp.opt.bc
 run-ifcp: $(M)-ifcp
 	./$<
 
+#
+# Trace Versions
+#
+$(M).bc.trace: $(M).linked.bc
+	$(OPT) -insert-trace-profiling -stats $< -o $@
+
+trace.bc: $(M).bc.trace
+	$(LLVM_LD) -liconv -ltrace_rt -L$(LLVM_LIB) $< -o _trace
+	mv _trace.bc $@
+
+trace llvmtrace.out: trace.bc
+	$(LLI_ENV) $(LLI) \
+		-load=/usr/lib/libiconv.dylib \
+		-load=$(LLVM_LIB)/libtrace_rt.dylib \
+		-use-ifcprofile-listener \
+		-debug-only=ifcprofile-jit-event-listener \
+		trace.bc
 
 #
 # Bytecode from LLVM IR
@@ -123,8 +140,9 @@ clean:
 	rm -f *.o *.hi $(M) $(M)-linked $(M)-ifcp $(M).cmm
 	rm -f a.out a.out.bc interp interp.bc interp-hand
 	rm -f prof _prof llvmprof.out prof.bc
+	rm -f trace _trace trace.bc
 	rm -f $(LINKED_BC_FILES)
-	rm -f $(M).bc.prof.ll $(M).bc.prof $(M).linked.bc
+	rm -f $(M).bc.prof.ll $(M).bc.prof $(M).linked.bc $(M).bc.trace
 	rm -f $(M).ll $(M).opt.ll $(M).linked.*
 	rm -rf __pycache__
 
