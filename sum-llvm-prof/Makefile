@@ -119,7 +119,7 @@ run-ifcp: $(M)-ifcp
 #
 
 clean:
-	rm -f *.o *.hi $(M) $(M)-linked $(M)-ifcp $(M).cmm
+	rm -f *.o *.hi $(M) $(M)-linked $(M)-ifcp
 	rm -f a.out a.out.bc interp interp.bc interp-hand
 	rm -f prof _prof llvmprof.out prof.bc
 	rm -f $(LINKED_BC_FILES)
