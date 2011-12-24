@@ -47,6 +47,10 @@ $(M).ll:
 $(M).opt.ll: $(M).ll
 	$(OPT) -mem2reg -S -o $@ $^
 
+# The Debug+Asserts version triggers an assertion like:
+# Assertion failed: (isa<ConstantAggregateZero>(AVI.DstInit)),
+# function linkAppendingVarInit, file LinkModules.cpp, line 766.
+# so we use the version without assertions (found on the path).
 $(M).linked.ll: $(LINKED_LL_FILES)
 	llvm-link $^ -S -o $@
 
