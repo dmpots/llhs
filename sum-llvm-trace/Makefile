@@ -127,9 +127,10 @@ trace llvmtrace.out: trace.bc
 		-load=/usr/lib/libiconv.dylib \
 		-load=$(LLVM_LIB)/libtrace_rt.dylib \
 		-use-ifcprofile-listener \
-		-debug-only=ifcprofile-jit-event-listener \
 		trace.bc
 
+view-trace:
+	$(LLVM_PROF) -stats -profile-type=trace $(M).linked.bc llvmprof.out
 #
 # Bytecode from LLVM IR
 #

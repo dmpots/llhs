@@ -1,0 +1,10 @@
+Main
+Main.bc.trace
+Main.cmm
+Main.linked.bc
+Main.linked.ll
+Main.ll
+Main.opt.ll
+_trace
+llvmprof.out
+trace.bc
