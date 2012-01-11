@@ -131,6 +131,29 @@ trace llvmtrace.out: trace.bc
 
 view-trace:
 	$(LLVM_PROF) -stats -profile-type=trace $(M).linked.bc llvmprof.out
+
+#
+# Trace optimizations
+#
+$(M).linked.traced.ll: $(M).linked.bc
+	$(OPT) $< -stats \
+		-load-trace-profile \
+		-trace-profile-loader-file=llvmprof.out \
+		-build-traces \
+		-debug-only=build-traces \
+		-S \
+		-o $@
+
+$(M).linked.traced.opt.bc: $(M).linked.traced.ll
+	$(OPT) $(OPT_POST_TRACE) $< -o $@
+
+$(M)-trace: $(M).linked.traced.opt.bc
+	$(LLC) -disable-cfi $< -o $<.s
+	$(GHC_TRACE) -no-hs-main $<.s -o $@
+
+run-trace: $(M)-trace
+	./$<
+
 #
 # Bytecode from LLVM IR
 #
